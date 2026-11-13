@@ -1,0 +1,677 @@
+{
+ "task1": {
+  "name": "T1 linear paired protocol",
+  "npz_alignment_max_abs_diff": 0.0,
+  "verification": {
+   "thr": {
+    "mine": -2.14729840822442,
+    "published": -2.14729840822442,
+    "abs_diff": 0.0
+   },
+   "recall": {
+    "mine": 0.9696969696969697,
+    "published": 0.9696969696969696,
+    "abs_diff": 1.1102230246251565e-16
+   },
+   "FA": {
+    "mine": 0.2989786443825441,
+    "published": 0.2989786443825441,
+    "abs_diff": 0.0
+   }
+  },
+  "linreg_oof_seconds": 0.1,
+  "verification_max_abs_diff": 1.1102230246251565e-16,
+  "linreg_AUC_gate": {
+   "mine": 0.9107791001941421,
+   "published": 0.910779100194142,
+   "abs_diff": 1.1102230246251565e-16
+  },
+  "paired": {
+   "pairing": "seed-mean",
+   "AUC_ebm": 0.9320261910791159,
+   "AUC_linreg": 0.910779100194142,
+   "dAUC": 0.021247090884973896,
+   "delong_z": 3.3238557744954718,
+   "delong_p": 0.0008878209791024486,
+   "n_boot_effective": 2000,
+   "dAUC_mean": 0.0211071698191192,
+   "dAUC_lo": 0.008118460830527205,
+   "dAUC_hi": 0.033534129961890424,
+   "frac_favoring_linreg": 0.0
+  },
+  "per_seed_dAUC": {
+   "seed0": 0.0195026267449665,
+   "seed1": 0.02001310357856312,
+   "seed2": 0.019635270331649024,
+   "seed3": 0.021717372692303005,
+   "seed4": 0.023284978716733407
+  },
+  "n_test": 1308,
+  "n_unstable": 231,
+  "status": "OK"
+ },
+ "task2": {
+  "name": "T2 tier/abstention battery",
+  "inputs": {
+   "thr": -2.190729573067052,
+   "w": 0.3,
+   "edge_secure_alert": -3.631347642511528,
+   "edge_alert_emergency": -1.8702925428281123
+  },
+  "tier_occupancy_gate": {
+   "mine": {
+    "Secure": 198,
+    "Alert": 666,
+    "Emergency": 444
+   },
+   "published": {
+    "Secure": 198,
+    "Alert": 666,
+    "Emergency": 444
+   },
+   "match": true
+  },
+  "a_missed_unstable": 15,
+  "a_alarmed_unstable": 216,
+  "a_n_unstable": 231,
+  "b_misses_in_alarm_band": 5,
+  "b_alarm_band_total": 236,
+  "b_miss_preds": [
+   -2.6781300467631928,
+   -2.1912195219640753,
+   -2.454864189733039,
+   -2.6190888422550667,
+   -2.501782543117476,
+   -2.4831034519880806,
+   -2.566216248297433,
+   -3.7626192221146524,
+   -3.2754928687405647,
+   -2.3174793925041874,
+   -2.616668017120143,
+   -2.3544950359254817,
+   -2.4924002312036895,
+   -2.7799575230731963,
+   -2.573194536997679
+  ],
+  "b_published_curve_crosscheck": {
+   "published_coverage_w0.3": 0.8195718654434251,
+   "mine_coverage": 0.8195718654434251,
+   "published_missed_unstable_overall": 0.0432900432900432,
+   "mine_missed_outside_band_over_unstable": 0.04329004329004329
+  },
+  "c_sa_band_total": 185,
+  "c_sa_band_by_assigned_tier": {
+   "Secure": 88,
+   "Alert": 97,
+   "Emergency": 0
+  },
+  "c_sa_band_by_truth": {
+   "stable": 184,
+   "unstable": 1
+  },
+  "c_secure_tier_unstable_rows": 1,
+  "c_secure_miss_ids": [
+   973
+  ],
+  "c_secure_miss_pred": [
+   -3.7626192221146524
+  ],
+  "c_secure_miss_in_sa_band": [
+   true
+  ],
+  "c_misses_caught_by_sa_band": 1,
+  "d_ae_band_total": 195,
+  "d_ae_band_by_assigned_tier": {
+   "Secure": 0,
+   "Alert": 103,
+   "Emergency": 92
+  },
+  "d_ae_band_by_truth": {
+   "stable": 175,
+   "unstable": 20
+  },
+  "d_misses_caught_by_ae_band": 0,
+  "d_secure_miss_in_ae_band": [
+   false
+  ],
+  "e_pooled_counts": {
+   "per_frame": {
+    "test": [
+     198,
+     1
+    ],
+    "topology": [
+     97,
+     0
+    ],
+    "config": [
+     33,
+     0
+    ],
+    "shell": [
+     132,
+     0
+    ]
+   },
+   "n": 460,
+   "k": 1
+  },
+  "e_wilson": {
+   "point": 0.002173913043478261,
+   "two_sided_95_z": 1.959963984540054,
+   "two_sided_95_lo": 0.0003838521616069896,
+   "two_sided_95_hi": 0.012209801789779536,
+   "one_sided_95_upper_z": 1.6448536269514722,
+   "one_sided_95_upper": 0.009684495852562069
+  },
+  "status": "OK"
+ },
+ "task4": {
+  "name": "T4 faithfulness nulls",
+  "n_scenarios_published": 236,
+  "n_pairs_ebm": 3971,
+  "verification": {
+   "max_abs_rho_diff": 1.1102230246251565e-16,
+   "median_mine": 0.5838937318389372,
+   "median_published": 0.5838937318389372
+  },
+  "fastpath_gate_abs_diff": 0.0,
+  "null": {
+   "n_perm": 1000,
+   "seed": 42,
+   "null_mean": 0.001210762242762701,
+   "null_sd": 0.021964877224045005,
+   "null_q95": 0.038233634311512346,
+   "null_q99": 0.05079574244036752,
+   "null_max": 0.06884875846501126,
+   "observed_median": 0.5838937318389372,
+   "p_value": 0.000999000999000999
+  },
+  "rating_vector_Sn_MVA": [
+   350.0,
+   850.0,
+   850.0,
+   800.0,
+   650.0,
+   850.0,
+   700.0,
+   700.0,
+   1050.0,
+   1250.0
+  ],
+  "baselines": {
+   "rating_Sn": {
+    "median_rho": -0.008433837129585037,
+    "mean_rho": -0.017656144105706685,
+    "q25": -0.1410750938039679,
+    "q75": 0.1015894017881834,
+    "n_valid": 236,
+    "definition": "score for probe (kind, plant i) = plant rating Sn_i from T7_plants.csv (build_case.m rule); rho = spearman(|dsig|, score) per scenario"
+   },
+   "abs_Qinv": {
+    "median_rho": 0.022650187351799522,
+    "mean_rho": 0.01741030600543872,
+    "q25": -0.09437578063249802,
+    "q75": 0.1479812240317569,
+    "n_valid": 236,
+    "definition": "score = |Qinv_i| of the probed plant, joined from data/dataset.csv by scenario id"
+   }
+  },
+  "status": "OK"
+ },
+ "task7": {
+  "name": "T7 GRIP shape stats",
+  "n_shape_points": 1001,
+  "grip_range": [
+   0.1186856933825015,
+   1.296030371401395
+  ],
+  "a_zero_crossings": [
+   0.2573843337579212,
+   0.7167361222720546
+  ],
+  "a_n_crossings": 2,
+  "a_segments": [
+   {
+    "grip_from": 0.1186856933825015,
+    "grip_to": 0.257289268851237,
+    "n_points": 292,
+    "y_min": 0.0005007525086075,
+    "y_max": 0.5228755964062533,
+    "sign": "positive"
+   },
+   {
+    "grip_from": 0.2577360832100009,
+    "grip_to": 0.7143865187249105,
+    "n_points": 576,
+    "y_min": -0.3769720656126203,
+    "y_max": -0.0018528332554444,
+    "sign": "negative"
+   },
+   {
+    "grip_from": 0.7176652045114595,
+    "grip_to": 1.296030371401395,
+    "n_points": 133,
+    "y_min": 0.0017010417513979,
+    "y_max": 0.579685127587121,
+    "sign": "positive"
+   }
+  ],
+  "b_mono_frac_nonincreasing": {
+   "steps_total": 1000,
+   "rule_diff_le_1e-9": 0.519,
+   "rule_diff_le_0": 0.519,
+   "published_e1_shape_check": 0.519,
+   "definition": "fraction of consecutive-point steps of the shape with non-increasing contribution; the record rule (e1_shape_fix.py) is diff <= 1e-9"
+  },
+  "b_reproduces_published": true,
+  "c_core_iqr": {
+   "train_PWSGSI_q25": 0.23634874051357074,
+   "train_PWSGSI_q75": 0.5731102671219728,
+   "n_core_points": 509,
+   "mono_frac_core": 0.6240157480314961,
+   "published": 0.6240157480314961,
+   "abs_diff": 0.0,
+   "definition": "same step rule restricted to shape points with grip inside the TRAIN PWSGSI interquartile range (e1_shape_fix.py convention)"
+  },
+  "d_density_weighted": {
+   "bank_all_7324": {
+    "n_grip_values_in_steps": 7186,
+    "weighted_mono_frac": 0.47884775953242414
+   },
+   "bank_trust": {
+    "n_grip_values_in_steps": 7186,
+    "weighted_mono_frac": 0.47884775953242414
+   },
+   "train_split": {
+    "n_grip_values_in_steps": 2984,
+    "weighted_mono_frac": 0.5197721179624665
+   },
+   "definition": "each shape step [grip_i, grip_{i+1}) weighted by the count of bank GRIP (PWSGSI) values falling in that interval; weighted fraction of steps with diff <= 1e-9; primary variant = all dataset.csv rows with finite PWSGSI"
+  },
+  "status": "OK"
+ },
+ "task8": {
+  "name": "T8 table extraction",
+  "n_rows": 17,
+  "source": "results/final/tables/e1_model_suite.csv",
+  "status": "OK"
+ },
+ "task5": {
+  "name": "T5 exact additive deletion",
+  "fit_seconds": 124.9,
+  "verification": {
+   "pred_vs_npz_max_abs_diff": 0.0,
+   "AUC": {
+    "mine": 0.9302817269391086,
+    "published_seed0": 0.9302817269391086,
+    "abs_diff": 0.0
+   },
+   "alarm_recall": {
+    "mine": 0.935064935064935,
+    "published": 0.935064935064935,
+    "abs_diff": 0.0
+   },
+   "alarm_FA": {
+    "mine": 0.3166202414113278,
+    "published": 0.3166202414113278,
+    "abs_diff": 0.0
+   }
+  },
+  "additivity_max_abs_residual": 5.329070518200751e-15,
+  "n_terms": 88,
+  "n_main_terms": 64,
+  "n_interaction_terms": 24,
+  "curves": [
+   {
+    "ordering": "importance_global",
+    "del_10": 0.8885578352696091,
+    "del_20": 0.8844331209491776,
+    "del_30": 1.1809042988377831,
+    "del_50": 1.163817212370963
+   },
+   {
+    "ordering": "perrow_intrinsic",
+    "del_10": 0.9630979691298333,
+    "del_20": 1.2695688667992213,
+    "del_30": 1.2848673193921007,
+    "del_50": 1.177597032585079
+   },
+   {
+    "ordering": "random_mean_20",
+    "del_10": 0.26839883292125605,
+    "del_20": 0.39488331800066107,
+    "del_30": 0.4759706198401147,
+    "del_50": 0.6909975325715637
+   },
+   {
+    "ordering": "random_sd_20",
+    "del_10": 0.08827312274956672,
+    "del_20": 0.12633337412383375,
+    "del_30": 0.14083505034517937,
+    "del_50": 0.15316091853110972
+   },
+   {
+    "ordering": "random_min_20",
+    "del_10": 0.13503070825628613,
+    "del_20": 0.20596273739779275,
+    "del_30": 0.31255282076601865,
+    "del_50": 0.42064924637109924
+   },
+   {
+    "ordering": "random_max_20",
+    "del_10": 0.5869170469026548,
+    "del_20": 0.6765922875954817,
+    "del_30": 0.8246678242859156,
+    "del_50": 1.0044262921137272
+   }
+  ],
+  "ratio_at_10pct_importance_over_random": 3.3105875521086854,
+  "ratio_at_10pct_perrow_over_random": 3.5883090796165678,
+  "metric_note": "mean |prediction change| over the same 200-row test subset as e2_blackbox_contrast.py (RandomState(42).choice first draw); deletion = exact removal of term contributions from the additive sum (eval_terms), fractions of the term count (main + pairwise); importance order = ebm.term_importances() descending (train mean |contribution|); 20 random term orders from RandomState(42)",
+  "status": "OK"
+ },
+ "task6": {
+  "name": "T6 zero-feature census",
+  "n_features_in_file": 64,
+  "n_xgb_zero": 16,
+  "n_amber_zero": 64,
+  "n_both_zero_as_filed": 16,
+  "both_zero_features_as_filed": [
+   "Vbus_5",
+   "Vbus_8",
+   "Vbus_9",
+   "Vbus_10",
+   "Hv_1",
+   "Hv_2",
+   "Hv_3",
+   "Hv_5",
+   "Hv_7",
+   "Hv_8",
+   "Dv_1",
+   "Dv_2",
+   "Dv_3",
+   "Dv_5",
+   "Dv_7",
+   "Dv_8"
+  ],
+  "xgb_zero_features": [
+   "Vbus_5",
+   "Vbus_8",
+   "Vbus_9",
+   "Vbus_10",
+   "Hv_1",
+   "Hv_2",
+   "Hv_3",
+   "Hv_5",
+   "Hv_7",
+   "Hv_8",
+   "Dv_1",
+   "Dv_2",
+   "Dv_3",
+   "Dv_5",
+   "Dv_7",
+   "Dv_8"
+  ],
+  "file_artifact_note": "amber_ebm_meanabs is exactly 0.0 for ALL rows: e2_blackbox_contrast.py fit the EBM on a numpy array, so term_names_ were positional and never matched the feature list; the filed amber channel is an artifact, not a measurement",
+  "corrected_amber": {
+   "n_zero": 12,
+   "zero_features": [
+    "Hv_1",
+    "Hv_2",
+    "Hv_3",
+    "Hv_5",
+    "Hv_7",
+    "Hv_8",
+    "Dv_1",
+    "Dv_2",
+    "Dv_3",
+    "Dv_5",
+    "Dv_7",
+    "Dv_8"
+   ],
+   "n_both_zero_corrected": 12,
+   "both_zero_corrected": [
+    "Hv_1",
+    "Hv_2",
+    "Hv_3",
+    "Hv_5",
+    "Hv_7",
+    "Hv_8",
+    "Dv_1",
+    "Dv_2",
+    "Dv_3",
+    "Dv_5",
+    "Dv_7",
+    "Dv_8"
+   ],
+   "definition": "feature importance = term_importances() (train mean |contribution|), interactions split half-half; EBM = verified task-5 retrain of the deployed M+D seed-0 model"
+  },
+  "status": "OK"
+ },
+ "task9": {
+  "name": "T9 type-flags ablation",
+  "flag_convention": "is_gfm_slot_k = 1 iff fpll_k == 0 (structural zero; schema.md: fpll is 0 for GFM plants, Hv/Dv are 0 for GFL plants)",
+  "fpll_vs_Hv_mismatch_rows": {
+   "1": 0,
+   "2": 0,
+   "3": 0,
+   "4": 0,
+   "5": 0,
+   "6": 0,
+   "7": 0,
+   "8": 0,
+   "9": 0,
+   "10": 0
+  },
+  "cfgbuses_crosscheck_mismatch_rows": 0,
+  "gfm_slots_observed_trust_bank": [
+   4,
+   5,
+   6,
+   9,
+   10
+  ],
+  "slot10_gfm_share": {
+   "bank_trust": 0.9228563626433642,
+   "train": 0.901311475409836,
+   "test": 0.9090214067278287
+  },
+  "flag_verification": "PASS",
+  "M_only_check": {
+   "per_seed": [
+    {
+     "config": "M",
+     "seed": 0,
+     "AUC": 0.884680469638687,
+     "R2": 0.41923993734128406,
+     "AUC_published": 0.884680469638687,
+     "AUC_abs_diff": 0.0,
+     "fit_s": 67.2
+    },
+    {
+     "config": "M",
+     "seed": 1,
+     "AUC": 0.8849015422831579,
+     "R2": 0.42031337489654286,
+     "AUC_published": 0.8849015422831579,
+     "AUC_abs_diff": 0.0,
+     "fit_s": 78.3
+    },
+    {
+     "config": "M",
+     "seed": 2,
+     "AUC": 0.8852351610011778,
+     "R2": 0.4216337307639413,
+     "AUC_published": 0.8852351610011778,
+     "AUC_abs_diff": 0.0,
+     "fit_s": 71.0
+    },
+    {
+     "config": "M",
+     "seed": 3,
+     "AUC": 0.8848412497437567,
+     "R2": 0.41999613404923963,
+     "AUC_published": 0.8848412497437567,
+     "AUC_abs_diff": 0.0,
+     "fit_s": 84.9
+    },
+    {
+     "config": "M",
+     "seed": 4,
+     "AUC": 0.8846402746124193,
+     "R2": 0.42044362082677533,
+     "AUC_published": 0.8846402746124193,
+     "AUC_abs_diff": 0.0,
+     "fit_s": 65.7
+    }
+   ],
+   "AUC_mean": 0.8848597394558396,
+   "AUC_sd": 0.00021134482126055202,
+   "max_gate_abs_diff": 0.0
+  },
+  "M_typeflags": {
+   "n_feats": 42,
+   "per_seed": [
+    {
+     "config": "M+typeflags",
+     "seed": 0,
+     "AUC": 0.9511148090535277,
+     "R2": 0.6057540728333692,
+     "R2_stable": 0.18725742689357538,
+     "fit_s": 28.1
+    },
+    {
+     "config": "M+typeflags",
+     "seed": 1,
+     "AUC": 0.9518704755473558,
+     "R2": 0.6077250559810405,
+     "R2_stable": 0.1935729061375896,
+     "fit_s": 24.0
+    },
+    {
+     "config": "M+typeflags",
+     "seed": 2,
+     "AUC": 0.9516373443950046,
+     "R2": 0.6072177027979937,
+     "R2_stable": 0.19656763509990216,
+     "fit_s": 25.9
+    },
+    {
+     "config": "M+typeflags",
+     "seed": 3,
+     "AUC": 0.9530039752880979,
+     "R2": 0.6115030795113294,
+     "R2_stable": 0.20141537210871518,
+     "fit_s": 23.8
+    },
+    {
+     "config": "M+typeflags",
+     "seed": 4,
+     "AUC": 0.9517860659921942,
+     "R2": 0.6069654595985666,
+     "R2_stable": 0.19501812253816886,
+     "fit_s": 21.1
+    }
+   ],
+   "AUC_mean": 0.9518825340552362,
+   "AUC_sd": 0.0006191286750417004,
+   "R2_mean": 0.6078330741444599,
+   "R2_sd": 0.0019459851316129596,
+   "alarm": {
+    "oof_thr": -2.2133567282009436,
+    "test_recall": 0.9567099567099567,
+    "test_FA": 0.28319405756731664,
+    "oof_s": 92.7
+   }
+  },
+  "M_reference": {
+   "AUC_mean": 0.8848597394558396,
+   "AUC_sd": 0.0002113448212605,
+   "R2_mean": 0.4203253595755566,
+   "R2_sd": 0.0007762081417374
+  },
+  "status": "OK"
+ },
+ "task10": {
+  "name": "T10 annex: per-frame GFM slot census",
+  "census": {
+   "train": {
+    "n": 3050,
+    "gfm_slots": [
+     4,
+     6,
+     9,
+     10
+    ]
+   },
+   "test": {
+    "n": 1308,
+    "gfm_slots": [
+     4,
+     6,
+     9,
+     10
+    ]
+   },
+   "ood_topology": {
+    "n": 870,
+    "gfm_slots": [
+     4,
+     5,
+     6,
+     9,
+     10
+    ]
+   },
+   "ood_config": {
+    "n": 1224,
+    "gfm_slots": [
+     4,
+     5,
+     9,
+     10
+    ]
+   },
+   "ood_shell": {
+    "n": 1377,
+    "gfm_slots": [
+     4,
+     5,
+     6,
+     9,
+     10
+    ]
+   }
+  },
+  "in_distribution_gfm_slots": [
+   4,
+   6,
+   9,
+   10
+  ],
+  "never_gfm_in_distribution_slots": [
+   1,
+   2,
+   3,
+   5,
+   7,
+   8
+  ],
+  "implied_structural_zero_features": [
+   "Hv_1",
+   "Hv_2",
+   "Hv_3",
+   "Hv_5",
+   "Hv_7",
+   "Hv_8",
+   "Dv_1",
+   "Dv_2",
+   "Dv_3",
+   "Dv_5",
+   "Dv_7",
+   "Dv_8"
+  ],
+  "status": "OK"
+ }
+}

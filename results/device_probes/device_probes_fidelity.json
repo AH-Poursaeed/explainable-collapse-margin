@@ -1,0 +1,94 @@
+{
+ "meta": {
+  "protocol": "python/device_probes_fidelity.py",
+  "gate_M1_worst_abs_diff": 1.1102230246251565e-16,
+  "atol": 1e-09,
+  "status": "complete",
+  "minutes": 4.2
+ },
+ "census": {
+  "out_of_range": 545,
+  "zero_dhat": 4,
+  "zero_dsig": 0,
+  "n_pairs": 6268,
+  "m_block_moved": 0
+ },
+ "results": {
+  "s0.02": {
+   "n_scenarios": 236,
+   "n_excluded_eight_probe_rule": 0,
+   "rho_median": 0.3216783216783217,
+   "rho_mean": 0.299657694420849,
+   "ci_lo": 0.2785714285714285,
+   "ci_hi": 0.36400162337662234,
+   "share_clearing_own_null": 0.3432203389830508,
+   "n_failing_own_null": 155,
+   "pooled_null": {
+    "observed_median": 0.3216783216783217,
+    "fastpath_abs_diff": 0.0,
+    "null_mean": 0.001553532364721681,
+    "null_sd": 0.02480265701501774,
+    "null_q95": 0.040700628835330085,
+    "null_max": 0.07767232767232767,
+    "p_value": 0.000999000999000999
+   },
+   "sign_agree_w": 0.7393507139477042,
+   "majority_sign_plant_pooled": 0.49532712518881733,
+   "majority_sign_per_key": 0.709031582899817
+  },
+  "s0.10": {
+   "n_scenarios": 236,
+   "n_excluded_eight_probe_rule": 0,
+   "rho_median": 0.4685314685314686,
+   "rho_mean": 0.40086544811121083,
+   "ci_lo": 0.41236263736263734,
+   "ci_hi": 0.5033966033966034,
+   "share_clearing_own_null": 0.5,
+   "n_failing_own_null": 118,
+   "pooled_null": {
+    "observed_median": 0.4685314685314686,
+    "fastpath_abs_diff": 0.0,
+    "null_mean": 0.0009492382617382622,
+    "null_sd": 0.025481012972551877,
+    "null_q95": 0.04185814185814184,
+    "null_max": 0.07857142857142854,
+    "p_value": 0.000999000999000999
+   },
+   "sign_agree_w": 0.7746686581321924,
+   "majority_sign_plant_pooled": 0.4500327955658792,
+   "majority_sign_per_key": 0.6865876530557001
+  }
+ },
+ "display_secondary": {
+  "n": 236,
+  "median": 0.5530094905094904
+ },
+ "without_slack_plant": {
+  "s0.02": {
+   "n_scenarios": 236,
+   "n_rho_finite": 236,
+   "n_slack_pairs_dropped": 472,
+   "rho_median": 0.23976023976023977
+  },
+  "s0.10": {
+   "n_scenarios": 236,
+   "n_rho_finite": 236,
+   "n_slack_pairs_dropped": 472,
+   "rho_median": 0.3440559440559441
+  }
+ },
+ "main_effect_slope_only": {
+  "s0.02": {
+   "n_scenarios": 236,
+   "n_rho_finite": 236,
+   "n_zero_main_slope": 4,
+   "rho_median": 0.3201798201798202
+  },
+  "s0.10": {
+   "n_scenarios": 236,
+   "n_rho_finite": 236,
+   "n_zero_main_slope": 0,
+   "rho_median": 0.4527472527472527
+  }
+ }
+}

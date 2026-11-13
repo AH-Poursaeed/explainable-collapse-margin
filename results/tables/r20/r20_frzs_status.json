@@ -1,0 +1,40 @@
+{
+ "protocol": "published-pool refits gated vs published per-seed test metrics, then scored once on dataset_r18freeze.csv (no thresholds recalibrated)",
+ "arms": {
+  "M+D sp": {
+   "n_seeds": 1,
+   "AUC_freeze_mean": 0.86300571509144,
+   "AUC_freeze_sd": 0.0,
+   "R2_freeze_mean": -0.5037137439515584,
+   "gate_absdiff_max": 1.1102230246251565e-16
+  },
+  "M+D linreg": {
+   "n_seeds": 1,
+   "AUC_freeze_mean": 0.9037793501791163,
+   "AUC_freeze_sd": 0.0,
+   "R2_freeze_mean": 0.4498064961128012,
+   "gate_absdiff_max": 1.1102230246251565e-16
+  },
+  "M+F ebm": {
+   "n_seeds": 4,
+   "AUC_freeze_mean": 0.9431289851296987,
+   "AUC_freeze_sd": 0.00043675151038825703,
+   "R2_freeze_mean": 0.5338285986354241,
+   "gate_absdiff_max": 0.0010039752880979247
+  },
+  "M+D kan": {
+   "n_seeds": 5,
+   "AUC_freeze_mean": 0.913881288024885,
+   "AUC_freeze_sd": 0.025009376133640557,
+   "R2_freeze_mean": -0.535774800276123,
+   "gate_absdiff_max": 0.00010852657092219609
+  },
+  "M+D ftt": {
+   "n_seeds": 5,
+   "AUC_freeze_mean": 0.9539812100528728,
+   "AUC_freeze_sd": 0.0037984431827546242,
+   "R2_freeze_mean": 0.71761580941981,
+   "gate_absdiff_max": 1.1102230246251565e-16
+  }
+ }
+}

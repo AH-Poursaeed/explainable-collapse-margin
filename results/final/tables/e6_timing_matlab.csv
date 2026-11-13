@@ -1,0 +1,7 @@
+stage,median_wall_s
+"power flow (MATPOWER, Q-lims)",0.08629155
+"GRIP index (susceptance rebuild + Schur + 10x10 eig; device data static)",0.05220435
+"full index chain incl. analytic thresholds (reduced.chain)",3.90116385
+"lossy multiport pencil + eig",0.3477346
+"full model: build + init + linearise (CS) + eig (348 states)",0.93409865
+"nonlinear EMT, 8 s window (ETDRK2, 50 us)",51.92325955

@@ -1,0 +1,20 @@
+# MATLAB
+*.asv
+*.m~
+*.autosave
+slprj/
+
+# work folders written by the MATLAB stages, and the figures
+/results/e9_work/
+/results/figures/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# OS and editors
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/

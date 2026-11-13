@@ -1,0 +1,334 @@
+{
+ "E": {
+  "name": "EXP-I margin-stratified FA curve",
+  "overall_FA": 0.3166202414113278,
+  "gate_overall_FA_vs_0.317": "PASS",
+  "deep_interior_FA_m_le_-3": 0.094,
+  "deep_interior_n": 500,
+  "status": "OK"
+ },
+ "B": {
+  "name": "EXP-D same-population inversion metrics",
+  "gates": {
+   "gSCR_bank_vs_0.244": 0.2439231313898867,
+   "SCR_bank_vs_0.292": 0.29244626162844245,
+   "GRIP_test_vs_0.859": 0.8585898780884853,
+   "rho_gSCR_kL_bank_vs_+0.96": 0.9642818412263364
+  },
+  "gate_verdict": "PASS",
+  "status": "OK"
+ },
+ "H": {
+  "name": "EXP-K top-k coverage",
+  "n_terms": 88,
+  "k80_median": 28.0,
+  "gate_k80_median_vs_28": "PASS",
+  "coverage_at_k8": {
+   "median": 0.3681040798145652,
+   "q25": 0.33774132168102566,
+   "q75": 0.4058597906689253
+  },
+  "status": "OK"
+ },
+ "I": {
+  "name": "EXP-L reliability (Brier/ECE)",
+  "brier": 0.06861349981397215,
+  "brier_climatology": 0.14541600033667199,
+  "brier_skill": 0.5281571515162301,
+  "ECE": 0.0216113665365554,
+  "test_base_rate": 0.17660550458715596,
+  "status": "OK"
+ },
+ "J": {
+  "name": "EXP-M NN leakage audit",
+  "test_to_train_perfeat_rms": {
+   "min": 0.2346725395173664,
+   "q01": 0.266229655265217,
+   "median": 0.3975563048542907,
+   "q99": 1.179216830179559
+  },
+  "train_to_train_median": 0.3982240424525335,
+  "n_test_below_0.01": 0,
+  "n_test_below_0.05": 0,
+  "status": "OK"
+ },
+ "K": {
+  "name": "EXP-Q noise alarms + dropout",
+  "noise_alarm": {
+   "ebm": {
+    "recall_mean": 0.9688311688311687,
+    "recall_sd": 0.005048443199000268,
+    "FA_mean": 0.5264623955431755,
+    "FA_sd": 0.014914000375310153
+   },
+   "xgb": {
+    "recall_mean": 0.9489177489177489,
+    "recall_sd": 0.0074479006641061446,
+    "FA_mean": 0.28040854224698236,
+    "FA_sd": 0.005601895312534202
+   }
+  },
+  "status": "OK"
+ },
+ "D": {
+  "name": "EXP-F per-channel sign agreement (recorded protocols)",
+  "gate_ebm_fine_vs_0.6218": 0.6217903274690305,
+  "gate_baseline_fine_vs_0.70": 0.6977598361507164,
+  "gate_verdict": "PASS",
+  "ebm_fine_P": 0.6354739634292389,
+  "ebm_fine_Q": 0.5857407538069693,
+  "baseline_fine_P": 0.739230742664598,
+  "baseline_fine_Q": 0.6530055029966481,
+  "status": "OK"
+ },
+ "F": {
+  "name": "EXP-O near-boundary error levels",
+  "paired_RMSE_near_diff_seedmean_e8conv": 0.2490683203306212,
+  "gate_vs_reference_0.26": "PASS",
+  "status": "OK"
+ },
+ "G": {
+  "name": "EXP-G dedup pooled Secure Wilson",
+  "edges_file_cols": [
+   "risk_level",
+   "edge_mhat",
+   "defined_frac",
+   "ci_lo",
+   "ci_hi",
+   "sd",
+   "resolvable"
+  ],
+  "edges_used": {
+   "secure_alert": -3.631347642511528,
+   "alert_emergency": -1.8702925428281123
+  },
+  "gate_test_occupancy_vs_198_666_444": [
+   198,
+   666,
+   444
+  ],
+  "per_frame": {
+   "test": {
+    "n_secure": 198,
+    "collapses": 1
+   },
+   "topology": {
+    "n_secure": 97,
+    "collapses": 0
+   },
+   "config": {
+    "n_secure": 33,
+    "collapses": 0
+   },
+   "shell": {
+    "n_secure": 132,
+    "collapses": 0
+   }
+  },
+  "pooled": {
+   "n": 460,
+   "collapses": 1,
+   "wilson_upper_1s95": 0.009684495852562069
+  },
+  "dedup": {
+   "n": 434,
+   "collapses": 1,
+   "wilson_upper_1s95": 0.010260889067113671
+  },
+  "n_duplicate_rows_removed": 26,
+  "status": "OK"
+ },
+ "L": {
+  "name": "EXP-V cap ablation",
+  "AUC_mean": 0.9329514805837926,
+  "AUC_sd": 0.0015091621800346552,
+  "R2_capped_scale_mean": -0.9191540177573728,
+  "alarm_nocap": {
+   "thr": -0.8680126885209979,
+   "recall": 0.9437229437229437,
+   "FA": 0.2906220984215413
+  },
+  "capped_reference": {
+   "AUC": 0.932,
+   "recall": 0.935,
+   "FA": 0.317
+  },
+  "status": "OK"
+ },
+ "A": {
+  "name": "EXP-A M+typeflags full suite",
+  "gate_M_ebm0_abs_diff": 0.0,
+  "suite_mean_sd": {
+   "ebm": {
+    "AUC": [
+     0.9518825340552362,
+     0.0006191286750417004
+    ],
+    "R2": [
+     0.6078330741444599,
+     0.0019459851316129596
+    ],
+    "R2_stable": [
+     0.19476629255559025,
+     0.004589678569980955
+    ],
+    "MAE": [
+     0.9129936264441414,
+     0.00323978042153351
+    ]
+   },
+   "xgb": {
+    "AUC": [
+     0.9532547922520067,
+     0.0013959116316207291
+    ],
+    "R2": [
+     0.6452763635706119,
+     0.002500469776266413
+    ],
+    "R2_stable": [
+     0.2777824069967426,
+     0.002861274364076359
+    ],
+    "MAE": [
+     0.8413636554801431,
+     0.004397645420860724
+    ]
+   }
+  },
+  "alarm": {
+   "ebm": {
+    "oof_thr": -2.2133567282009436,
+    "test_recall": 0.9567099567099567,
+    "test_FA": 0.28319405756731664,
+    "oof_s": 66.2
+   },
+   "xgb": {
+    "oof_thr": -1.9635229766368865,
+    "test_recall": 0.9264069264069265,
+    "test_FA": 0.2042711234911792,
+    "oof_s": 8.2
+   }
+  },
+  "noise_mean": {
+   "ebm": {
+    "AUC": 0.9347948244884178,
+    "R2": 0.3742212627515073,
+    "recall": 0.9861471861471861,
+    "FA": 0.5578458681522749
+   },
+   "xgb": {
+    "AUC": 0.9072556041915373,
+    "R2": 0.34300968311682467,
+    "recall": 0.9272727272727274,
+    "FA": 0.26388115134633244
+   }
+  },
+  "MD_ebm0_strata_R2_stable": {
+   "topology": 0.21757340629572053,
+   "config": -0.18899970194694515,
+   "shell": 0.2692826110011107
+  },
+  "paired_MF": {
+   "AUC_ebm": 0.952135762720721,
+   "AUC_xgb": 0.954358547673311,
+   "dAUC": -0.0022227849525899845,
+   "delong_p": 0.5321910715835454
+  },
+  "paired_MF_vs_MD_ebm": {
+   "AUC_MF": 0.952135762720721,
+   "AUC_MD": 0.9320261910791158,
+   "dAUC": 0.020109571641605206,
+   "delong_p": 0.00033780172362270303
+  },
+  "status": "OK"
+ },
+ "C": {
+  "name": "EXP-E faithfulness tail",
+  "models_present": [
+   "ebm",
+   "ftt",
+   "linreg",
+   "sp",
+   "xgb"
+  ],
+  "gate_rho_vs_r13_max_abs_diff": 1.1102230246251565e-16,
+  "n_scenarios": 236,
+  "n_below_null_q95": 80,
+  "frac_below_null_q95": 0.3389830508474576,
+  "n_rho_nonpos": 8,
+  "frac_rho_nonpos": 0.03389830508474576,
+  "flagged_by_tier": {
+   "Emergency": 45,
+   "Alert": 32,
+   "Secure": 3
+  },
+  "flagged_sigma_dom_range": [
+   -4.70027051651214,
+   0.745003311278694
+  ],
+  "flagged_median_rho": 0.23443463985224705,
+  "status": "OK"
+ },
+ "T": {
+  "name": "EXP-T KAN arm (vendored efficient-kan)",
+  "AUC_mean": 0.936183964596221,
+  "AUC_sd": 0.001976334465912301,
+  "R2_mean": 0.7022953330193618,
+  "R2_sd": 0.008529749612469259,
+  "MAE_mean": 0.7064872095937673,
+  "R2_stable_mean": 0.48693650826859025,
+  "hyperparameters": {
+   "n_features": 64,
+   "seed": 0,
+   "hidden": 32,
+   "grid_size": 5,
+   "lr": 0.01,
+   "epochs": 200,
+   "batch": 256,
+   "patience": 25
+  },
+  "status": "OK"
+ },
+ "M": {
+  "name": "EXP-H repeated splits",
+  "status": "OK"
+ },
+ "N": {
+  "name": "EXP-C zero-crossing bootstrap",
+  "reference_lower_zero": 0.25738433375792125,
+  "gate_vs_reference_0.257": "PASS",
+  "bootstrap": {
+   "B_effective": 30,
+   "mean": 0.22174392230688372,
+   "sd": 0.044253100861454966,
+   "ci95": [
+    0.08447213203319522,
+    0.2568385709788763
+   ],
+   "frac_inside_band_0.2197_0.2870": 0.8666666666666667
+  },
+  "deenriched_n_train": 2299,
+  "deenriched_zeros": [
+   0.24719030666667452,
+   0.2504419565817004,
+   0.24670678966246312,
+   0.25381930772190525,
+   0.24884904971683788
+  ],
+  "status": "OK"
+ },
+ "R": {
+  "name": "EXP-R JVSM [13] on the held-out test set (r15_jvsm.m, I-VSBI gated)",
+  "n_rows": 1308,
+  "n_unstable": 231,
+  "sigma_reproduction_max_abs_diff": 1.0000000005838672e-07,
+  "gates": "G1a 3.553e-15, G1b 1.377e-05, G2 3.594e-15 (the gates of r15_jvsm.m: PASS)",
+  "AUC_min_over_buses": 0.721918749773903,
+  "AUC_V_channel": 0.7726730094418117,
+  "AUC_theta_channel": 0.6860567473380843,
+  "jvsm_min_median": 13.426026,
+  "convention": "whole-system driving-point Y per [13], Sec. VI-B; pu transform of their (3); fmin 5 Hz fmax 100 Hz log10(f)-weighted integrals; min over the 10 converter buses",
+  "status": "OK"
+ }
+}

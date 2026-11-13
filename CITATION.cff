@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+title: >-
+  Code for "Intrinsically Explainable, Model-Verified Monitoring of the Small-Signal Collapse Margin in 100% Inverter-Based Power Systems"
+type: software
+license: MIT
+repository-code: "https://github.com/AH-Poursaeed/explainable-collapse-margin"
+authors:
+  - family-names: Poursaeed
+    given-names: Amir Hossein
+  - family-names: Namdari
+    given-names: Farhad
+  - family-names: Shen
+    given-names: Shuhang
+  - family-names: Crossley
+    given-names: Peter A.
+keywords:
+  - grid-forming converter
+  - small-signal stability
+  - inverter-based power systems
+  - explainable machine learning
+  - collapse margin
+preferred-citation:
+  type: article
+  title: >-
+    Intrinsically Explainable, Model-Verified Monitoring of the Small-Signal Collapse Margin in 100% Inverter-Based Power Systems
+  authors:
+    - family-names: Poursaeed
+      given-names: Amir Hossein
+    - family-names: Namdari
+      given-names: Farhad
+    - family-names: Shen
+      given-names: Shuhang
+    - family-names: Crossley
+      given-names: Peter A.
+  journal: IEEE Transactions on Industry Applications
+  status: submitted

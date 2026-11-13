@@ -1,0 +1,1177 @@
+round,id,kL,k,nGFM,fail
+bank,20,1.06613898325923,1.84622936705742,4,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,39,1.06495950215501,1.84517640143605,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,81,1.15677929141681,1.80298426366374,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,108,1.18356980720739,1.64424117719191,2,powerflow
+bank,166,1.13955234801913,1.69550499273213,4,powerflow
+bank,209,1.16288698614566,1.79841236022117,4,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,216,1.17978910558003,1.63997936872123,2,powerflow
+bank,217,1.17737082957007,1.54734890019609,3,powerflow
+bank,230,1.19435318913385,1.70674525704393,1,powerflow
+bank,233,1.12786369163976,1.69639805214439,2,powerflow
+bank,249,1.13452129717909,1.67615826963081,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,261,1.09564211452232,1.84870789829344,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,327,1.16272509231856,1.83649627075079,2,powerflow
+bank,370,1.14271425121505,1.75176515775301,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,372,1.09826820762826,1.73852359264474,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,374,1.13834515625059,1.75753093921148,4,powerflow
+bank,381,1.16906590973378,1.71443265974973,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,389,1.0743578756201,1.8877111447031,4,powerflow
+bank,400,1.05851076198732,1.83000867056427,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,415,1.19192331505196,1.86631697224228,2,powerflow
+bank,419,1.06764056538352,1.69432105577765,2,powerflow
+bank,433,1.17582208909572,1.65851331091947,4,powerflow
+bank,440,1.18232631035436,1.6731563637332,1,powerflow
+bank,442,1.13596069355605,1.86645192817282,3,powerflow
+bank,444,1.19627579018257,1.80516513853412,2,powerflow
+bank,475,1.14740051145604,1.60798870371164,2,powerflow
+bank,477,1.16820202050027,1.71114413518689,3,powerflow
+bank,481,1.15837672467815,1.69917238376623,3,powerflow
+bank,482,1.12009215129373,1.64157904256842,4,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,487,1.19286184749753,1.8799918885975,3,powerflow
+bank,491,1.18250931217324,1.63448723994898,4,powerflow
+bank,498,1.11934839948458,1.6949521660345,3,powerflow
+bank,500,1.19993278006137,1.77497717372256,3,powerflow
+bank,501,1.19816273971128,1.8066265323452,1,powerflow
+bank,550,1.18826683818485,1.83036967283831,3,powerflow
+bank,584,1.15247732867166,1.55840774539072,3,powerflow
+bank,640,1.13923233575319,1.65265457135679,3,powerflow
+bank,644,1.18951159873747,1.71764502097913,2,powerflow
+bank,689,1.16188556913899,1.60973524095565,3,powerflow
+bank,714,1.14117999784842,1.89373366681057,1,powerflow
+bank,717,1.14413703910483,1.89234280952582,1,powerflow
+bank,727,1.13716390090422,1.89898149193426,3,powerflow
+bank,754,1.14540231504551,1.74203063322626,1,powerflow
+bank,755,0.950244222610724,1.82683666214051,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,765,1.1578749608022,1.85955464469154,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,775,1.15927109801444,1.57010329162374,3,powerflow
+bank,782,1.1522358473691,1.63807123930735,2,powerflow
+bank,794,1.15177178613762,1.65778606804917,4,powerflow
+bank,838,1.16642196765058,1.8559666136927,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,853,1.07964401418263,1.83286882905269,1,powerflow
+bank,860,1.11413217259709,1.77293217816786,4,powerflow
+bank,886,1.16778804146875,1.78903364382497,2,powerflow
+bank,889,1.12191478433776,1.81940606719634,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,906,1.14874214662271,1.60202283330033,4,powerflow
+bank,917,1.12579485820259,1.75191033356379,3,powerflow
+bank,928,1.04579348394565,1.85363339176502,2,powerflow
+bank,959,1.07931383862379,1.84039674267742,2,powerflow
+bank,980,1.19327167160169,1.65034875882222,4,powerflow
+bank,991,1.15342970345349,1.85743863588505,3,powerflow
+bank,992,1.18314304363343,1.63478682492754,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,996,1.10857417807878,1.88285279540516,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,1013,1.13217540025691,1.8158366202364,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,1019,1.12616884643922,1.74668355386091,3,powerflow
+bank,1021,1.16213773418207,1.81150471587401,2,powerflow
+bank,1029,1.12551996998163,1.83343523801283,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,1048,1.16833955757128,1.56872574626194,2,powerflow
+bank,1071,1.13145018099918,1.85661190200325,2,powerflow
+bank,1072,1.15524148952442,1.41658641219626,1,powerflow
+bank,1079,1.09024416128075,1.54803475785992,3,powerflow
+bank,1089,1.13407990504794,1.78358753982597,2,powerflow
+bank,1092,1.0866337466633,1.74787007786626,3,powerflow
+bank,1109,1.09685675860592,1.83826325057575,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,1140,1.18903245024796,1.75597741730184,1,powerflow
+bank,1145,1.06852013829492,1.89107980792406,4,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,1152,1.15778809320705,1.60742336611681,3,powerflow
+bank,1154,1.1611946655073,1.80169282470191,4,powerflow
+bank,1178,1.19856070942817,1.6373479014238,1,powerflow
+bank,1189,1.16924085320703,1.83853538059316,1,powerflow
+bank,1209,1.12210065628332,1.66799915623309,2,powerflow
+bank,1210,1.06718869506729,1.78087935444129,3,powerflow
+bank,1240,1.11652181499252,1.86150315815507,4,powerflow
+bank,1274,1.12355946525163,1.79225042599722,4,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,1302,1.19780743359524,1.29291786984142,4,powerflow
+bank,1311,1.12175088727133,1.51167185495337,2,powerflow
+bank,1317,1.19312202008631,1.52798152640495,1,powerflow
+bank,1325,1.1418851890817,1.88330661221616,4,powerflow
+bank,1351,1.18175768907552,1.88720529407913,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,1388,1.15904570147356,1.53845555041928,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,1435,1.18666081045062,1.68958785852433,1,powerflow
+bank,1447,1.07815041437476,1.73632710137212,3,powerflow
+bank,1478,1.0607472071299,1.81268139146309,1,powerflow
+bank,1479,1.0887290120357,1.69034621542695,4,powerflow
+bank,1519,1.16946036925865,1.83794439700701,3,powerflow
+bank,1521,1.09285225100374,1.47211408676053,1,powerflow
+bank,1560,1.19507823592008,1.69323323380628,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,1592,1.17328794127324,1.507687469941,3,powerflow
+bank,1624,1.16106331851909,1.5857451357707,2,powerflow
+bank,1641,1.12143275809199,1.75242067134069,1,powerflow
+bank,1655,1.1532675306223,1.57865950414625,1,powerflow
+bank,1669,1.1789265861003,1.89572946880183,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,1684,1.19689986122959,1.85160047833984,2,powerflow
+bank,1697,1.0891923142845,1.81862086855002,2,powerflow
+bank,1786,1.06306156508515,1.82866514817484,3,powerflow
+bank,1813,1.16467693916826,1.66946737866958,4,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,1834,1.1612909222005,1.87095549102287,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,1852,1.05840935214422,1.75697779640219,2,powerflow
+bank,1861,1.07989770095526,1.6439679624213,1,powerflow
+bank,1911,1.07164626857159,1.77408069991013,3,powerflow
+bank,1923,1.19930257442481,1.76501251119957,2,powerflow
+bank,1981,1.14403635261681,1.44192630920992,4,powerflow
+bank,1991,1.16083945104231,1.64325647486136,4,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,2031,1.08473586627651,1.84339973611184,2,powerflow
+bank,2043,1.12948147411686,1.6846395906611,1,powerflow
+bank,2069,1.14966813269709,1.66342577571588,1,powerflow
+bank,2078,1.19016574828558,1.60642459702171,2,powerflow
+bank,2106,1.04111995745681,1.86127232202277,2,powerflow
+bank,2122,1.09779284010496,1.83249349705565,2,powerflow
+bank,2129,0.992522538410825,1.86093584745668,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,2201,1.14283715320546,1.63939588330762,2,powerflow
+bank,2220,1.14672922916643,1.8773154218718,2,powerflow
+bank,2313,1.16404587376624,1.86597643180977,1,powerflow
+bank,2396,1.17227781357508,1.88410600219202,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,2403,1.1752057709091,1.85916819562987,2,powerflow
+bank,2429,1.19641315429976,1.86020699679214,2,powerflow
+bank,2451,1.16498443563632,1.80811812619566,3,powerflow
+bank,2472,1.17230410101254,1.86961253333756,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,2496,1.17302959494229,1.62041761454721,1,powerflow
+bank,2508,1.06272205110697,1.74638929656699,1,powerflow
+bank,2511,1.10949481127563,1.64828211176187,3,powerflow
+bank,2545,1.18761940529483,1.49166950687259,4,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,2592,1.14692562415304,1.70356592678829,4,powerflow
+bank,2596,1.0151598561865,1.72430213237189,2,powerflow
+bank,2605,1.17929868089205,1.64278549292994,2,powerflow
+bank,2670,1.18603161118117,1.67823304372745,2,powerflow
+bank,2687,1.11001062292959,1.75265100903724,1,powerflow
+bank,2704,1.07191586318691,1.88142920423222,1,powerflow
+bank,2723,1.15072431994708,1.85559348498403,2,powerflow
+bank,2758,1.19670477135602,1.47893050335931,2,powerflow
+bank,2772,1.17467300681161,1.89142266704834,3,powerflow
+bank,2774,1.18698185440291,1.69454211709011,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,2807,1.05800959167994,1.79948894679956,3,powerflow
+bank,2810,1.05389306852929,1.71010270426087,4,powerflow
+bank,2812,1.16938115642295,1.74412154026669,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,2815,1.07271208973944,1.81683982313022,2,powerflow
+bank,2822,1.15101080704913,1.50617942824508,4,powerflow
+bank,2831,1.16871502234153,1.72210037287433,3,powerflow
+bank,2839,1.13741853241592,1.7961081006663,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,2875,1.18426604647495,1.44369508085016,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,2918,1.15860970255104,1.36948601879775,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,2928,1.08530218725168,1.70937826947367,2,powerflow
+bank,2933,1.11458131463301,1.34306903685968,4,powerflow
+bank,2937,1.16685862942734,1.36330770867244,1,powerflow
+bank,2954,1.1802228365407,1.51549527298901,1,powerflow
+bank,2969,1.0063908334252,1.79195850828629,2,powerflow
+bank,3006,1.18836426381378,1.69999687222605,4,powerflow
+bank,3039,1.02742443510558,1.7556317162794,2,powerflow
+bank,3079,0.984607482076158,1.8331435035139,1,powerflow
+bank,3097,1.16981569175888,1.5332457520777,3,powerflow
+bank,3098,1.10496367444766,1.84712059839386,4,powerflow
+bank,3125,1.16043363956404,1.81567324001124,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,3135,1.15484425022156,1.71041361267417,1,powerflow
+bank,3157,1.09975895160099,1.85111253350957,2,powerflow
+bank,3158,1.07347660360761,1.66209256939783,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,3161,1.17050062203787,1.81879495315155,2,powerflow
+bank,3165,1.16353866580375,1.56934355588011,1,powerflow
+bank,3166,1.12686535981916,1.85796409480235,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,3194,1.13565226229911,1.80766308716909,2,powerflow
+bank,3256,1.08225040484217,1.66850328995713,2,powerflow
+bank,3321,1.14480356283743,1.74455719966498,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,3360,1.14011218402468,1.89843620853744,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,3415,1.08303058055967,1.86764701919905,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,3423,1.16396560582504,1.71964570196578,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,3434,1.02652010147797,1.85258336663558,1,powerflow
+bank,3436,1.00303919984828,1.7860500642197,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,3452,1.15265249035378,1.64861341865531,3,powerflow
+bank,3495,1.18416948003893,1.76160693152547,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,3497,1.18056128054667,1.88800238733633,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,3500,1.07849603935992,1.81770772934351,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,3538,1.11770886812459,1.67399855330417,2,powerflow
+bank,3578,1.18266107498839,1.56809460751568,2,powerflow
+bank,3596,1.12316230193676,1.73723908911308,1,powerflow
+bank,3605,1.15201503575569,1.82192320308801,1,powerflow
+bank,3628,1.14711513537369,1.66466281580184,3,powerflow
+bank,3659,1.09862896282013,1.86466974706632,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,3700,1.18086957398416,1.57915371368088,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,3718,1.13181725474565,1.8162624734765,1,powerflow
+bank,3752,1.09842701476115,1.82523327826799,2,powerflow
+bank,3772,1.19024516112836,1.488671291732,2,powerflow
+bank,3774,1.18205467315656,1.63051957056777,3,powerflow
+bank,3805,1.15808435940645,1.76063418338342,3,powerflow
+bank,3815,1.18320257302052,1.7031829931196,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,3829,1.0897474530672,1.70440406460682,4,powerflow
+bank,3855,1.15011935406308,1.76204444004761,4,powerflow
+bank,3882,1.18737561877429,1.40734099750914,2,powerflow
+bank,3893,1.19466894166784,1.3087568003419,1,powerflow
+bank,3896,0.997599086802468,1.89965667474591,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,3899,1.16203519030686,1.67235602351873,1,powerflow
+bank,3953,1.09148057596328,1.73392909398803,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,4002,1.19608666839937,1.76783725558834,2,powerflow
+bank,4005,1.18674706214419,1.76464191095344,3,powerflow
+bank,4009,1.12029542415073,1.80117685865767,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,4019,1.15932388680152,1.65521893213056,1,powerflow
+bank,4036,1.18790557678204,1.5846797508495,2,powerflow
+bank,4038,1.10984774395596,1.76532026490272,1,powerflow
+bank,4091,1.02311610182599,1.76144235152695,3,powerflow
+bank,4092,1.14163109566695,1.54574851818438,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,4096,1.16620125818489,1.70151809181677,2,powerflow
+bank,4113,1.15111967984294,1.4300183504468,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,4127,1.17335522894441,1.77443302755377,2,powerflow
+bank,4184,1.0932874254881,1.62381944815013,2,powerflow
+bank,4191,1.14029532915305,1.86204635032792,1,powerflow
+bank,4207,1.02468680610057,1.68165637381198,4,powerflow
+bank,4214,1.15968227448403,1.86441699268923,3,powerflow
+bank,4270,1.16242898873971,1.66911968121108,3,powerflow
+bank,4277,1.0998165720421,1.78468098765487,3,powerflow
+bank,4283,1.183022446887,1.53203080053291,1,powerflow
+bank,4298,1.08948422343309,1.73754304506102,2,powerflow
+bank,4322,1.1736725739031,1.66999398225904,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,4331,1.0600321120893,1.85531414204009,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,4373,1.19412890072061,1.87045027972982,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,4409,1.12605041991136,1.51119721055065,2,powerflow
+bank,4414,1.18723739880701,1.54135606948171,1,powerflow
+bank,4418,1.0407467130387,1.89330190235083,4,powerflow
+bank,4423,1.12032686060706,1.66212487483847,2,powerflow
+bank,4431,1.19801826991808,1.87174937731859,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,4437,1.16808078841483,1.6408998258702,4,powerflow
+bank,4440,1.19529985995788,1.70923645770935,3,powerflow
+bank,4528,1.19845699332309,1.86860869247076,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,4534,1.13987795222342,1.52639622525035,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,4540,1.00784342259778,1.69903921888092,4,powerflow
+bank,4585,1.086340145903,1.81053061925532,3,powerflow
+bank,4586,1.12659157697237,1.74099304399624,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,4593,1.16583645753316,1.86043745798414,2,powerflow
+bank,4604,1.17044765160376,1.85718386709667,2,powerflow
+bank,4617,1.12498439057631,1.89179766309173,2,powerflow
+bank,4773,1.09409136837183,1.88561130560596,1,powerflow
+bank,4785,1.14585235438904,1.75948239700664,3,powerflow
+bank,4809,1.172087157265,1.71180675491203,2,powerflow
+bank,4827,1.15081412809654,1.66158610719197,4,powerflow
+bank,4828,1.13349921400189,1.40658654273732,2,powerflow
+bank,4848,1.09657244640186,1.81496417375477,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,4889,1.17009681191379,1.54273284122377,4,powerflow
+bank,4898,1.15142693395029,1.73799569278235,1,powerflow
+bank,4918,1.10916793884433,1.89999350180911,3,powerflow
+bank,4940,1.14033580290118,1.83967630075309,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,4951,1.00011300989656,1.74710405129756,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,4959,1.1853834373436,1.46967315258244,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,4976,1.11020454623581,1.74545720691183,4,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,4991,1.17065902518768,1.78305430857665,3,powerflow
+bank,5008,1.15304221927343,1.61373479485937,4,powerflow
+bank,5040,1.04684433203659,1.79047423502436,1,powerflow
+bank,5098,1.11252532475261,1.70607814312244,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,5108,1.15811340296753,1.88483209803162,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,5150,1.10064972816253,1.78059291260208,3,powerflow
+bank,5154,1.16362540847154,1.88969171097019,2,powerflow
+bank,5173,1.18635365472044,1.77517153837509,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,5196,1.13168432951242,1.83197181301825,4,powerflow
+bank,5220,1.1798099867674,1.5443837204569,3,powerflow
+bank,5233,1.18365276934043,1.55594812659234,2,powerflow
+bank,5247,1.16261931766775,1.66365744114842,2,powerflow
+bank,5255,1.19045599699588,1.84090457695102,2,powerflow
+bank,5282,1.17577134579382,1.84824185098783,1,powerflow
+bank,5307,1.14665303814627,1.71915759128037,2,powerflow
+bank,5326,1.18711511012216,1.80123977203709,3,powerflow
+bank,5334,1.19454363242679,1.55938973827843,3,powerflow
+bank,5356,1.18011159102417,1.66510735297952,1,powerflow
+bank,5371,1.17405781814072,1.74962758551333,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,5391,1.18514546923429,1.83020666534386,4,powerflow
+bank,5401,1.00952310386056,1.8781308812562,4,powerflow
+bank,5427,1.18617608493928,1.77975588576572,3,powerflow
+bank,5428,1.17139807697868,1.73199842631426,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,5481,1.12107003883722,1.71217727507564,4,powerflow
+bank,5533,1.15718612986564,1.6532904744423,3,powerflow
+bank,5546,1.18963516427151,1.79651028445857,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,5551,1.09810404687734,1.76622456297592,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,5557,1.15560419542502,1.62436939744681,2,powerflow
+bank,5584,1.10506704536928,1.6253548301129,2,powerflow
+bank,5599,1.05525060136149,1.81023005689341,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,5610,1.09297626148018,1.6703223385476,2,powerflow
+bank,5626,1.11583435292479,1.89864531355596,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,5656,1.14775969760268,1.55998428197614,3,powerflow
+bank,5667,1.19080239507705,1.77419643436611,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,5675,1.13881618850196,1.84537283943729,2,powerflow
+bank,5712,1.19534960736818,1.88333356163382,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,5754,1.14650049483281,1.73452814164516,4,powerflow
+bank,5761,1.1784258554422,1.89130869422189,3,powerflow
+bank,5764,1.07629071946348,1.73665355924958,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,5780,1.1920567537773,1.82934165569671,1,powerflow
+bank,5789,1.10752427415447,1.80154870787431,3,powerflow
+bank,5813,1.12523689653905,1.88097645498815,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,5820,1.17438923960055,1.75891300437891,4,powerflow
+bank,5845,1.12054501883667,1.6464419207118,3,powerflow
+bank,5867,1.1703919831367,1.50837651601416,3,powerflow
+bank,5885,1.19114118842379,1.74041942234219,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,5913,1.17859309447127,1.80446600038204,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,5918,1.09727797986759,1.55042906340624,3,powerflow
+bank,5944,1.17029028379193,1.7215940257314,4,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,5974,1.1759432770087,1.80885467336215,2,powerflow
+bank,5979,1.0825696688129,1.85771768747215,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank,5981,1.18758224135784,1.75471679053411,2,powerflow
+bank,5991,1.11439063301897,1.71237545047858,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10002,1.07592658939913,2.2516738074917,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10006,1.15495319402287,2.27602343195286,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10012,1.13640271624981,2.20617906984453,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10015,1.15677641952129,2.24010141721963,3,powerflow
+bank_topup,10016,0.962394302315333,2.12305709011933,1,powerflow
+bank_topup,10017,1.01444119954025,2.18882677248554,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10018,0.989231819441786,2.24324295456134,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10020,1.1497915121642,1.77360341536889,1,powerflow
+bank_topup,10022,1.19147207754284,1.99365116075455,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10023,1.00874377098252,2.15422599975425,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10024,1.18525356704876,1.86936406030936,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10028,1.16600865965405,1.76163822837923,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10032,1.05687207014924,2.27819808551975,1,powerflow
+bank_topup,10036,1.17034607566427,1.55595837956071,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10038,1.05019501730147,2.26372662939642,4,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10041,1.18482860418818,1.69472501316941,2,powerflow
+bank_topup,10043,1.15650190023824,2.26621843416668,1,powerflow
+bank_topup,10044,1.09773924842154,1.77712212197823,2,powerflow
+bank_topup,10047,1.16556197672135,2.08304839611147,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10050,1.19791899774969,1.69568592150095,3,powerflow
+bank_topup,10051,1.11638406265972,1.90733659814023,1,powerflow
+bank_topup,10053,1.06240641693535,2.25204669253881,2,powerflow
+bank_topup,10054,1.01690048623172,2.27028758991351,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10055,1.11421095191119,2.24112082627954,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10056,1.012800848556,2.28449047559985,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10057,1.09696686142296,2.18142280536538,2,powerflow
+bank_topup,10058,1.10698881662044,2.06453954950421,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10061,0.957861629615185,2.27496688082385,3,powerflow
+bank_topup,10063,1.13454762025833,1.42670158245327,2,powerflow
+bank_topup,10065,1.09145331760484,2.02472975708976,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10066,0.983481210037677,1.99499960573762,2,powerflow
+bank_topup,10070,0.968331544984673,2.16623605406555,1,powerflow
+bank_topup,10071,1.07051866013153,2.24634938590298,2,powerflow
+bank_topup,10074,1.11122709308734,1.84010108686961,1,powerflow
+bank_topup,10075,1.10428766352337,1.99403658802617,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10077,1.1822777214928,1.82635261973527,2,powerflow
+bank_topup,10078,1.04476130574415,2.29128954734284,3,powerflow
+bank_topup,10079,1.16670719261917,2.04281601109016,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10080,0.955300386986916,2.22570885823102,2,powerflow
+bank_topup,10088,1.06472452131635,1.95679125912446,1,powerflow
+bank_topup,10093,1.18519863795341,2.13014234650388,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10094,1.11806259900967,2.08356352769296,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10097,1.1618109239336,2.22464571091498,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10100,1.07852920161719,2.24743428880559,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10104,0.98787523894948,2.18364792816582,1,powerflow
+bank_topup,10105,1.12166314191348,2.10754156721349,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10107,1.18155436330031,1.54395863961087,2,powerflow
+bank_topup,10110,1.16811757057076,1.57217293641975,2,powerflow
+bank_topup,10114,1.1448294001139,1.57304119983982,4,powerflow
+bank_topup,10116,1.07347886282652,1.8030393367691,1,powerflow
+bank_topup,10118,1.10409992949381,1.51494384493871,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10121,1.0874002991483,2.14250188659075,1,powerflow
+bank_topup,10127,1.19073017122215,1.93173799250408,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10132,1.11389256655801,2.15212311825352,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10133,1.16843075807453,1.99303381703223,1,powerflow
+bank_topup,10147,1.04629563901151,1.8403430130457,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10151,1.14818760140661,1.49279375372614,1,powerflow
+bank_topup,10153,1.14416149130389,1.9656832586273,2,powerflow
+bank_topup,10156,1.17666367744349,1.91316141583923,2,powerflow
+bank_topup,10158,1.19818417395031,1.61758953100114,1,powerflow
+bank_topup,10159,1.03649950381147,2.16895711260821,3,powerflow
+bank_topup,10161,1.18462570139441,1.47955629826059,1,powerflow
+bank_topup,10164,1.17950247948072,1.48953724781394,2,powerflow
+bank_topup,10167,1.16221624706382,2.12410015871363,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10170,1.19888788889809,1.86241292414354,3,powerflow
+bank_topup,10173,1.19200478919794,2.2233985025673,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10174,1.19938073103456,1.66202553962866,2,powerflow
+bank_topup,10178,1.10846009383198,1.68406806045755,3,powerflow
+bank_topup,10179,1.0823156808967,2.12642474482177,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10182,1.09402962938793,1.58932596303855,3,powerflow
+bank_topup,10184,1.07076673797086,1.64173551466314,2,powerflow
+bank_topup,10188,1.04465137359189,2.15636881663941,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10189,1.10651487724052,2.29660469337227,1,powerflow
+bank_topup,10193,1.14379359806328,1.85864692325368,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10195,1.05780827248453,2.19635717246539,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10196,1.145459846689,2.1118513915206,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10200,1.18844735713082,2.1374703405186,2,powerflow
+bank_topup,10203,1.151920818326,1.92692159149137,1,powerflow
+bank_topup,10204,1.04240634848822,2.12682352791182,1,powerflow
+bank_topup,10205,1.03339742864519,2.13666833254407,1,powerflow
+bank_topup,10210,1.19726778790843,2.28838740353108,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10211,1.10362751194105,2.07804243612097,2,powerflow
+bank_topup,10215,0.992821203109421,1.94813472200448,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10217,1.03643930026481,2.20808151115074,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10224,1.10053224287598,1.91771958534893,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10232,1.05741729242545,2.09510661280333,1,powerflow
+bank_topup,10237,1.14595642147152,1.75697936790294,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10238,1.07175421271152,2.11244035296932,2,powerflow
+bank_topup,10247,1.16569501066446,2.28016269993176,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10250,1.06537585807463,2.06849900575609,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10252,1.10943959846719,1.7287193134238,1,powerflow
+bank_topup,10254,1.02148458700047,2.05853768193114,3,powerflow
+bank_topup,10257,1.13270973230481,1.8651276014401,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10258,1.19721178303624,2.09575982884339,2,powerflow
+bank_topup,10259,1.17005308449015,2.1734148230358,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10261,1.02504121471619,1.93610778789284,2,powerflow
+bank_topup,10262,1.08092849997275,2.24381841806067,2,powerflow
+bank_topup,10268,1.19154251568984,1.73636561251758,1,powerflow
+bank_topup,10277,1.13380029205302,1.92664831833172,1,powerflow
+bank_topup,10279,1.16428485196541,2.27675176224499,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10281,1.13910034935594,1.91258143761666,3,powerflow
+bank_topup,10282,1.15943223367641,1.99558199762194,4,powerflow
+bank_topup,10285,1.13856146853029,1.85020902173559,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10286,1.17756948863386,1.66770001602082,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10288,1.13113408710331,2.18067898177057,3,powerflow
+bank_topup,10290,1.06731040656978,1.982780166401,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10295,1.02574916291981,1.76190523874756,3,powerflow
+bank_topup,10296,1.18269351485507,1.62043746359411,1,powerflow
+bank_topup,10299,1.13418213458797,1.84158037294253,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10300,0.927433961970989,2.00878429558903,4,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10306,1.16482906570753,2.10623102742159,4,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10307,1.19503821402012,1.72904193820369,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10308,1.02201971765126,2.19067553733397,2,powerflow
+bank_topup,10311,1.12467994174396,2.07971663715653,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10313,0.986909750308575,2.22713585531569,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10315,1.19838708936777,2.21245547792311,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10317,1.11242545959249,1.68544278129269,1,powerflow
+bank_topup,10321,1.04083781395599,2.22503309118502,2,powerflow
+bank_topup,10323,1.19330941722684,1.51940176072397,1,powerflow
+bank_topup,10324,1.06860476591579,1.75573462699742,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10326,0.998937105676244,2.28617421857062,3,powerflow
+bank_topup,10327,1.18203325140401,1.94083832824832,2,powerflow
+bank_topup,10328,1.09116597227459,2.24484884970126,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10330,1.187641604059,1.88866724135464,1,powerflow
+bank_topup,10335,1.1937474277347,1.76467934865574,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10336,1.13884699313742,1.96197960878275,2,powerflow
+bank_topup,10345,1.1626047364991,1.65539259029953,1,powerflow
+bank_topup,10351,1.04295787384649,2.11877803440442,1,powerflow
+bank_topup,10353,1.16091323800005,1.81367261627718,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10354,1.11185200869266,1.99007867731734,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10358,0.982992784860508,2.16055324275479,1,powerflow
+bank_topup,10360,1.01582930534711,1.90931511831325,1,powerflow
+bank_topup,10366,0.973276582376786,2.11743751382064,3,powerflow
+bank_topup,10373,1.09682827445511,1.75878221192774,2,powerflow
+bank_topup,10382,0.984196683430066,2.17726605713846,4,powerflow
+bank_topup,10389,1.1434545244449,2.04750971570042,1,powerflow
+bank_topup,10394,1.16633378142557,2.20190703921688,2,powerflow
+bank_topup,10395,1.11852445598659,1.98174984493329,2,powerflow
+bank_topup,10396,1.10368284372935,2.09844073532126,2,powerflow
+bank_topup,10397,1.00652658952196,2.2394252737108,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10400,1.19766183322089,1.44111260610287,2,powerflow
+bank_topup,10406,1.17342396475258,2.28086133069215,4,powerflow
+bank_topup,10410,1.04066783472732,2.13143584333067,2,powerflow
+bank_topup,10416,1.12869235545065,2.08867720011677,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10418,1.13996734865526,2.20786795104479,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10420,1.12727193663198,2.206859197175,1,powerflow
+bank_topup,10421,1.00360003064492,2.08548833013968,1,powerflow
+bank_topup,10423,1.0714771787678,2.16430719775253,2,powerflow
+bank_topup,10425,1.08713836465989,1.78400919222145,1,powerflow
+bank_topup,10426,1.11040120649273,1.70037908540873,2,powerflow
+bank_topup,10427,1.16407038682027,1.89071023768742,2,powerflow
+bank_topup,10430,1.1955796113387,1.94445547684456,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10433,1.18693151205089,1.97119841111811,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10434,1.13754519680283,1.61232906423223,2,powerflow
+bank_topup,10437,1.14752055091529,1.98141962336917,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10443,1.01461230216799,2.24618471363154,2,powerflow
+bank_topup,10445,1.04149300742973,2.23211662154668,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10446,1.0608614206697,2.05608358742619,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10448,1.14472844505728,2.12893374764765,1,powerflow
+bank_topup,10450,1.1855011652069,2.05656721502673,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10453,1.18730441355035,1.56864765192535,4,powerflow
+bank_topup,10454,1.15537028070084,2.11297116101364,2,powerflow
+bank_topup,10456,1.19829889087888,1.70470547271988,2,powerflow
+bank_topup,10458,1.05830007751821,2.21972540937344,2,powerflow
+bank_topup,10461,1.13814956767185,1.81312011854996,2,powerflow
+bank_topup,10464,1.16344307209393,2.22366246773458,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10465,1.04844801963585,2.06637677434445,1,powerflow
+bank_topup,10467,1.04433918754722,2.26948865068586,1,powerflow
+bank_topup,10472,1.06137056578802,2.24100540936925,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10476,1.19111807568805,1.43485843037348,4,powerflow
+bank_topup,10477,1.06479663801092,2.0740952887715,3,powerflow
+bank_topup,10481,1.13540729077876,2.27564427827691,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10484,1.18368244474986,2.08112618831537,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10485,1.13917232298683,1.94656896283828,2,powerflow
+bank_topup,10486,0.921386962616561,2.27308958502429,1,powerflow
+bank_topup,10487,1.19389777625701,2.13676490611383,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10488,1.11851993145062,1.7729554949924,1,powerflow
+bank_topup,10492,1.03595974208058,2.00316912890838,1,powerflow
+bank_topup,10500,1.03482391909013,2.17420693354689,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10501,1.11757569869143,2.29601180310886,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10503,1.15085796415334,2.11640677833889,1,powerflow
+bank_topup,10510,0.964618130622215,1.94215739432295,1,powerflow
+bank_topup,10513,1.10490980388471,1.71194876191299,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10514,1.14260719163387,1.84297673710332,1,powerflow
+bank_topup,10521,0.937233691277849,2.29006615622937,2,powerflow
+bank_topup,10526,1.08638498474841,1.87833792873019,2,powerflow
+bank_topup,10534,1.01955640502786,2.28749402777725,2,powerflow
+bank_topup,10535,1.13841130325498,1.88601196321697,1,powerflow
+bank_topup,10545,1.1307861963331,2.24207786601967,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10546,1.02593031774228,2.28367947251499,1,powerflow
+bank_topup,10549,1.08792331724674,2.19155898106851,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10550,1.17601029534689,1.72711590495557,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10553,1.06664526817956,1.9202350394633,1,powerflow
+bank_topup,10555,1.19540716220084,2.23629505899203,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10556,1.19706519354547,1.6052013291401,3,powerflow
+bank_topup,10562,1.04090571998806,1.96280387929762,1,powerflow
+bank_topup,10563,1.02404878933841,2.24187334571652,2,powerflow
+bank_topup,10564,1.06597029797132,2.13238734784891,1,powerflow
+bank_topup,10565,1.10518699360275,2.04191532734457,2,powerflow
+bank_topup,10566,1.12634302581316,2.00004342688203,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10567,1.08890598691914,2.08747707203875,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10568,0.950768555843102,2.12249222366025,1,powerflow
+bank_topup,10570,0.990844924889355,2.24890553182639,1,powerflow
+bank_topup,10574,1.10707433567454,2.21503883917364,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10580,1.06121498288115,2.21404189900701,2,powerflow
+bank_topup,10581,1.18286718941502,2.17862140920898,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10582,1.09497641128305,1.82470788393539,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10583,1.17710738483253,1.96501996479665,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10584,0.97698296467131,2.08316562847802,1,powerflow
+bank_topup,10587,1.10328905725918,2.06199054843143,2,powerflow
+bank_topup,10588,1.0838128090619,2.14192216902163,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10589,1.09594950379034,2.02616374338006,3,powerflow
+bank_topup,10594,1.03679974795361,2.21452322060116,2,powerflow
+bank_topup,10595,1.16328387077252,2.14210329967113,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10599,1.03310615174922,2.2372368330095,4,powerflow
+bank_topup,10600,1.15556907404943,2.28255200738226,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10601,1.05497821892348,1.63633326226474,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10602,1.07323168534757,1.96114319552736,2,powerflow
+bank_topup,10603,1.08326763508142,1.89443035674415,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10605,1.14129624857439,2.13545859141761,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10608,1.05139671198796,2.23043576683221,4,powerflow
+bank_topup,10610,1.11664529015874,1.89386169756026,1,powerflow
+bank_topup,10611,1.01838274754158,2.02505691814423,3,powerflow
+bank_topup,10614,1.15789691964251,1.73073086322217,2,powerflow
+bank_topup,10623,1.13680019742326,1.93475912332897,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10627,1.06696389186127,2.05546369719696,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10635,1.1087379429298,2.28772695059993,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10637,0.998392638001184,2.10712717616793,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10640,1.1249218881655,2.16372383646901,2,powerflow
+bank_topup,10641,1.08209733480507,1.90980422748476,1,powerflow
+bank_topup,10647,1.10902467899106,2.20008622640093,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10648,1.02378030034262,2.24446207751867,1,powerflow
+bank_topup,10649,1.04720283907651,2.08218836833822,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10657,1.18979260751118,2.26541855513305,2,powerflow
+bank_topup,10659,1.16887527102233,2.02709947298666,2,powerflow
+bank_topup,10661,1.01044281267562,1.85136406568661,3,powerflow
+bank_topup,10663,1.15842750407456,2.05303307503801,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10665,1.03102154840844,2.15062426540638,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10666,1.11029719020866,2.16756402064496,2,powerflow
+bank_topup,10671,1.15201199835297,2.27141830796118,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10675,1.10097097223173,2.20560520239095,1,powerflow
+bank_topup,10676,1.12514213553521,1.99664487032708,3,powerflow
+bank_topup,10682,1.19845569369892,1.9340193098319,2,powerflow
+bank_topup,10684,1.1678939161476,2.17124017011155,3,powerflow
+bank_topup,10686,1.13048138012405,2.22868860658027,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10689,1.16544790972983,1.95846216902993,2,powerflow
+bank_topup,10692,1.19972806836925,2.21112842613786,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10695,1.02561327418517,2.22545182918416,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10697,1.11753730288262,1.67989630023232,2,powerflow
+bank_topup,10701,1.1669344166707,1.836066314896,1,powerflow
+bank_topup,10705,1.12606560635986,1.91218656681476,2,powerflow
+bank_topup,10708,1.18276227078555,2.01423045630155,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10711,1.12576808257304,1.69530204088411,1,powerflow
+bank_topup,10712,1.18403141274023,2.2964610161883,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10714,1.04944390088826,2.06259245448742,1,powerflow
+bank_topup,10717,1.06723075249328,2.13300547269843,1,powerflow
+bank_topup,10721,1.02108110434834,2.25341791761352,3,powerflow
+bank_topup,10723,1.05527210977414,1.6653136438104,1,powerflow
+bank_topup,10729,1.03491902143496,2.1550391516737,1,powerflow
+bank_topup,10731,1.06527355153728,2.27077679105343,3,powerflow
+bank_topup,10732,1.09238994637775,2.19592757861372,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10733,1.07563602075846,1.83341709541849,1,powerflow
+bank_topup,10736,1.18132710416104,2.26496203800299,2,powerflow
+bank_topup,10741,1.15513781878241,2.05482518204158,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10742,1.16726233940212,2.05532971910919,1,powerflow
+bank_topup,10744,1.11690301162797,2.21567389408928,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10746,1.17260153731894,1.95624395734851,1,powerflow
+bank_topup,10747,1.04458145435985,2.22622194205347,1,powerflow
+bank_topup,10752,1.14163807981439,1.96010235234416,2,powerflow
+bank_topup,10753,1.19904528434826,1.75619245703962,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10754,0.996559573654152,2.24030656273657,2,powerflow
+bank_topup,10756,1.08566279368546,1.69089797834704,2,powerflow
+bank_topup,10760,1.1577652610434,2.11918321892218,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10761,1.14995477965552,2.1868796751872,2,powerflow
+bank_topup,10762,1.05596957252679,2.2310678203455,2,powerflow
+bank_topup,10763,1.16852393955395,2.19396178173093,4,powerflow
+bank_topup,10764,1.18866074556281,1.93566487815138,2,powerflow
+bank_topup,10765,1.08005586452551,2.18759644053648,1,powerflow
+bank_topup,10766,1.09817677070682,1.95685904071049,1,powerflow
+bank_topup,10769,1.16048882295821,1.68948966012942,1,powerflow
+bank_topup,10776,1.14498418739515,2.12611093303223,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10781,0.980653117259458,2.23404389177314,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10783,1.03688602365165,1.7979186751498,1,powerflow
+bank_topup,10784,1.15728425593391,2.03362203398077,2,powerflow
+bank_topup,10788,1.03187743996047,2.19474018934229,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10796,0.988856251302688,1.91740958893912,1,powerflow
+bank_topup,10797,1.17247004159216,1.51272358033233,1,powerflow
+bank_topup,10800,1.19346154126032,1.4669462606496,2,powerflow
+bank_topup,10803,1.17039024404387,1.73689237070444,2,powerflow
+bank_topup,10806,1.15901871887454,1.9681913403233,2,powerflow
+bank_topup,10809,1.12944468648593,1.95768023622869,1,powerflow
+bank_topup,10810,1.13962506005424,1.83185049163427,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10811,1.18025372982421,1.76436476177578,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10820,1.10394742950195,1.79424805566993,2,powerflow
+bank_topup,10821,1.10592142511555,2.05194420987166,1,powerflow
+bank_topup,10826,1.16985744803357,1.73858006841479,3,powerflow
+bank_topup,10827,1.15284790050524,1.79803368005965,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10831,1.08203617680682,2.24295852537955,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10835,1.12022032474451,2.06894322662584,4,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10836,1.1868177534991,1.50582804182404,1,powerflow
+bank_topup,10837,1.07019282050798,2.12346394550183,2,powerflow
+bank_topup,10840,1.07107095317639,1.90706618474213,2,powerflow
+bank_topup,10844,1.16141726980951,1.88257908236922,2,powerflow
+bank_topup,10845,1.19387645190291,2.13940696549435,2,powerflow
+bank_topup,10846,1.0935714149557,1.87155729309211,3,powerflow
+bank_topup,10850,1.06976682938295,1.97070564950782,2,powerflow
+bank_topup,10852,1.138045479324,2.2086959735809,2,powerflow
+bank_topup,10853,1.06591727468519,2.19232743746613,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10855,1.18814676337239,2.06329255329587,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10856,1.12897722569082,2.2338251929735,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10860,1.12608010892675,1.74790886388472,3,powerflow
+bank_topup,10864,1.01208505219917,2.14501185927723,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10865,1.1685639674916,2.01849184817778,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10867,1.10306329050121,1.72084573001984,1,powerflow
+bank_topup,10871,1.16316296995323,1.828491893773,1,powerflow
+bank_topup,10872,1.10568486046637,1.90210272970798,2,powerflow
+bank_topup,10874,1.03779572395281,2.00923718441993,1,powerflow
+bank_topup,10875,1.18991424264246,1.87692305730404,2,powerflow
+bank_topup,10877,1.11728971522619,2.06938300318546,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10880,1.18353887650317,1.50482897075808,1,powerflow
+bank_topup,10881,1.0323916208126,1.90052410229374,1,powerflow
+bank_topup,10883,0.990330812089614,2.12172358615992,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10889,1.19687904179012,1.75431458640157,2,powerflow
+bank_topup,10894,1.15393043220852,2.02016843283024,3,powerflow
+bank_topup,10895,1.12728323847895,1.67953210437979,3,powerflow
+bank_topup,10896,1.14115482020848,1.77008866535187,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10897,1.02954922983184,2.23799516599986,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10898,1.18923651450772,1.65248767679847,4,powerflow
+bank_topup,10899,1.13284881514419,1.7819777701543,3,powerflow
+bank_topup,10902,1.12298898415869,2.01517476096245,2,powerflow
+bank_topup,10909,1.15667097116612,1.79266130338,1,powerflow
+bank_topup,10910,1.16892713623948,2.22798655778618,1,powerflow
+bank_topup,10911,1.05256756353595,1.93500166635366,2,powerflow
+bank_topup,10913,1.12423485097533,1.9437794008941,1,powerflow
+bank_topup,10918,1.1360418818987,1.70896116482584,1,powerflow
+bank_topup,10919,1.02977882122721,2.04966048874096,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10926,1.05444174179822,2.19565535180902,2,powerflow
+bank_topup,10929,1.08424710324777,1.79856036713511,1,powerflow
+bank_topup,10933,1.15119843555046,1.9256624420988,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10943,1.08593090104768,1.52248583544738,1,powerflow
+bank_topup,10945,1.17634241016619,2.21051666405259,2,powerflow
+bank_topup,10955,1.01819805795621,2.20501438129176,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10956,0.914109450790027,1.97539349960367,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10957,1.00164330124269,2.20121620745836,2,powerflow
+bank_topup,10959,1.18171099745478,1.63470071372819,2,powerflow
+bank_topup,10964,1.1742228271656,1.80448901900106,1,powerflow
+bank_topup,10966,1.06385423695851,2.05050354881918,2,powerflow
+bank_topup,10967,1.16150179334414,2.11362095270088,2,powerflow
+bank_topup,10975,1.14881561090448,2.2181586039685,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10977,1.18074878210201,2.2837644453893,1,powerflow
+bank_topup,10979,1.00418968555621,1.79644110029602,1,powerflow
+bank_topup,10983,0.982646157116232,2.18229424410575,2,powerflow
+bank_topup,10984,0.96552709894938,1.76816736631248,3,powerflow
+bank_topup,10985,1.11490876944964,1.83536865424477,2,powerflow
+bank_topup,10989,1.1489560086985,2.18980218822602,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10990,0.954765820441059,2.26893457179546,3,powerflow
+bank_topup,10992,1.09921551038659,2.03850076360309,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,10993,1.15113610477593,1.71579228754308,1,powerflow
+bank_topup,10995,1.15802639001485,2.01774007546769,2,powerflow
+bank_topup,11000,1.00850706183386,2.06626741457901,4,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11003,1.15258143674126,1.81413131093251,1,powerflow
+bank_topup,11005,1.02867800110434,2.09908193449827,2,powerflow
+bank_topup,11017,1.077135858869,2.04913062572566,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11018,1.09453860490281,2.23890458331847,3,powerflow
+bank_topup,11020,1.03990232213249,2.00871836240741,2,powerflow
+bank_topup,11021,1.1443790380898,1.65853833219336,1,powerflow
+bank_topup,11022,1.15381500775532,2.28570026886638,4,powerflow
+bank_topup,11024,1.16466622285059,2.22046168993544,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11034,0.901841381403253,2.18480543563346,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11036,1.08770358830857,2.03154167228019,3,powerflow
+bank_topup,11043,1.09278216327109,2.07366439006254,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11044,1.1606931522307,1.48294752376874,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11045,1.0370737165093,2.14576707105776,1,powerflow
+bank_topup,11046,1.17729667659769,2.09263390044617,3,powerflow
+bank_topup,11052,1.09960940513805,2.12090071838948,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11053,1.13776907187496,1.79719341711917,1,powerflow
+bank_topup,11054,1.12231253953035,1.87742524677155,4,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11057,0.944053727755818,2.24275311279645,2,powerflow
+bank_topup,11058,1.16723486633297,2.17586866156324,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11059,1.05841434292436,2.18335211376965,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11060,1.14600322956576,1.55258397453475,2,powerflow
+bank_topup,11061,1.03892373095927,2.29203041402064,4,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11065,1.0598982237221,2.03796998427439,2,powerflow
+bank_topup,11067,1.1365447572222,1.50516212784241,3,powerflow
+bank_topup,11071,1.1537130191377,2.26742243810977,1,powerflow
+bank_topup,11073,1.0941706918041,2.13622113375915,1,powerflow
+bank_topup,11091,1.13206381888944,1.70604221615112,1,powerflow
+bank_topup,11094,0.983804118220317,2.02086960237179,1,powerflow
+bank_topup,11098,1.09778168102676,1.88581927187528,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11104,1.12178959007432,1.80940094438275,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11105,0.96202380264542,2.24921910991156,2,powerflow
+bank_topup,11107,1.14107667835825,2.26022228416463,1,powerflow
+bank_topup,11115,1.19613151146896,1.86012619805688,4,powerflow
+bank_topup,11118,1.06514283482312,1.80006343559777,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11119,1.05151972230412,2.29735288366772,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11121,1.01350488875914,1.89922655302479,1,powerflow
+bank_topup,11122,1.11558088536991,2.01136660065137,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11134,1.10472429209874,1.90372142380237,1,powerflow
+bank_topup,11136,1.09330977023777,1.81933997845546,2,powerflow
+bank_topup,11137,1.15433724509496,1.53673265398864,2,powerflow
+bank_topup,11143,1.07161316153562,1.74674691149079,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11147,0.947067029763084,1.95586740769309,1,powerflow
+bank_topup,11150,1.03104158788937,2.17010501322466,2,powerflow
+bank_topup,11151,1.10104058384341,2.28196965179566,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11153,1.06175294867647,2.11795078729561,2,powerflow
+bank_topup,11154,1.06334800032843,1.81012742401426,1,powerflow
+bank_topup,11156,1.06563988683391,2.04445095758255,1,powerflow
+bank_topup,11157,1.1321480642712,1.7095834646596,1,powerflow
+bank_topup,11161,1.19892985547427,1.69231861993009,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11167,1.09114983423152,1.99518907543683,1,powerflow
+bank_topup,11168,1.01432000017684,2.22764373851757,2,powerflow
+bank_topup,11170,0.925620743474536,2.27917569553266,2,powerflow
+bank_topup,11171,0.973325227072571,2.07081608209071,2,powerflow
+bank_topup,11179,1.04341155896075,1.9946384751333,1,powerflow
+bank_topup,11188,1.09055308565421,2.27438952353706,2,powerflow
+bank_topup,11194,1.08338792696338,2.16719185819705,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11195,1.15330159765725,1.76885508450642,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11198,1.02848919470928,1.87852044957173,1,powerflow
+bank_topup,11200,0.944559209240892,2.12134745610421,1,powerflow
+bank_topup,11203,1.09566919277731,2.07568027431951,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11204,1.06754684361604,2.01124154760989,4,powerflow
+bank_topup,11206,1.1854042938039,1.79582985310407,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11207,1.03374101564786,2.1536802339094,1,powerflow
+bank_topup,11211,0.984636794332171,2.04845822295819,1,powerflow
+bank_topup,11214,1.18962294959986,1.69652259023404,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11216,1.1404732302688,1.86765598581557,3,powerflow
+bank_topup,11217,0.995156156227821,1.81758515510241,3,powerflow
+bank_topup,11219,1.10786737574236,1.75391856034749,2,powerflow
+bank_topup,11220,1.02464861891108,2.13925712440742,1,powerflow
+bank_topup,11221,1.11409081825675,2.28296200953706,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11222,1.12486379592807,2.21369457156259,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11223,0.993589312259294,2.11528699453434,1,powerflow
+bank_topup,11226,1.07269788704888,2.10581252147749,1,powerflow
+bank_topup,11229,0.917936387381649,2.09291148671772,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11230,1.10155067741736,1.76293482130621,3,powerflow
+bank_topup,11231,1.11627964140163,1.7109095826311,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11234,1.010043690041,2.2540783830738,3,powerflow
+bank_topup,11237,1.18183502481187,2.09374923703614,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11243,1.16062228647622,2.14821229011463,2,powerflow
+bank_topup,11244,1.03070588434068,2.07053566923179,2,powerflow
+bank_topup,11247,1.13166715570348,1.63913047494212,1,powerflow
+bank_topup,11252,1.14307575864479,2.11401712083639,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11256,1.16923624221648,2.08990693269003,2,powerflow
+bank_topup,11257,1.10263125026761,1.86584661662988,2,powerflow
+bank_topup,11258,1.13496243646288,1.76509214116647,4,powerflow
+bank_topup,11259,1.08178617666674,2.26814373471626,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11262,1.11821426690479,1.92929764808277,1,powerflow
+bank_topup,11263,1.12988206362788,1.89744192913853,1,powerflow
+bank_topup,11264,1.03945222269729,2.17041642373787,1,powerflow
+bank_topup,11267,1.06052582433209,2.02860077662347,2,powerflow
+bank_topup,11268,1.06248263009144,2.22143881458081,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11272,1.122050917676,2.11701569385292,1,powerflow
+bank_topup,11274,1.12063213013805,2.24519365530078,2,powerflow
+bank_topup,11278,1.15504727525501,1.60305024841534,4,powerflow
+bank_topup,11283,1.02905543269552,2.29795328860687,2,powerflow
+bank_topup,11284,1.12999311709367,1.9065077342926,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11292,1.1658663271012,1.7177207160364,3,powerflow
+bank_topup,11293,1.04003047031645,1.95263734480057,1,powerflow
+bank_topup,11295,1.05956610799087,2.06389884794391,1,powerflow
+bank_topup,11301,1.16300673627256,1.64768465132839,1,powerflow
+bank_topup,11303,1.16709677845061,1.84450576752678,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11304,1.0122891462387,2.22087727491296,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11305,1.05411597978326,2.29077082372535,1,powerflow
+bank_topup,11307,1.10727478150886,1.6086927073039,1,powerflow
+bank_topup,11309,1.07866302300767,2.02448980954974,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11310,0.977435679214615,2.11167398812737,4,powerflow
+bank_topup,11313,1.03390068572013,2.27120957586115,1,powerflow
+bank_topup,11315,1.11682339806455,1.63034821022104,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11317,1.11260587593624,2.03536449932651,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11323,1.1832413717212,1.78280665989687,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11325,1.17265451740951,2.22223939425102,3,powerflow
+bank_topup,11331,1.18716533170135,1.66569486615261,4,powerflow
+bank_topup,11332,1.16963037136501,2.0591211690975,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11338,1.16540470023843,2.13496058355537,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11344,1.04608288732586,1.95227816250095,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11346,1.1625364833393,1.56129727793287,2,powerflow
+bank_topup,11348,1.18146469928216,1.80238805319874,1,powerflow
+bank_topup,11349,1.14798027717595,1.73225900583065,2,powerflow
+bank_topup,11351,1.04792793434081,1.97383759978631,1,powerflow
+bank_topup,11354,1.04230580421603,1.90327145383172,3,powerflow
+bank_topup,11361,1.17501022302262,2.21817769874742,4,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11363,1.00976619518756,2.24557456605862,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11364,0.949575025859357,2.23247458384586,3,powerflow
+bank_topup,11366,1.05249163460592,1.92031844721463,2,powerflow
+bank_topup,11367,1.16994771128197,2.16145395027795,2,powerflow
+bank_topup,11370,1.02272759877928,2.14656539930054,2,powerflow
+bank_topup,11374,1.02611438353715,2.18609788173171,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11375,1.11993731623814,1.60362885979172,3,powerflow
+bank_topup,11378,1.08995515978632,1.83704587569084,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11379,0.984444227755881,2.25933511911868,1,powerflow
+bank_topup,11380,1.19569954714978,2.25578286428645,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11381,1.04043652300249,2.18926407725068,2,powerflow
+bank_topup,11382,1.11232402723549,2.02739469438914,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11384,1.1283947747026,2.24682304506648,2,powerflow
+bank_topup,11389,0.924649290196455,2.28691203240449,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11392,1.03858383390988,2.12480119207059,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11395,1.1534797983684,2.1532712140922,2,powerflow
+bank_topup,11396,1.05045024818885,1.98198030857557,1,powerflow
+bank_topup,11402,1.12918637024546,1.48008335930467,2,powerflow
+bank_topup,11405,1.16626367600622,1.8123869831805,2,powerflow
+bank_topup,11406,1.08941540787908,1.85500665318098,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11415,1.19258221048237,1.52736335955744,1,powerflow
+bank_topup,11419,1.14035155395257,2.08047978022061,2,powerflow
+bank_topup,11420,1.1358547849773,1.80909571029572,2,powerflow
+bank_topup,11422,1.08783034662993,1.99076723490657,1,powerflow
+bank_topup,11423,1.11980545746036,1.94119587155986,4,powerflow
+bank_topup,11424,1.17435597931391,1.63820057132944,1,powerflow
+bank_topup,11425,0.997251159826171,2.04622114816858,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11427,0.957721738574077,1.93375627989586,1,powerflow
+bank_topup,11428,1.07054270934847,2.11435710488568,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11433,1.12397822113249,2.15785774781452,1,powerflow
+bank_topup,11435,1.11915902402772,2.26194846730972,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11437,1.05190967196998,2.19908208608702,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11439,1.11532193865825,2.11502967366712,3,powerflow
+bank_topup,11440,1.02947090369848,2.20978905660557,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11447,1.11874429494975,2.14078234108486,2,powerflow
+bank_topup,11450,1.15985996967559,1.83313305700153,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11451,1.17531944878351,1.44333694097101,2,powerflow
+bank_topup,11457,0.912044382749108,2.19715452383145,2,powerflow
+bank_topup,11459,1.10078518331033,2.0128504015003,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11461,1.17692359801864,2.19394985301446,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11462,1.0848053666485,1.75123847242757,1,powerflow
+bank_topup,11464,0.928477759478523,2.19333322169796,2,powerflow
+bank_topup,11466,1.13986431787129,1.97435076683396,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11467,1.18334860851428,1.85303003330184,1,powerflow
+bank_topup,11471,1.12143473086078,2.09961339138105,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11480,1.04904663118857,1.99794474320509,2,powerflow
+bank_topup,11495,1.17915764116371,1.74389043555657,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11496,1.17905154581465,2.05810645132757,3,powerflow
+bank_topup,11497,1.17304579459975,1.89884542451709,3,powerflow
+bank_topup,11499,1.09037418555035,2.16654850281403,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11501,1.14083004586137,1.73302977620144,3,powerflow
+bank_topup,11502,1.13094228711117,1.70746910759884,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11503,1.04035058869173,2.04090981434801,1,powerflow
+bank_topup,11510,1.15910004145421,2.01318698075946,2,powerflow
+bank_topup,11513,1.02285524388796,2.2931224742552,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11516,1.05542965710288,2.04162585294321,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11529,1.17969876182639,2.13017453408887,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11532,1.15000185648395,2.02575591912576,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11537,1.1739375494952,1.71907592479706,2,powerflow
+bank_topup,11543,1.03411538371392,1.93845203092532,1,powerflow
+bank_topup,11544,1.1770469272469,2.14441434962892,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11545,1.02483520794092,2.16680680281654,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11551,0.973765861175292,2.14801979716946,1,powerflow
+bank_topup,11553,1.19080042565707,1.53804911581756,1,powerflow
+bank_topup,11559,1.15998721498853,1.57612490596899,2,powerflow
+bank_topup,11573,1.09550483362221,2.27337420925815,1,powerflow
+bank_topup,11577,1.16355066732796,1.65172495697972,1,powerflow
+bank_topup,11578,1.14701314914393,1.95024812097392,1,powerflow
+bank_topup,11586,1.13364959370416,2.19930919469252,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11588,1.06508088771998,2.01445073873202,2,powerflow
+bank_topup,11589,1.19326640332243,1.44591629363611,1,powerflow
+bank_topup,11594,1.03286704989547,2.12839021114891,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11595,1.18856836438226,1.7799019339688,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11602,1.01761299438189,2.24768447033969,3,powerflow
+bank_topup,11604,0.943298999813614,1.9260086696573,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11615,1.13788960741313,2.08236692135967,1,powerflow
+bank_topup,11618,0.963027600971282,2.1087858070394,1,powerflow
+bank_topup,11619,1.18495766617539,1.72477371081485,4,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11620,1.11587525451598,1.81598216630448,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11622,1.13072099139007,2.14417458549422,1,powerflow
+bank_topup,11624,1.0980124676887,1.98086677981639,2,powerflow
+bank_topup,11625,1.10657120358835,1.7443588120847,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11628,1.07286616990224,2.06312442467407,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11629,0.936613406787653,2.10163759949683,1,powerflow
+bank_topup,11639,1.10881383508251,1.39303368852048,1,powerflow
+bank_topup,11642,1.15753736312855,1.7936995146354,4,powerflow
+bank_topup,11644,1.16605994393758,1.67000609819093,1,powerflow
+bank_topup,11647,1.1682639611204,1.54741546079961,2,powerflow
+bank_topup,11649,1.04991242597504,1.89263246117595,3,powerflow
+bank_topup,11652,1.15560173188343,2.17460252096826,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11656,1.16931015713953,1.79932576075809,2,powerflow
+bank_topup,11660,0.934574750130571,2.1740842142417,3,powerflow
+bank_topup,11662,0.990572590011772,2.13163703650386,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11665,1.1808064446538,1.7036203238896,2,powerflow
+bank_topup,11666,1.14920965687486,1.92958993378408,1,powerflow
+bank_topup,11667,1.11077545393505,2.27630584100348,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11669,1.08112615405142,1.88447255736587,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11670,1.15883593550286,2.11571071146141,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11671,1.12405453537297,2.19680950489153,2,powerflow
+bank_topup,11678,1.1318879579045,1.48613078445425,2,powerflow
+bank_topup,11681,1.11433909648652,1.55674126488324,2,powerflow
+bank_topup,11685,1.15245914824108,1.94554444017166,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11690,1.15832250071388,1.6885566542285,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11696,1.05856008026451,2.15170830701629,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11698,1.07220417918796,1.86059626402099,1,powerflow
+bank_topup,11699,1.1728157500498,1.82586703282392,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11702,1.15469912538245,1.90163352606151,3,powerflow
+bank_topup,11703,1.12288178951326,1.75774254307856,3,powerflow
+bank_topup,11704,1.01252965852599,2.17714251711893,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11708,1.16754792689751,1.91906358122688,2,powerflow
+bank_topup,11710,1.03519668573757,1.7317185071429,2,powerflow
+bank_topup,11714,1.16377209446844,1.72763830457002,3,powerflow
+bank_topup,11715,1.17143900612499,2.29777863588279,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11717,1.08255813615314,1.58619752905168,1,powerflow
+bank_topup,11718,0.988403466396422,1.96388454509298,2,powerflow
+bank_topup,11721,1.08158387367812,2.17813927490034,1,powerflow
+bank_topup,11722,1.04780404390331,2.10672981308457,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11732,1.12076784376599,2.00346410185652,2,powerflow
+bank_topup,11735,1.14264138630904,1.6119477493971,1,powerflow
+bank_topup,11736,1.09578439074094,1.96837362319606,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11739,1.09547856182317,1.99752982119931,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11742,1.19125649157466,2.28531579023849,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11746,0.983578365345245,2.00576724030007,1,powerflow
+bank_topup,11748,1.02695887951014,2.23489703547699,1,powerflow
+bank_topup,11755,1.02647072180308,1.83435273449581,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11756,1.05996234410808,2.13804017070318,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11757,1.14788590409704,2.26064458876556,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11758,0.971145229938281,2.02297792299169,3,powerflow
+bank_topup,11760,1.0757400225126,2.23567139459805,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11762,1.00236953712931,2.2990052651144,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11767,1.06358421204591,1.74748142634017,3,powerflow
+bank_topup,11769,1.17413251541971,2.01076231389959,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11770,1.08872068455595,1.90107113536977,1,powerflow
+bank_topup,11786,1.14052596916252,2.05229863512136,1,powerflow
+bank_topup,11792,0.953006041205056,2.09045149981334,2,powerflow
+bank_topup,11799,1.17548019774159,2.29450015010519,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11801,1.16905836108934,1.4080500377598,1,powerflow
+bank_topup,11803,1.14285570599358,1.50714433480247,1,powerflow
+bank_topup,11807,1.07758209122125,1.76361645829912,3,powerflow
+bank_topup,11812,1.16163389028586,2.0402514850101,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11815,1.12352325567461,2.26109165760404,1,powerflow
+bank_topup,11818,1.05710966240087,1.89655009014013,2,powerflow
+bank_topup,11821,1.17882643580752,2.17071424383755,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11822,1.17997268691868,2.21734425565613,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11824,1.08915532404749,2.05075633877509,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11828,1.17744140067644,1.58520193190005,3,powerflow
+bank_topup,11829,1.05349837529885,1.71137857195421,1,powerflow
+bank_topup,11830,1.04930214321727,2.13405160845504,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11841,1.01088768373438,2.25472085432123,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11845,1.07293108141307,2.14607712937657,2,powerflow
+bank_topup,11847,1.11457856174196,2.00167725732263,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11849,0.977660522750787,2.1475029863415,3,powerflow
+bank_topup,11850,1.11360853015016,1.99946407911054,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11854,1.13130330390531,2.0868599646584,2,powerflow
+bank_topup,11856,1.1707835681501,1.50902776998141,4,powerflow
+bank_topup,11860,1.19238273835921,1.95146122584876,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11869,1.11198310269277,2.02390658409473,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11870,1.19622391225761,1.94480747122297,3,powerflow
+bank_topup,11871,1.00678609271579,2.04543129595409,1,powerflow
+bank_topup,11873,1.11159949266152,2.1036725874004,4,powerflow
+bank_topup,11875,1.09999262388056,2.09154688770128,1,powerflow
+bank_topup,11876,1.1183154834746,1.7893075726507,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11877,1.10124591463204,2.18546948038081,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11881,1.11886227689464,1.80152632368053,4,powerflow
+bank_topup,11882,1.18881072552422,1.98471141346136,1,powerflow
+bank_topup,11883,1.17504893149609,1.72036689963482,2,powerflow
+bank_topup,11884,1.12959239358297,2.23091702411805,2,powerflow
+bank_topup,11885,1.16656570750301,2.18271516265968,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11886,1.03257250122151,2.10254509065242,1,powerflow
+bank_topup,11887,0.922252329145176,2.16118603865137,1,powerflow
+bank_topup,11888,1.13181634299891,1.93807472697196,1,powerflow
+bank_topup,11890,0.9048696760448,1.95537740867047,1,powerflow
+bank_topup,11892,1.17679359384585,1.56614988742174,2,powerflow
+bank_topup,11894,1.1955172182169,2.25852794032318,2,powerflow
+bank_topup,11897,1.02501380123875,1.9075343969461,2,powerflow
+bank_topup,11900,0.958972409615469,1.93013176164525,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11901,1.15365352988217,1.97863922059577,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11902,1.10930781021252,2.2505957778541,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11904,1.123609304827,1.80812832316948,2,powerflow
+bank_topup,11906,1.00794430476105,2.02252997591171,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11908,1.18784990084542,2.07731272157808,2,powerflow
+bank_topup,11909,1.05892308862621,2.15917637637819,1,powerflow
+bank_topup,11911,1.10567268528215,1.87450442210557,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11913,1.1435101168853,2.25760863114462,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11921,1.1586919787658,2.00243813748646,1,powerflow
+bank_topup,11923,1.17644416067034,1.83940461683871,1,powerflow
+bank_topup,11925,1.17018380939948,1.816214042814,1,powerflow
+bank_topup,11926,1.13763576363856,2.20056727598084,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11929,1.03090415290052,1.88341798145361,2,powerflow
+bank_topup,11931,1.13724412611568,1.5975360249741,3,powerflow
+bank_topup,11945,1.10326211941702,1.9732435623852,2,powerflow
+bank_topup,11946,1.17561815619096,2.17927385037217,2,powerflow
+bank_topup,11951,1.16268959665489,2.17666726322082,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11952,1.09163254878359,2.05994605997598,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11953,1.03196916572825,2.23325375189127,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11957,0.927921586924148,2.25450057033293,2,powerflow
+bank_topup,11958,1.1254748948159,1.61898081747758,2,powerflow
+bank_topup,11961,1.04519735976793,1.86918628440575,4,powerflow
+bank_topup,11962,1.09233158760311,1.69171704047421,2,powerflow
+bank_topup,11967,0.977798959250612,2.28921357848335,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11969,1.13938106815614,2.01358961934266,1,powerflow
+bank_topup,11970,1.14447832334341,1.96365519515674,1,powerflow
+bank_topup,11973,1.09857579873079,1.80561742717845,3,powerflow
+bank_topup,11976,1.18015506669183,1.96612701152163,4,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11978,1.16443320335898,1.61118515473115,3,powerflow
+bank_topup,11980,1.0340381121553,1.91058121064477,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11982,1.17465883757055,1.71038333713421,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11990,1.02344406139737,2.21206729318518,1,powerflow
+bank_topup,11991,1.10982089937778,2.02121553583486,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11992,1.12384448564099,2.21646393995416,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,11999,1.19445755041222,1.91144260336261,1,powerflow
+bank_topup,12001,1.17053801820403,1.9837916927668,3,powerflow
+bank_topup,12002,1.02043646497487,1.93693711524415,1,powerflow
+bank_topup,12003,1.04862349758793,1.54614189256534,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12011,1.01658183079615,2.29390934416183,1,powerflow
+bank_topup,12013,1.18896752623359,2.2075595526626,1,powerflow
+bank_topup,12017,1.13035803888545,2.09736072679226,3,powerflow
+bank_topup,12021,1.15725445213094,1.92299609041051,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12023,1.05424111059814,2.03985973262736,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12024,1.11696140423173,1.72988447098694,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12025,1.00093272177335,1.92483346242967,3,powerflow
+bank_topup,12029,1.17787605355655,1.74374825606648,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12030,1.08653580846926,1.9215191489086,1,powerflow
+bank_topup,12034,1.03576609550191,2.08416500741457,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12036,1.09989340659961,1.83770718936573,2,powerflow
+bank_topup,12037,1.01024153309735,2.23756936607458,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12038,1.09845949914765,1.85358472950614,1,powerflow
+bank_topup,12040,1.19298897048304,1.62923535768696,3,powerflow
+bank_topup,12041,1.10919147672324,1.77413530286374,2,powerflow
+bank_topup,12044,1.12648397312075,1.76390142212491,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12045,1.08762432118173,2.12399329318386,2,powerflow
+bank_topup,12048,1.09086656010243,2.22914808442622,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12051,1.19637629910859,2.08039725122517,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12052,0.919174481863664,2.26423182537428,1,powerflow
+bank_topup,12055,1.09187175063866,1.80881581586142,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12061,1.14315632874983,1.97525537768057,1,powerflow
+bank_topup,12063,1.19526330810521,2.00388779868659,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12064,1.18663162247788,1.50666547879756,2,powerflow
+bank_topup,12067,1.04924982597866,2.07890111855908,4,powerflow
+bank_topup,12069,1.14955896225483,1.53535257727466,4,powerflow
+bank_topup,12074,1.03826042823316,1.72374074265925,2,powerflow
+bank_topup,12079,1.08321655678717,2.25713994508043,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12084,0.909262299522681,2.22687721477409,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12091,1.08624266730628,1.64463006741151,2,powerflow
+bank_topup,12092,1.05816110269266,2.22970516885247,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12093,1.13709080573917,1.73782270314843,1,powerflow
+bank_topup,12094,1.08832092177385,2.10521227254293,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12097,1.19361192946965,1.78688308347546,1,powerflow
+bank_topup,12100,1.0807200799286,1.83121358396793,3,powerflow
+bank_topup,12110,1.18807487982479,2.21621109027045,2,powerflow
+bank_topup,12111,1.14683653751674,2.1414853957447,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12114,1.03438730432604,2.19818966702731,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12116,1.08353770876736,1.9040871234137,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12117,1.1779757450565,1.85882064757505,1,powerflow
+bank_topup,12119,1.05156338871408,2.13072662061927,2,powerflow
+bank_topup,12127,1.03278163753407,1.83029460723672,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12128,1.19584923870331,1.86336988748632,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12134,1.18443716577495,2.04503933215747,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12135,1.19774619426646,1.51552477437109,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12139,0.971462914103108,1.86554840732594,1,powerflow
+bank_topup,12143,0.980766036892034,2.29851171744184,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12147,1.17362347969239,2.15670914187226,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12149,1.16120533347128,2.26760572668883,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12152,1.08704095112735,1.83469869672607,1,powerflow
+bank_topup,12153,1.14570068429436,2.07542052666458,2,powerflow
+bank_topup,12154,1.12589842876123,2.05165537510816,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12160,1.1189681702212,1.72186879343034,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12162,1.10349792705161,1.73120881369132,1,powerflow
+bank_topup,12164,1.13253762798738,1.93757829320781,2,powerflow
+bank_topup,12165,1.18636800520869,2.13884223468188,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12167,1.18195805214681,1.4479028052097,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12169,1.07926621410981,2.00119517147334,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12170,1.07998800754273,2.08934888707925,1,powerflow
+bank_topup,12172,1.05943997509691,1.87066151941653,2,powerflow
+bank_topup,12174,1.19005357387439,1.37917733715919,1,powerflow
+bank_topup,12183,1.17235453875591,2.11093108326779,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12184,1.012756379211,1.5199006408247,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12189,0.952761802235117,2.19771701547594,1,powerflow
+bank_topup,12192,1.08071037978227,2.25313379363502,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12198,1.14385493725449,1.72270963831416,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12199,1.08679345724482,2.09409931344115,1,powerflow
+bank_topup,12203,1.14728421087907,2.06534224769487,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12205,1.15893832933813,1.80747104437108,1,powerflow
+bank_topup,12206,1.06928259302729,1.84633103224539,2,powerflow
+bank_topup,12209,1.18754422073283,2.26216992239155,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12210,0.985812672456569,2.14723754009801,2,powerflow
+bank_topup,12212,1.09868605899408,1.91645517039605,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12214,0.950447046433869,2.25793777114798,3,powerflow
+bank_topup,12219,0.944419551164807,2.20898145707003,4,powerflow
+bank_topup,12224,1.01564474761242,2.1839830720586,3,powerflow
+bank_topup,12231,1.17320209792102,2.28177959321801,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12232,1.04571816422697,2.028431678235,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12233,1.01877315209319,2.2739868158064,1,powerflow
+bank_topup,12238,1.19599135791122,2.19219153837685,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12240,0.976154242270936,2.2501270701735,3,powerflow
+bank_topup,12242,1.19427600339525,2.06077229948793,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12245,1.12771575945583,1.59925431709057,1,powerflow
+bank_topup,12246,1.1053656731332,1.99864575498123,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12254,1.11300850130114,1.97224002087622,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12257,1.00331855253439,1.91982534399197,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12262,0.975712953825536,2.28668058742999,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12265,1.13871105911386,2.20640961719759,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12269,1.05868702712946,2.27249056178448,3,powerflow
+bank_topup,12272,1.133060178404,2.06494974556869,2,powerflow
+bank_topup,12275,1.19027720981788,2.17320517425385,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12276,0.966472106533902,1.97987082425041,2,powerflow
+bank_topup,12279,1.12457218112495,2.27971699536985,2,powerflow
+bank_topup,12283,1.08284876394159,1.94600469865818,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12286,0.970478608862698,2.08755650881882,1,powerflow
+bank_topup,12287,1.14581663729614,2.26314437383951,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12288,1.01486450422597,2.12879180367059,2,powerflow
+bank_topup,12290,1.17327031480621,2.10211711007423,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12291,1.11959794409658,2.21111935614323,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12292,1.18413730856539,1.75032352269218,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12293,1.19117359696023,1.70646760893707,1,powerflow
+bank_topup,12295,1.1942087811845,2.2947774565932,2,powerflow
+bank_topup,12296,1.13718294132795,2.002591929074,1,powerflow
+bank_topup,12298,1.1563495685129,1.81101285331848,2,powerflow
+bank_topup,12299,1.12272596420055,1.85389506454689,1,powerflow
+bank_topup,12301,1.04831704930366,2.15932576243684,4,powerflow
+bank_topup,12302,1.1940716523048,2.16478582224353,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12305,1.0206986382928,2.25084611592384,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12306,1.19493370625463,2.17608958865992,2,powerflow
+bank_topup,12308,1.19190741058345,1.85983229439731,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12311,1.1570615226342,2.03254734434545,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12315,1.17926479886066,1.77284798967381,1,powerflow
+bank_topup,12319,1.01362032345783,2.23611759002527,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12320,1.16190044582792,1.42168598766536,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12323,1.06798138352824,2.21527631999436,1,powerflow
+bank_topup,12326,1.0223492348661,2.15298106031993,3,powerflow
+bank_topup,12330,1.04261785125679,2.16961992155199,1,powerflow
+bank_topup,12331,1.18585253970391,1.94913544114128,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12332,1.02986472519893,2.16223700841716,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12334,1.19981841900097,1.55111148840478,1,powerflow
+bank_topup,12336,1.15691417890382,1.74151348607876,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12337,1.16374233105695,1.81256851257813,4,powerflow
+bank_topup,12344,1.13224422143177,2.09470474117156,2,powerflow
+bank_topup,12345,1.1857229930379,1.69758495210631,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12355,1.09735514810205,1.78586931694908,2,powerflow
+bank_topup,12357,1.19994121214105,2.25542160672035,2,powerflow
+bank_topup,12362,0.996075059880895,2.11024732452554,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12363,1.11479883963162,2.07160163169287,1,powerflow
+bank_topup,12365,1.13005949637868,2.01602566641773,2,powerflow
+bank_topup,12367,1.10300585752628,1.76607761494103,2,powerflow
+bank_topup,12371,1.09886689958693,1.63411720813055,1,powerflow
+bank_topup,12374,1.0745701599359,2.17966054222397,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12375,1.17743292554745,1.73032611694719,2,powerflow
+bank_topup,12376,1.13027277558665,2.15255549810492,3,powerflow
+bank_topup,12380,1.09339350366759,1.91339338379974,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12381,0.986379190614816,2.27733274633279,2,powerflow
+bank_topup,12382,0.940967560365441,2.18799422520585,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12384,1.08561068551817,1.9207441458792,2,powerflow
+bank_topup,12387,1.06779067440851,1.8939770940589,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12392,1.03145078480657,2.28859570738898,2,powerflow
+bank_topup,12393,0.969091137399153,2.202339431392,1,powerflow
+bank_topup,12395,1.12158199573934,1.89100957655706,2,powerflow
+bank_topup,12396,1.12680725582441,1.7921057464097,2,powerflow
+bank_topup,12405,1.03440043736889,1.9761017940036,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12407,1.06747424701303,2.17261433688567,1,powerflow
+bank_topup,12412,1.00737926390623,1.84074352891309,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12413,1.06293077869625,1.74060111259111,1,powerflow
+bank_topup,12423,0.969665663465383,2.26469397184742,2,powerflow
+bank_topup,12427,1.05622245127831,2.03222793365992,1,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12428,0.969529706114445,2.23464051786491,2,powerflow
+bank_topup,12432,1.1856089047734,2.18720425186073,2,powerflow
+bank_topup,12433,1.16454823818836,1.48527156691973,1,powerflow
+bank_topup,12435,1.12191566319886,1.70074344239921,1,powerflow
+bank_topup,12437,1.05288998568003,2.02988661742973,1,powerflow
+bank_topup,12438,1.1461792415897,2.0347225117258,3,powerflow
+bank_topup,12440,0.99419555275554,2.23170576206149,1,powerflow
+bank_topup,12442,1.1455865610099,2.06748589209142,3,powerflow
+bank_topup,12444,0.960817430306451,2.18576306415232,3,powerflow
+bank_topup,12450,1.07097321855103,2.21873165904141,1,powerflow
+bank_topup,12452,1.10682027916384,2.21715548691411,2,powerflow
+bank_topup,12454,1.18704254265872,2.20390549854848,3,powerflow
+bank_topup,12455,0.954341779260872,2.22416589654301,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12458,0.958832256919905,2.16315946905445,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12459,1.15620834154536,1.82687912710721,2,powerflow
+bank_topup,12461,1.02852981754481,1.83387661006183,3,powerflow
+bank_topup,12464,1.06915837325927,2.0572145499966,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12465,1.09756122912491,2.01193582677479,1,powerflow
+bank_topup,12467,1.06308432701666,1.89248539900923,3,powerflow
+bank_topup,12468,1.1879000646728,1.84695494618927,4,powerflow
+bank_topup,12469,1.19043135885017,2.09784360312025,1,powerflow
+bank_topup,12470,1.08502171652322,1.83239276388028,3,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12474,1.18596856050527,1.72099338628297,2,powerflow
+bank_topup,12478,1.18054004364923,1.57126404328668,2,powerflow
+bank_topup,12479,1.19946039172098,2.24966955870863,1,powerflow
+bank_topup,12483,1.09440478802256,2.13442060633996,2,powerflow
+bank_topup,12485,1.05885128208841,2.13224344165365,2,error: mp.net_model.ensure_ref_node: must have at least one REF or PV node
+bank_topup,12487,1.19695496439802,1.70120733790663,3,powerflow
+bank_topup,12495,1.17864571323393,2.01896644347231,1,powerflow
+bank_topup,12496,1.10278677634188,1.98806167455245,1,powerflow
+bank_topup,12500,1.02675231507551,1.99603334002692,2,powerflow

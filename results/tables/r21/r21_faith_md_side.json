@@ -1,0 +1,38 @@
+{
+ "results": {
+  "ledger": {
+   "attempted": 313,
+   "base_failures": [],
+   "removed_cap_region_total": 73,
+   "removed_cap_at_or_above_plus1": 70,
+   "removed_cap_between_0p8_and_1": 3,
+   "removed_cap_between_0p8_and_1_ids": [
+    3690,
+    11556,
+    11833
+   ],
+   "removed_cap_between_0p8_and_1_base_sigma": [
+    0.9704,
+    0.8519,
+    0.9042
+   ],
+   "lost_probe_nonconvergence": 4,
+   "lost_probe_nonconvergence_ids": [
+    10082,
+    11191,
+    11797,
+    12033
+   ],
+   "lost_probe_nonconvergence_base_sigma": [
+    -0.7875,
+    -1.3352,
+    -1.472,
+    -0.2598
+   ],
+   "kept": 236,
+   "stable_side_attempted": 215,
+   "stable_side_kept": 211,
+   "unstable_side_kept_below_cap": 25
+  }
+ }
+}

@@ -1,0 +1,7 @@
+{
+ "gates": {
+  "md_ebm_s0": 0.0,
+  "response_rho_reproduction_max": 1.1102230246251565e-16
+ },
+ "n_pq_main_terms": 20
+}

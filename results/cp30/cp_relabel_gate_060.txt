@@ -1,0 +1,7 @@
+cp relabel 60% reproduction gate PASS 12-Nov-2026 01:58:27
+G1 rows 7324, unique ids 7324, ids = dataset ids 1, ok rows 7324
+G2 binary flips 3310 (reference 3310)
+G3 flips to unstable 3310 of 3310
+G4 flipped ids identical to the reference: 1
+G5 worst rel sigma_cp difference 1.87e-07 (id 10609), tol 1e-6
+report: class_cp differs on 0 rows; worst |zeta_cp diff| 1.3e-09

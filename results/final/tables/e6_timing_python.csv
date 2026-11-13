@@ -1,0 +1,6 @@
+model,fit_s,inference_us_per_sample,hardware
+ebm,63.76,2.73,"Intel64 Family 6 Model 140 Stepping 1, GenuineIntel; AMD64; Python 3.13.9"
+sp,0.83,37.13,"Intel64 Family 6 Model 140 Stepping 1, GenuineIntel; AMD64; Python 3.13.9"
+xgb,2.93,4.93,"Intel64 Family 6 Model 140 Stepping 1, GenuineIntel; AMD64; Python 3.13.9"
+ftt,899.22,455.63,"Intel64 Family 6 Model 140 Stepping 1, GenuineIntel; AMD64; Python 3.13.9"
+linreg,0.01,0.25,"Intel64 Family 6 Model 140 Stepping 1, GenuineIntel; AMD64; Python 3.13.9"

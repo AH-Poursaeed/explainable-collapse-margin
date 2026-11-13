@@ -1,0 +1,7 @@
+rayid,case_,k,sigma_full,outcome,tdiv,enddev,pulse_dip,t_end,wall_s
+8,ride,0.808629,-0.870711,ride-through,NaN,6.48027e-07,0.0122,8.000,134.8
+8,collapse,0.824965,0.916868,collapse,3.738,NaN,0.0117,3.775,67.3
+11,ride,2.004363,-0.200116,ride-through,NaN,2.29467e-05,0.0387,8.000,140.7
+11,collapse,2.044855,0.208687,ride-through,NaN,0.000869713,0.0403,10.000,195.6
+11,collapse30,2.044855,0.208687,collapse,17.123,NaN,0.0403,17.137,287.7
+11,collapse2pc,2.065101,0.434824,collapse,9.954,51.6462,0.0402,9.963,153.5

@@ -1,0 +1,3 @@
+convention,id,pred,sigma_dom,in_band_alarm,in_band_sa,abstains,routed,dist_to_SA_edge
+seed0,5588,-3.8895936031225715,33.5939643629633,False,True,True,True,-0.25824596061104366
+seedmean,5588,-3.806259573209668,33.5939643629633,False,True,True,True,-0.17491193069814015

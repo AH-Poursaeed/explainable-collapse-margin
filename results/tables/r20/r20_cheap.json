@@ -1,0 +1,54 @@
+{
+ "dlg": {
+  "auc_grip": 0.8586,
+  "auc_lam": 0.8394,
+  "dauc": 0.0192,
+  "delong_z": 7.307,
+  "delong_p": 2.7297715498953385e-13,
+  "ci_lo": 0.0143,
+  "ci_hi": 0.0244,
+  "frac_pos": 1.0
+ },
+ "rank": {
+  "ebm_below_n": 9,
+  "xgb_below_n": 9,
+  "ebm_resplit_min": 0.9289,
+  "xgb_resplit_min": 0.9522,
+  "lead_min": 0.0117,
+  "lead_max": 0.0239
+ },
+ "cap": {
+  "frozen_beyond": 963,
+  "frozen_n": 7292,
+  "frozen_pct": 13.2,
+  "pub_beyond": 1000,
+  "pub_n": 7324,
+  "pub_pct": 13.7,
+  "id5588_sigma": 33.59
+ },
+ "xled": {
+  "attempted": 313,
+  "cap_excluded": 70,
+  "pf_lost": 7,
+  "retained": 236,
+  "unstable_side_retained": 25,
+  "stable_attempted": 215,
+  "stable_survived": 211,
+  "stable_surv_pct": 98.1
+ },
+ "clus": {
+  "n_clusters": 77,
+  "ci_lo": 0.878,
+  "ci_hi": 0.958
+ },
+ "trn": {
+  "secure_n": 19,
+  "alert_n": 119,
+  "emerg_n": 98,
+  "check": [
+   19,
+   119,
+   98
+  ]
+ }
+}

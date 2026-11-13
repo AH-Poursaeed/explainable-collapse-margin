@@ -1,0 +1,2023 @@
+{
+ "meta": {
+  "script": "python/e9_ma2024_index.py",
+  "generator": "matlab/e9_ma2024_index.m",
+  "mode": "full",
+  "started": "2026-11-01 04:08:40",
+  "versions": {
+   "python": "3.13.15",
+   "numpy": "2.3.5",
+   "pandas": "2.3.3",
+   "scipy": "1.16.3",
+   "scikit-learn": "1.7.2"
+  },
+  "assumptions": [
+   "As-published network: the load susceptance is taken out of B_lap, because the source states that its loads play no role in the small-signal admittance model (printed p. 4); the line charging and the declared bus shunt capacitance are kept, an assumption of this implementation: the pages of the source read (printed pp. 4-8) do not settle how it treats line charging and other shunts.",
+   "Loads-absorbed network: B_lap as the reduced chain builds it (loads as susceptance at the power-flow voltages), the network of lambda_min(A).",
+   "The monitor's score in the paired tests is the five-seed score-averaged ensemble of the stored deployed predictions, the paired-test convention of e8_paired_test.py and r21_design_baseline.py.",
+   "As published without shunts: the load susceptance, the line charging and the declared bus shunt capacitance are taken out of B_lap; the GFM stiffening and the transformer taps are kept. The as-published network and this one are the two ends of the treatment the source leaves open (every line charging and bus shunt kept, every one taken out)."
+  ],
+  "not_established": [
+   "The threshold CgSCR of the source (eq. 40) is not computed here; it is the artifact results/final/e9_ma2024_threshold.json (on the as-published network).",
+   "How the source treats line charging and other shunts: both treatments are computed here (ma2024_as_published keeps them, ma2024_as_published_no_shunts takes them out)."
+  ],
+  "status": "complete",
+  "n_gates": 104,
+  "n_run": 104,
+  "n_pass": 104,
+  "n_fail": 0,
+  "n_not_run": 0,
+  "finished": "2026-11-01 04:09:19",
+  "wall_s": 39.6
+ },
+ "merge": {
+  "workers": [
+   {
+    "file": "e9_rows_1_7324.csv",
+    "sha256": "4c85653c02dc0a9baf76c9d5ac672076b2219924e5fe416860bd6cf056fa833a",
+    "data_lines": 7324,
+    "cut_last_line_dropped": false
+   }
+  ],
+  "rows_read": 7324,
+  "unique_ids": 7324,
+  "duplicate_ids": 0,
+  "max_duplicate_abs_delta": 0.0,
+  "code_id": "caa17c871ad2f35d",
+  "written": "results/final/tables/e9_ma2024_index_rows.csv"
+ },
+ "inputs": {
+  "rows": "results/final/tables/e9_ma2024_index_rows.csv",
+  "bank": "data/dataset.csv",
+  "test_frame": "results/tables/r13/r13_tier_battery_rows.csv",
+  "monitor_predictions": "results/final/e8_test_predictions.npz",
+  "suite": "results/final/tables/e1_model_suite.csv",
+  "suite_raw": "results/final/tables/e1_model_suite_raw.csv",
+  "e8_paired": "results/final/tables/e8_paired_frontier.csv",
+  "design_baseline": "results/tables/r21/r21_design_baseline.json",
+  "strength_screens": "results/tables/r15/r15_same_population_metrics.csv",
+  "generator": "matlab/e9_ma2024_index.m",
+  "stage": "python/e9_ma2024_index.py",
+  "preview_record": "results/reference/ma2024_preview_auc.json",
+  "committed_artifact": "results/reference/committed/e9_ma2024_index.json",
+  "committed_rows": "results/reference/committed/e9_ma2024_index_rows.csv"
+ },
+ "inputs_sha256": {
+  "rows": "4c85653c02dc0a9baf76c9d5ac672076b2219924e5fe416860bd6cf056fa833a",
+  "bank": "6add967f8fb3eae69453d6ff8f4e736efb17a4dd0fcc010775fdfd7b7a558d4d",
+  "test_frame": "2fb8772476f130324e011c6517e58271b6cf72fdd41957da88066f98846f3790",
+  "monitor_predictions": "78eb8f3b06190b5e4b8d7d858718805153a84792397d00923c684a79ee33480f",
+  "suite": "cabc75b56a1527ddb6dbc1c116777dbf500a03b94cac07da77114681e6d977aa",
+  "suite_raw": "5dd09fd3eed5a8e253c0b44f9c180a71a49da0824737186dc30f8b011640546c",
+  "e8_paired": "3719d4809f823bacfbc95accd4033c889449af243dc9636c66f40698bcf783c2",
+  "design_baseline": "63f3866dbdb380abc8365192419f895431567e025a1d5b8ade574135bfc7469e",
+  "strength_screens": "483c4cbc5f8cbf1073e9cba513a4de0d432c63d79b696db65124e1d4be148cd0",
+  "generator": "caa17c871ad2f35d31313b9f4baaf4583fb423f134c32fe0d4f56835bfdd00b7",
+  "stage": "95f07367264c45b926000b1fa447ee26996887223fd00689a25afbe1a0301207",
+  "preview_record": "35f370538dac6a9f05ffcea93a1bb349999aad32b4792c341957ed02f59822be",
+  "committed_artifact": "eddf03b1b6b56ce9563db201e5a4b828a7b8dca9cc943662e466a118ddc070a6",
+  "committed_rows": "c64ec33a84e017e57334fb789655990f6e48f66d528f516e454985907f04b836"
+ },
+ "committed_rows_comparison": {
+  "rows_compared": 7324,
+  "old_columns": [
+   "id",
+   "nGFL",
+   "nGFM",
+   "lam_min_row",
+   "lam_min_re",
+   "gSCR_row",
+   "gSCR_re",
+   "trace_ok",
+   "gscr_ma_load",
+   "gscr_ma_load_eq39",
+   "gscr_ma_noload",
+   "gscr_ma_noload_eq39",
+   "lam_min_noload",
+   "eigmin_gfm_noload"
+  ],
+  "cells_compared": 102536,
+  "cells_text_differ": 0,
+  "max_abs_delta": 0.0,
+  "code_id_committed": [
+   "39cb5a4bcf24c60b"
+  ],
+  "code_id_now": [
+   "caa17c871ad2f35d"
+  ]
+ },
+ "preview_reproduction": {
+  "report": {
+   "rows": 7324,
+   "trace_misses": 0,
+   "eq39_max_abs_difference": 1.0000333894311098e-12,
+   "index_not_below_lam_min": true,
+   "full_bank": {
+    "n": 7324,
+    "unstable": 1120,
+    "lam_min": 0.8607783284977434,
+    "PWSGSI": 0.8756446014092291,
+    "gSCR": 0.24392313138988672,
+    "gscr_ma_load": 0.8618866284424795,
+    "gscr_ma_noload": 0.8783497973657548
+   },
+   "test_frame": {
+    "n": 1308,
+    "unstable": 231,
+    "lam_min": 0.8394289090667921,
+    "PWSGSI": 0.8585898780884853,
+    "gSCR": 0.24635129649057225,
+    "gscr_ma_load": 0.840502116268133,
+    "gscr_ma_noload": 0.8562545470623465
+   },
+   "spearman_gscr_ma_load_vs_lam_min": 0.9999220166241467,
+   "spearman_gscr_ma_noload_vs_lam_min": 0.989802104921591,
+   "spearman_load_vs_noload": 0.9904864906541084,
+   "spearman_with_load_level": {
+    "lam_min": 0.018966042406085945,
+    "PWSGSI": 0.01913258725490892,
+    "gSCR": 0.9642818412263364,
+    "gscr_ma_load": 0.015226553015581894,
+    "gscr_ma_noload": -0.09358313912684127
+   },
+   "test_frame_by_gfm_count": {
+    "1": {
+     "n": 363,
+     "unstable": 147,
+     "lam_min": 0.5764046359284455,
+     "PWSGSI": 0.6013479465860418,
+     "gSCR": 0.23554421768707484,
+     "gscr_ma_load": 0.5788611740992693,
+     "gscr_ma_noload": 0.6243386243386243
+    },
+    "2": {
+     "n": 558,
+     "unstable": 81,
+     "lam_min": 0.8082925692988586,
+     "PWSGSI": 0.8582964515878562,
+     "gSCR": 0.21350001294096332,
+     "gscr_ma_load": 0.81085488003727,
+     "gscr_ma_noload": 0.8581152781013018
+    },
+    "4": {
+     "n": 171,
+     "unstable": 3,
+     "lam_min": 0.9305555555555556,
+     "PWSGSI": 0.9265873015873016,
+     "gSCR": 0.43452380952380953,
+     "gscr_ma_load": 0.9285714285714286,
+     "gscr_ma_noload": 0.9246031746031746
+    }
+   },
+   "full_bank_by_gfm_count": {
+    "1": {
+     "n": 1698,
+     "unstable": 712,
+     "lam_min": 0.5895899332224173,
+     "PWSGSI": 0.6147283884495294,
+     "gSCR": 0.23620718143902272,
+     "gscr_ma_load": 0.5922892403765071,
+     "gscr_ma_noload": 0.6232123322013812
+    },
+    "2": {
+     "n": 3045,
+     "unstable": 387,
+     "lam_min": 0.7661051518209374,
+     "PWSGSI": 0.8075470083974468,
+     "gSCR": 0.21811002035685745,
+     "gscr_ma_load": 0.7691402095570293,
+     "gscr_ma_noload": 0.8442379594146091
+    },
+    "3": {
+     "n": 1741,
+     "unstable": 15,
+     "lam_min": 0.891850135187331,
+     "PWSGSI": 0.944611819235226,
+     "gSCR": 0.16879103901120124,
+     "gscr_ma_load": 0.8966010042487447,
+     "gscr_ma_noload": 0.9164542294322132
+    },
+    "4": {
+     "n": 840,
+     "unstable": 6,
+     "lam_min": 0.9156674660271783,
+     "PWSGSI": 0.9172661870503597,
+     "gSCR": 0.6045163868904876,
+     "gscr_ma_load": 0.9148681055155875,
+     "gscr_ma_noload": 0.8894884092725819
+    }
+   }
+  },
+  "comparison": {
+   "leaves_stored": 75,
+   "leaves_realized": 75,
+   "missing": [],
+   "extra": [],
+   "numeric_compared": 74,
+   "exact_compared": 1,
+   "max_abs_delta": 0.0,
+   "mismatched": [],
+   "gate_flags": {
+    "test lam_min prints 0.839": {
+     "stored": true,
+     "counterpart": "G5 test_frame: AUC of low lam_min equals r15 (test, lam_min)",
+     "counterpart_pass": true
+    },
+    "test gSCR prints 0.246": {
+     "stored": true,
+     "counterpart": "G5 test_frame: AUC of low gSCR_classical equals r15 (test, gSCR)",
+     "counterpart_pass": true
+    },
+    "bank gSCR prints 0.244": {
+     "stored": true,
+     "counterpart": "G5 bank: AUC of low gSCR_classical equals r15 (bank_trust, gSCR)",
+     "counterpart_pass": true
+    },
+    "every row traces": {
+     "stored": true,
+     "counterpart": "G1 every row traces (rows with trace_ok not 1)",
+     "counterpart_pass": true
+    }
+   },
+   "not_compared": {
+    "status": "a label, not a computed leaf"
+   }
+  }
+ },
+ "definitions": {
+  "frames": {
+   "bank": "every row of data/dataset.csv; unstable = sigma_dom >= 0",
+   "test_frame": "the held-out test rows of results/tables/r13/r13_tier_battery_rows.csv; unstable as stored there"
+  },
+  "populations": {
+   "all_rows": "every row of the frame",
+   "nGFM_k": "the rows with k GFM plants"
+  },
+  "index_scores": {
+   "gSCR_classical": "rank by -gSCR (a low index means risky)",
+   "lam_min": "rank by -lam_min (a low index means risky)",
+   "GRIP": "rank by -PWSGSI (a low index means risky)",
+   "ma2024_loads_absorbed": "rank by -gscr_ma_load (a low index means risky)",
+   "ma2024_as_published": "rank by -gscr_ma_noload (a low index means risky)"
+  },
+  "ma2024_loads_absorbed": "eq. 39 on this paper's network: loads as susceptance at the power-flow voltages",
+  "ma2024_as_published": "eq. 39 with the load susceptance taken out of B_lap (the source: loads play no role in the small-signal admittance model); line charging and the bus shunts kept",
+  "monitor_md_amber_ensemble": "five-seed score-averaged ensemble of the deployed M+D AMBER-EBM (results/final/e8_test_predictions.npz)",
+  "monitor_md_amber_seed_mean": "mean over the five seeds of each seed's AUC (the Table II convention)",
+  "design_coordinates_amber_seed_mean": "DC4 AMBER-EBM five-seed mean test AUC (results/tables/r21/r21_design_baseline.json arms.DC4.ebm)",
+  "design_coordinates_amber_ensemble": "DC4 AMBER-EBM five-seed ensemble AUC (results/tables/r21/r21_design_baseline.json strata)",
+  "design_coordinates_logistic": "DC4 logistic classifier fitted on the train split, scored on the test frame (results/tables/r21/r21_design_baseline.json strata AUC_DC4_LOGIT)",
+  "design_coordinates_logistic_oof": "results/tables/r21/r21_design_baseline.json crosscheck, this paper's label: full bank, design matrix [nGFM, k, kL, outage>0] (strata drop nGFM), StandardScaler + LogisticRegression(C=1e6, max_iter=2000), StratifiedKFold(5, shuffle=True, random_state=20260921), pooled OOF probability AUC, NaN below 25 unstable",
+  "paired_delong": "monitor ensemble (A) against the index (B) on the same rows: DeLong z and two-sided p; paired bootstrap of dAUC, 2000 resamples, RandomState(42), percentile interval 2.5 to 97.5",
+  "low_support": "fewer than 10 unstable or 10 stable rows",
+  "ma2024_as_published_no_shunts": "eq. 39 with the load susceptance, the line charging and the declared bus shunt capacitance taken out of B_lap (rebuilt without BR_B and BS), the GFM stiffening and the transformer taps kept; rank by -gscr_ma_noshunt (a low index means risky);",
+  "rank_correlation_with_as_published": "Spearman rank correlation of the index without shunts with the as-published index (gscr_ma_noload) over every row of the frame",
+  "schur_monotonicity": "B_noshunt = B_published + diag(s) with s >= 0, so where the as-published interior block (and S_FF) is positive definite the two Schur complements keep the order and the index without shunts is not below the as-published one"
+ },
+ "results": {
+  "auc": {
+   "bank": {
+    "all_rows": {
+     "n": 7324,
+     "n_unstable": 1120,
+     "n_stable": 6204,
+     "low_support": false,
+     "gSCR_classical": 0.24392313138988672,
+     "lam_min": 0.8607783284977434,
+     "GRIP": 0.8756446014092291,
+     "ma2024_loads_absorbed": 0.8618866284424795,
+     "ma2024_as_published": 0.8783497973657548,
+     "design_coordinates_logistic_oof": 0.9434244611771208,
+     "ma2024_as_published_no_shunts": 0.8802736713640968
+    },
+    "nGFM_1": {
+     "n": 1698,
+     "n_unstable": 712,
+     "n_stable": 986,
+     "low_support": false,
+     "gSCR_classical": 0.23620718143902272,
+     "lam_min": 0.5895899332224173,
+     "GRIP": 0.6147283884495294,
+     "ma2024_loads_absorbed": 0.5922892403765071,
+     "ma2024_as_published": 0.6232123322013812,
+     "design_coordinates_logistic_oof": 0.9020016181598559,
+     "ma2024_as_published_no_shunts": 0.649527371971648
+    },
+    "nGFM_2": {
+     "n": 3045,
+     "n_unstable": 387,
+     "n_stable": 2658,
+     "low_support": false,
+     "gSCR_classical": 0.21811002035685745,
+     "lam_min": 0.7661051518209374,
+     "GRIP": 0.8075470083974468,
+     "ma2024_loads_absorbed": 0.7691402095570293,
+     "ma2024_as_published": 0.8442379594146091,
+     "design_coordinates_logistic_oof": 0.9016211602436601,
+     "ma2024_as_published_no_shunts": 0.8244206461698194
+    },
+    "nGFM_3": {
+     "n": 1741,
+     "n_unstable": 15,
+     "n_stable": 1726,
+     "low_support": false,
+     "gSCR_classical": 0.16879103901120124,
+     "lam_min": 0.891850135187331,
+     "GRIP": 0.944611819235226,
+     "ma2024_loads_absorbed": 0.8966010042487447,
+     "ma2024_as_published": 0.9164542294322132,
+     "design_coordinates_logistic_oof": null,
+     "design_coordinates_note": "the r21 cross-check protocol gives no value for this population (see definitions)",
+     "ma2024_as_published_no_shunts": 0.9320200849748937
+    },
+    "nGFM_4": {
+     "n": 840,
+     "n_unstable": 6,
+     "n_stable": 834,
+     "low_support": true,
+     "gSCR_classical": 0.6045163868904876,
+     "lam_min": 0.9156674660271783,
+     "GRIP": 0.9172661870503597,
+     "ma2024_loads_absorbed": 0.9148681055155875,
+     "ma2024_as_published": 0.8894884092725819,
+     "note": "low support (fewer than 10 rows of a class)",
+     "design_coordinates_logistic_oof": null,
+     "design_coordinates_note": "the r21 cross-check protocol gives no value for this population (see definitions)",
+     "ma2024_as_published_no_shunts": 0.8912869704236611
+    }
+   },
+   "test_frame": {
+    "all_rows": {
+     "n": 1308,
+     "n_unstable": 231,
+     "n_stable": 1077,
+     "low_support": false,
+     "gSCR_classical": 0.24635129649057225,
+     "lam_min": 0.8394289090667921,
+     "GRIP": 0.8585898780884853,
+     "ma2024_loads_absorbed": 0.840502116268133,
+     "ma2024_as_published": 0.8562545470623465,
+     "monitor_md_amber_ensemble": 0.9320261910791158,
+     "monitor_md_amber_seed_mean": 0.931609770606985,
+     "design_coordinates_amber_ensemble": 0.9196139669677275,
+     "design_coordinates_logistic": 0.9312745440879145,
+     "design_coordinates_amber_seed_mean": 0.9195649290356812,
+     "ma2024_as_published_no_shunts": 0.8612829448484045
+    },
+    "nGFM_1": {
+     "n": 363,
+     "n_unstable": 147,
+     "n_stable": 216,
+     "low_support": false,
+     "gSCR_classical": 0.23554421768707484,
+     "lam_min": 0.5764046359284455,
+     "GRIP": 0.6013479465860418,
+     "ma2024_loads_absorbed": 0.5788611740992693,
+     "ma2024_as_published": 0.6243386243386243,
+     "monitor_md_amber_ensemble": 0.9500188964474678,
+     "monitor_md_amber_seed_mean": 0.9498425296044344,
+     "design_coordinates_amber_ensemble": 0.8910934744268078,
+     "design_coordinates_logistic": 0.891660367850844,
+     "ma2024_as_published_no_shunts": 0.6537226001511716
+    },
+    "nGFM_2": {
+     "n": 558,
+     "n_unstable": 81,
+     "n_stable": 477,
+     "low_support": false,
+     "gSCR_classical": 0.21350001294096332,
+     "lam_min": 0.8082925692988586,
+     "GRIP": 0.8582964515878562,
+     "ma2024_loads_absorbed": 0.81085488003727,
+     "ma2024_as_published": 0.8581152781013018,
+     "monitor_md_amber_ensemble": 0.894945259725134,
+     "monitor_md_amber_seed_mean": 0.8944586795041023,
+     "design_coordinates_amber_ensemble": 0.894117038072314,
+     "design_coordinates_logistic": 0.8979734451432565,
+     "ma2024_as_published_no_shunts": 0.8429484690840386
+    },
+    "nGFM_3": {
+     "n": 216,
+     "n_unstable": 0,
+     "n_stable": 216,
+     "low_support": true,
+     "gSCR_classical": null,
+     "lam_min": null,
+     "GRIP": null,
+     "ma2024_loads_absorbed": null,
+     "ma2024_as_published": null,
+     "note": "AUC undefined: one class only",
+     "monitor_md_amber_ensemble": null,
+     "monitor_md_amber_seed_mean": null,
+     "design_coordinates_amber_ensemble": null,
+     "design_coordinates_logistic": null,
+     "ma2024_as_published_no_shunts": null
+    },
+    "nGFM_4": {
+     "n": 171,
+     "n_unstable": 3,
+     "n_stable": 168,
+     "low_support": true,
+     "gSCR_classical": 0.43452380952380953,
+     "lam_min": 0.9305555555555556,
+     "GRIP": 0.9265873015873016,
+     "ma2024_loads_absorbed": 0.9285714285714286,
+     "ma2024_as_published": 0.9246031746031746,
+     "note": "low support (fewer than 10 rows of a class)",
+     "monitor_md_amber_ensemble": 0.763888888888889,
+     "monitor_md_amber_seed_mean": 0.7623015873015873,
+     "design_coordinates_amber_ensemble": 0.623015873015873,
+     "design_coordinates_logistic": 0.8075396825396824,
+     "ma2024_as_published_no_shunts": 0.9265873015873016
+    }
+   }
+  },
+  "rank_correlation_with_lam_min": {
+   "bank": {
+    "all_rows": {
+     "ma2024_loads_absorbed": 0.9999220166241467,
+     "ma2024_as_published": 0.989802104921591,
+     "n": 7324,
+     "ma2024_as_published_no_shunts": 0.9864087597395864
+    }
+   },
+   "test_frame": {
+    "all_rows": {
+     "ma2024_loads_absorbed": 0.9999366165689642,
+     "ma2024_as_published": 0.9894525680845431,
+     "n": 1308,
+     "ma2024_as_published_no_shunts": 0.9868549198897514
+    }
+   }
+  },
+  "nonpositive_as_published": {
+   "bank": {
+    "all_rows": {
+     "n_rows_index_nonpositive": 366,
+     "n_unstable_among_them": 144,
+     "n_stable_among_them": 222,
+     "n_rows_population": 7324,
+     "n_unstable_population": 1120
+    },
+    "nGFM_1": {
+     "n_rows_index_nonpositive": 366,
+     "n_unstable_among_them": 144,
+     "n_stable_among_them": 222,
+     "n_rows_population": 1698,
+     "n_unstable_population": 712
+    },
+    "nGFM_2": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 3045,
+     "n_unstable_population": 387
+    },
+    "nGFM_3": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 1741,
+     "n_unstable_population": 15
+    },
+    "nGFM_4": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 840,
+     "n_unstable_population": 6
+    }
+   },
+   "test_frame": {
+    "all_rows": {
+     "n_rows_index_nonpositive": 83,
+     "n_unstable_among_them": 30,
+     "n_stable_among_them": 53,
+     "n_rows_population": 1308,
+     "n_unstable_population": 231
+    },
+    "nGFM_1": {
+     "n_rows_index_nonpositive": 83,
+     "n_unstable_among_them": 30,
+     "n_stable_among_them": 53,
+     "n_rows_population": 363,
+     "n_unstable_population": 147
+    },
+    "nGFM_2": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 558,
+     "n_unstable_population": 81
+    },
+    "nGFM_3": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 216,
+     "n_unstable_population": 0
+    },
+    "nGFM_4": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 171,
+     "n_unstable_population": 3
+    }
+   },
+   "inertia_bank_all_rows": {
+    "rows": 7324,
+    "rows_gfm_block_positive_definite": 7324,
+    "rows_loads_out_lam_min_nonpositive": 366,
+    "rows_index_nonpositive": 366,
+    "rows_sign_agreement": 7324,
+    "nonpositive_rows_eq39_form2_positive": 366,
+    "nonpositive_rows_eq39_forms_agree": 0,
+    "nonpositive_rows_index_min": -0.0770070269957,
+    "nonpositive_rows_index_max": -3.11063996225e-05
+   },
+   "sign_meaning_bank_all_rows": "The as-published index is the smallest eigenvalue of the S_b-scaled Schur complement S_GG - S_GF S_FF^-1 S_FG of the loads-out stiffened matrix S (Y_eq of eq. 33 in symmetric form), so a nonpositive value means that this Schur complement is not positive definite. S_FF is positive definite on all 7324 rows, so by Haynsworth's inertia additivity the index is nonpositive exactly where S itself, over all 10 plants, has a nonpositive eigenvalue (366 rows of the bank). On those rows eq. 39's second form, 1/lambda_max(Z S_b), is not the index: it is positive on 366 of them."
+  },
+  "paired_delong_monitor_vs_ma2024": {
+   "test_frame": {
+    "all_rows": {
+     "ma2024_loads_absorbed": {
+      "n": 1308,
+      "n_unstable": 231,
+      "n_stable": 1077,
+      "AUC_monitor": 0.9320261910791159,
+      "AUC_index": 0.840502116268133,
+      "dAUC": 0.0915240748109829,
+      "delong_z": 6.768870541390498,
+      "delong_p": 1.2979161136188734e-11,
+      "boot_dAUC_mean": 0.0920087635887451,
+      "boot_dAUC_lo": 0.06580213170263287,
+      "boot_dAUC_hi": 0.11895142247927028,
+      "boot_share_dAUC_negative": 0.0,
+      "boot_share_dAUC_positive": 1.0,
+      "boot_resamples": 2000,
+      "boot_resamples_used": 2000,
+      "boot_seed": 42,
+      "sign": "dAUC = AUC(monitor) - AUC(index)"
+     },
+     "ma2024_as_published": {
+      "n": 1308,
+      "n_unstable": 231,
+      "n_stable": 1077,
+      "AUC_monitor": 0.9320261910791159,
+      "AUC_index": 0.8562545470623465,
+      "dAUC": 0.07577164401676939,
+      "delong_z": 6.077929192450132,
+      "delong_p": 1.217444884854822e-09,
+      "boot_dAUC_mean": 0.07617708952543394,
+      "boot_dAUC_lo": 0.05151117967925929,
+      "boot_dAUC_hi": 0.10103854035241028,
+      "boot_share_dAUC_negative": 0.0,
+      "boot_share_dAUC_positive": 1.0,
+      "boot_resamples": 2000,
+      "boot_resamples_used": 2000,
+      "boot_seed": 42,
+      "sign": "dAUC = AUC(monitor) - AUC(index)"
+     },
+     "ma2024_as_published_no_shunts": {
+      "n": 1308,
+      "n_unstable": 231,
+      "n_stable": 1077,
+      "AUC_monitor": 0.9320261910791159,
+      "AUC_index": 0.8612829448484045,
+      "dAUC": 0.07074324623071138,
+      "delong_z": 5.649839034447952,
+      "delong_p": 1.6059814695429627e-08,
+      "boot_dAUC_mean": 0.0711772137716296,
+      "boot_dAUC_lo": 0.04657631116566871,
+      "boot_dAUC_hi": 0.09652590439223506,
+      "boot_share_dAUC_negative": 0.0,
+      "boot_share_dAUC_positive": 1.0,
+      "boot_resamples": 2000,
+      "boot_resamples_used": 2000,
+      "boot_seed": 42,
+      "sign": "dAUC = AUC(monitor) - AUC(index)"
+     }
+    },
+    "nGFM_1": {
+     "ma2024_loads_absorbed": {
+      "n": 363,
+      "n_unstable": 147,
+      "n_stable": 216,
+      "AUC_monitor": 0.9500188964474678,
+      "AUC_index": 0.5788611740992693,
+      "dAUC": 0.37115772234819855,
+      "delong_z": 11.320918496625094,
+      "delong_p": 1.0338300761289149e-29,
+      "boot_dAUC_mean": 0.3713016154941855,
+      "boot_dAUC_lo": 0.3085437535010684,
+      "boot_dAUC_hi": 0.4347442074637209,
+      "boot_share_dAUC_negative": 0.0,
+      "boot_share_dAUC_positive": 1.0,
+      "boot_resamples": 2000,
+      "boot_resamples_used": 2000,
+      "boot_seed": 42,
+      "sign": "dAUC = AUC(monitor) - AUC(index)"
+     },
+     "ma2024_as_published": {
+      "n": 363,
+      "n_unstable": 147,
+      "n_stable": 216,
+      "AUC_monitor": 0.9500188964474678,
+      "AUC_index": 0.6243386243386243,
+      "dAUC": 0.32568027210884354,
+      "delong_z": 10.78317026175756,
+      "delong_p": 4.1338800307398856e-27,
+      "boot_dAUC_mean": 0.3256756142256122,
+      "boot_dAUC_lo": 0.2687976694117136,
+      "boot_dAUC_hi": 0.3831506886094948,
+      "boot_share_dAUC_negative": 0.0,
+      "boot_share_dAUC_positive": 1.0,
+      "boot_resamples": 2000,
+      "boot_resamples_used": 2000,
+      "boot_seed": 42,
+      "sign": "dAUC = AUC(monitor) - AUC(index)"
+     },
+     "ma2024_as_published_no_shunts": {
+      "n": 363,
+      "n_unstable": 147,
+      "n_stable": 216,
+      "AUC_monitor": 0.9500188964474678,
+      "AUC_index": 0.6537226001511716,
+      "dAUC": 0.2962962962962963,
+      "delong_z": 10.036039360634781,
+      "delong_p": 1.0583880545906927e-23,
+      "boot_dAUC_mean": 0.2963689535608878,
+      "boot_dAUC_lo": 0.24058761462518014,
+      "boot_dAUC_hi": 0.3526077699280408,
+      "boot_share_dAUC_negative": 0.0,
+      "boot_share_dAUC_positive": 1.0,
+      "boot_resamples": 2000,
+      "boot_resamples_used": 2000,
+      "boot_seed": 42,
+      "sign": "dAUC = AUC(monitor) - AUC(index)"
+     }
+    },
+    "nGFM_2": {
+     "ma2024_loads_absorbed": {
+      "n": 558,
+      "n_unstable": 81,
+      "n_stable": 477,
+      "AUC_monitor": 0.894945259725134,
+      "AUC_index": 0.81085488003727,
+      "dAUC": 0.08409037968786393,
+      "delong_z": 3.2169140794218922,
+      "delong_p": 0.0012957739780126002,
+      "boot_dAUC_mean": 0.08368532624258185,
+      "boot_dAUC_lo": 0.030648358328204246,
+      "boot_dAUC_hi": 0.1329447974566853,
+      "boot_share_dAUC_negative": 0.001,
+      "boot_share_dAUC_positive": 0.999,
+      "boot_resamples": 2000,
+      "boot_resamples_used": 2000,
+      "boot_seed": 42,
+      "sign": "dAUC = AUC(monitor) - AUC(index)"
+     },
+     "ma2024_as_published": {
+      "n": 558,
+      "n_unstable": 81,
+      "n_stable": 477,
+      "AUC_monitor": 0.894945259725134,
+      "AUC_index": 0.8581152781013018,
+      "dAUC": 0.03682998162383211,
+      "delong_z": 1.6212487523075516,
+      "delong_p": 0.10496430095611613,
+      "boot_dAUC_mean": 0.03642359656469965,
+      "boot_dAUC_lo": -0.007645897015193662,
+      "boot_dAUC_hi": 0.08142741872377056,
+      "boot_share_dAUC_negative": 0.053,
+      "boot_share_dAUC_positive": 0.947,
+      "boot_resamples": 2000,
+      "boot_resamples_used": 2000,
+      "boot_seed": 42,
+      "sign": "dAUC = AUC(monitor) - AUC(index)"
+     },
+     "ma2024_as_published_no_shunts": {
+      "n": 558,
+      "n_unstable": 81,
+      "n_stable": 477,
+      "AUC_monitor": 0.894945259725134,
+      "AUC_index": 0.8429484690840386,
+      "dAUC": 0.0519967906410953,
+      "delong_z": 2.1458511284488133,
+      "delong_p": 0.031884857958382286,
+      "boot_dAUC_mean": 0.05148481912524429,
+      "boot_dAUC_lo": 0.0039057531940108916,
+      "boot_dAUC_hi": 0.097755058133996,
+      "boot_share_dAUC_negative": 0.0175,
+      "boot_share_dAUC_positive": 0.9825,
+      "boot_resamples": 2000,
+      "boot_resamples_used": 2000,
+      "boot_seed": 42,
+      "sign": "dAUC = AUC(monitor) - AUC(index)"
+     }
+    }
+   }
+  },
+  "rank_correlation_with_as_published": {
+   "bank": {
+    "all_rows": {
+     "ma2024_as_published_no_shunts": 0.9979459705977699,
+     "n": 7324
+    }
+   },
+   "test_frame": {
+    "all_rows": {
+     "ma2024_as_published_no_shunts": 0.9983426198014009,
+     "n": 1308
+    }
+   }
+  },
+  "nonpositive_as_published_no_shunts": {
+   "bank": {
+    "all_rows": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 7324,
+     "n_unstable_population": 1120
+    },
+    "nGFM_1": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 1698,
+     "n_unstable_population": 712
+    },
+    "nGFM_2": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 3045,
+     "n_unstable_population": 387
+    },
+    "nGFM_3": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 1741,
+     "n_unstable_population": 15
+    },
+    "nGFM_4": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 840,
+     "n_unstable_population": 6
+    }
+   },
+   "test_frame": {
+    "all_rows": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 1308,
+     "n_unstable_population": 231
+    },
+    "nGFM_1": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 363,
+     "n_unstable_population": 147
+    },
+    "nGFM_2": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 558,
+     "n_unstable_population": 81
+    },
+    "nGFM_3": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 216,
+     "n_unstable_population": 0
+    },
+    "nGFM_4": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 171,
+     "n_unstable_population": 3
+    }
+   },
+   "inertia_bank_all_rows": {
+    "rows": 7324,
+    "rows_gfm_block_positive_definite": 7324,
+    "rows_no_shunts_lam_min_nonpositive": 0,
+    "rows_index_nonpositive": 0,
+    "rows_sign_agreement": 7324,
+    "nonpositive_rows_eq39_form2_positive": 0,
+    "nonpositive_rows_eq39_forms_agree": 0,
+    "nonpositive_rows_index_min": null,
+    "nonpositive_rows_index_max": null
+   },
+   "schur_monotonicity_bank_all_rows": {
+    "rows": 7324,
+    "rows_interior_block_positive_definite": 7324,
+    "rows_index_below_as_published": 0,
+    "rows_index_below_as_published_among_positive_definite": 0
+   },
+   "removed_shunt_susceptance_bank_all_rows": {
+    "s_sum_pu_min": 9.3563,
+    "s_sum_pu_median": 10.5563,
+    "s_sum_pu_max": 10.5563,
+    "s_min_pu_min": 0.005
+   },
+   "sign_meaning_bank_all_rows": "As for the as-published index: the index without shunts is the smallest eigenvalue of the S_b-scaled Schur complement of the stiffened matrix S without the loads, the line charging and the bus shunts; S_FF is positive definite on all 7324 rows, so the index is nonpositive exactly where S, over all 10 plants, has a nonpositive eigenvalue (0 rows of the bank)."
+  }
+ },
+ "committed_results_comparison": {
+  "ok": true,
+  "leaves_compared": 289,
+  "numeric_leaves": 256,
+  "other_leaves": 33,
+  "leaves_equal": 289,
+  "missing": [],
+  "differ": [],
+  "extra": []
+ },
+ "gates": [
+  {
+   "gate": "G1 the rows file has every column of e9_ma2024_index.m",
+   "pass": true,
+   "detail": {
+    "missing": []
+   },
+   "tol": "exact",
+   "source": "rows file header"
+  },
+  {
+   "gate": "G1 ids: every bank id exactly once",
+   "pass": true,
+   "detail": {
+    "rows": 7324,
+    "bank_rows": 7324
+   },
+   "tol": "exact",
+   "source": "data/dataset.csv"
+  },
+  {
+   "gate": "G1 every row traces (rows with trace_ok not 1)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G1 rebuilt lambda_min(A) equals the stored column (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 4.4403403176573875e-10,
+   "abs_delta": 4.4403403176573875e-10,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv lam_min"
+  },
+  {
+   "gate": "G1 rebuilt classical gSCR equals the stored column (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 7.972109916654091e-10,
+   "abs_delta": 7.972109916654091e-10,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv gSCR"
+  },
+  {
+   "gate": "G1 nGFM equals the bank's nGFM (rows that differ)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv nGFM"
+  },
+  {
+   "gate": "G1 nGFL + nGFM equals the plant count (rows that differ)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv fpll_ columns"
+  },
+  {
+   "gate": "G1 every row written by the generating script as it stands (code_id)",
+   "pass": true,
+   "detail": {
+    "code_id_of_script": "caa17c871ad2f35d",
+    "code_ids_in_rows": [
+     "caa17c871ad2f35d"
+    ]
+   },
+   "tol": "exact",
+   "source": "matlab/e9_ma2024_index.m"
+  },
+  {
+   "gate": "G2 eq. 39 forms 1 and 2 agree, loads absorbed (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 1.0000333894311098e-12,
+   "abs_delta": 1.0000333894311098e-12,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G2 eq. 39 forms 1 and 2 agree, as published, rows with a positive index (max |d|)",
+   "expected": 0.0,
+   "realized": 1.0000333894311098e-12,
+   "abs_delta": 1.0000333894311098e-12,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G3 lambda_min(A) is positive on every row (rows not positive)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G3 index with loads absorbed never below lambda_min(A) (largest shortfall)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G3 as published: S_FF positive definite on every row (rows not)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G3 as published: index nonpositive exactly where lam_min_noload is (rows that differ)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G3 as published: index on the side of lam_min_noload the Schur bound gives (largest violation)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G2 eq. 39 forms 1 and 2 agree, as published without shunts, rows with a positive index (max |d|)",
+   "expected": 0.0,
+   "realized": 1.000088900582341e-12,
+   "abs_delta": 1.000088900582341e-12,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G3 as published without shunts: S_FF positive definite on every row (rows not)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G3 as published without shunts: index nonpositive exactly where lam_min_noshunt is (rows that differ)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G3 as published without shunts: index on the side of lam_min_noshunt the Schur bound gives (largest violation)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G9 B_noshunt - B_published = diag(s): the off-diagonal entries agree (largest |d| over rows and entries, pu)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file shunt_offdiag_max"
+  },
+  {
+   "gate": "G9 B_noshunt - B_published = diag(s): each diagonal entry differs by the bus's shunt susceptance s_i from the case data (largest |d| over rows and buses, pu)",
+   "expected": 0.0,
+   "realized": 2.23820961764e-13,
+   "abs_delta": 2.23820961764e-13,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file shunt_diag_resid"
+  },
+  {
+   "gate": "G9 every removed shunt susceptance is capacitive, s_i >= 0 (rows with a negative s_i)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file shunt_s_min"
+  },
+  {
+   "gate": "G9 Schur monotonicity: on the rows whose as-published interior block is positive definite, the index without shunts is never below the as-published index (largest shortfall)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file eigmin_int_noload, gscr_ma_noload, gscr_ma_noshunt"
+  },
+  {
+   "gate": "G10 the rows are rows of the committed rows file, whose header is the old columns (ids, header)",
+   "pass": true,
+   "detail": {
+    "headers_as_expected": true,
+    "rows": 7324,
+    "committed_rows": 7324
+   },
+   "tol": "exact",
+   "source": "results/reference/committed/e9_ma2024_index_rows.csv"
+  },
+  {
+   "gate": "G10 the existing variants' per-row values reproduce the committed rows file (largest |d| over every old column and row)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/reference/committed/e9_ma2024_index_rows.csv"
+  },
+  {
+   "gate": "G10 the old columns are byte-identical to the committed rows file (cells that differ)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/reference/committed/e9_ma2024_index_rows.csv"
+  },
+  {
+   "gate": "G5 bank: population size equals r15 (bank_trust)",
+   "expected": 7324.0,
+   "realized": 7324.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r15/r15_same_population_metrics.csv"
+  },
+  {
+   "gate": "G5 bank: AUC of low lam_min equals r15 (bank_trust, lam_min)",
+   "expected": 0.8607783284977434,
+   "realized": 0.8607783284977434,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r15/r15_same_population_metrics.csv"
+  },
+  {
+   "gate": "G5 bank: AUC of low GRIP equals r15 (bank_trust, GRIP)",
+   "expected": 0.875644601409229,
+   "realized": 0.8756446014092291,
+   "abs_delta": 1.1102230246251565e-16,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r15/r15_same_population_metrics.csv"
+  },
+  {
+   "gate": "G5 bank: AUC of low gSCR_classical equals r15 (bank_trust, gSCR)",
+   "expected": 0.2439231313898867,
+   "realized": 0.24392313138988672,
+   "abs_delta": 2.7755575615628914e-17,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r15/r15_same_population_metrics.csv"
+  },
+  {
+   "gate": "G5 test_frame: population size equals r15 (test)",
+   "expected": 1308.0,
+   "realized": 1308.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r15/r15_same_population_metrics.csv"
+  },
+  {
+   "gate": "G5 test_frame: AUC of low lam_min equals r15 (test, lam_min)",
+   "expected": 0.8394289090667921,
+   "realized": 0.8394289090667921,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r15/r15_same_population_metrics.csv"
+  },
+  {
+   "gate": "G5 test_frame: AUC of low GRIP equals r15 (test, GRIP)",
+   "expected": 0.8585898780884853,
+   "realized": 0.8585898780884853,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r15/r15_same_population_metrics.csv"
+  },
+  {
+   "gate": "G5 test_frame: AUC of low gSCR_classical equals r15 (test, gSCR)",
+   "expected": 0.2463512964905722,
+   "realized": 0.24635129649057225,
+   "abs_delta": 5.551115123125783e-17,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r15/r15_same_population_metrics.csv"
+  },
+  {
+   "gate": "G4 the preview record is reproduced leaf for leaf at 1e-9",
+   "pass": true,
+   "detail": {
+    "leaves_stored": 75,
+    "numeric_compared": 74,
+    "exact_compared": 1,
+    "max_abs_delta": 0.0,
+    "missing": [],
+    "extra": [],
+    "mismatched": []
+   },
+   "tol": 1e-09,
+   "source": "results/reference/ma2024_preview_auc.json"
+  },
+  {
+   "gate": "G6 r21_design_baseline.json is complete and its gates PASS",
+   "pass": true,
+   "detail": {
+    "status": "complete",
+    "verdict": "PASS"
+   },
+   "tol": "exact",
+   "source": "results/tables/r21/r21_design_baseline.json"
+  },
+  {
+   "gate": "G6 design-coordinate arm: its five per-seed test AUCs average to its stored seed mean (Table II)",
+   "expected": 0.9195649290356812,
+   "realized": 0.9195649290356812,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r21/r21_design_baseline.json arms.DC4.ebm"
+  },
+  {
+   "gate": "G6 design-coordinate arm: its stored five-seed ensemble equals its strata row (all test rows)",
+   "expected": 0.9196139669677275,
+   "realized": 0.9196139669677275,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r21/r21_design_baseline.json strata"
+  },
+  {
+   "gate": "G6 design-coordinate logistic classifier: its strata row equals its paired-test row (S-IX)",
+   "pass": true,
+   "detail": {
+    "paired_AUC_A": 0.9312745440879145,
+    "strata": 0.9312745440879145
+   },
+   "tol": 1e-09,
+   "source": "results/tables/r21/r21_design_baseline.json paired, strata"
+  },
+  {
+   "gate": "G6 test frame (all test rows): the r21 strata population equals this one",
+   "pass": true,
+   "detail": {
+    "r21": {
+     "n": 1308,
+     "n_unstable": 231
+    },
+    "here": {
+     "n": 1308,
+     "n_unstable": 231
+    }
+   },
+   "tol": "exact",
+   "source": "results/tables/r21/r21_design_baseline.json strata"
+  },
+  {
+   "gate": "G6 test frame (nGFM = 1): the r21 strata population equals this one",
+   "pass": true,
+   "detail": {
+    "r21": {
+     "n": 363,
+     "n_unstable": 147
+    },
+    "here": {
+     "n": 363,
+     "n_unstable": 147
+    }
+   },
+   "tol": "exact",
+   "source": "results/tables/r21/r21_design_baseline.json strata"
+  },
+  {
+   "gate": "G6 test frame (nGFM = 2): the r21 strata population equals this one",
+   "pass": true,
+   "detail": {
+    "r21": {
+     "n": 558,
+     "n_unstable": 81
+    },
+    "here": {
+     "n": 558,
+     "n_unstable": 81
+    }
+   },
+   "tol": "exact",
+   "source": "results/tables/r21/r21_design_baseline.json strata"
+  },
+  {
+   "gate": "G6 test frame (nGFM = 3): the r21 strata population equals this one",
+   "pass": true,
+   "detail": {
+    "r21": {
+     "n": 216,
+     "n_unstable": 0
+    },
+    "here": {
+     "n": 216,
+     "n_unstable": 0
+    }
+   },
+   "tol": "exact",
+   "source": "results/tables/r21/r21_design_baseline.json strata"
+  },
+  {
+   "gate": "G6 test frame (nGFM = 4): the r21 strata population equals this one",
+   "pass": true,
+   "detail": {
+    "r21": {
+     "n": 171,
+     "n_unstable": 3
+    },
+    "here": {
+     "n": 171,
+     "n_unstable": 3
+    }
+   },
+   "tol": "exact",
+   "source": "results/tables/r21/r21_design_baseline.json strata"
+  },
+  {
+   "gate": "G6 bank (all): the r21 cross-check population equals this one",
+   "pass": true,
+   "detail": {
+    "r21": {
+     "n": 7324,
+     "n_unstable": 1120
+    },
+    "here": {
+     "n": 7324,
+     "n_unstable": 1120
+    }
+   },
+   "tol": "exact",
+   "source": "results/tables/r21/r21_design_baseline.json crosscheck"
+  },
+  {
+   "gate": "G6 bank (nGFM 1): the r21 cross-check population equals this one",
+   "pass": true,
+   "detail": {
+    "r21": {
+     "n": 1698,
+     "n_unstable": 712
+    },
+    "here": {
+     "n": 1698,
+     "n_unstable": 712
+    }
+   },
+   "tol": "exact",
+   "source": "results/tables/r21/r21_design_baseline.json crosscheck"
+  },
+  {
+   "gate": "G6 bank (nGFM 2): the r21 cross-check population equals this one",
+   "pass": true,
+   "detail": {
+    "r21": {
+     "n": 3045,
+     "n_unstable": 387
+    },
+    "here": {
+     "n": 3045,
+     "n_unstable": 387
+    }
+   },
+   "tol": "exact",
+   "source": "results/tables/r21/r21_design_baseline.json crosscheck"
+  },
+  {
+   "gate": "G6 bank (nGFM 3): the r21 cross-check population equals this one",
+   "pass": true,
+   "detail": {
+    "r21": {
+     "n": 1741,
+     "n_unstable": 15
+    },
+    "here": {
+     "n": 1741,
+     "n_unstable": 15
+    }
+   },
+   "tol": "exact",
+   "source": "results/tables/r21/r21_design_baseline.json crosscheck"
+  },
+  {
+   "gate": "G6 bank (nGFM 4): the r21 cross-check population equals this one",
+   "pass": true,
+   "detail": {
+    "r21": {
+     "n": 840,
+     "n_unstable": 6
+    },
+    "here": {
+     "n": 840,
+     "n_unstable": 6
+    }
+   },
+   "tol": "exact",
+   "source": "results/tables/r21/r21_design_baseline.json crosscheck"
+  },
+  {
+   "gate": "G7 the test frame rows exist in the bank and match the stored predictions in number",
+   "pass": true,
+   "detail": {
+    "test_rows": 1308,
+    "predictions": 1308
+   },
+   "tol": "exact",
+   "source": "results/final/e8_test_predictions.npz"
+  },
+  {
+   "gate": "G7 alignment: stored y_raw equals the bank's sigma_dom at the test-frame ids (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/e8_test_predictions.npz"
+  },
+  {
+   "gate": "G7 alignment: the stored y_raw values are distinct (repeats)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/e8_test_predictions.npz"
+  },
+  {
+   "gate": "G7 alignment: the test frame's pred_ebm0 equals stored ebm_0 (max |d|)",
+   "expected": 0.0,
+   "realized": 8.881784197001252e-16,
+   "abs_delta": 8.881784197001252e-16,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/e8_test_predictions.npz"
+  },
+  {
+   "gate": "G7 labels: stored unstable equals the test frame's (rows that differ)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/e8_test_predictions.npz"
+  },
+  {
+   "gate": "G7 the stored seeds are the seeds of the published suite",
+   "pass": true,
+   "detail": {
+    "npz": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "suite": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ]
+   },
+   "tol": "exact",
+   "source": "results/final/tables/e1_model_suite_raw.csv"
+  },
+  {
+   "gate": "G7 monitor seed 0: test AUC from the stored predictions equals e1_model_suite_raw.csv",
+   "expected": 0.9302817269391086,
+   "realized": 0.9302817269391086,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e1_model_suite_raw.csv"
+  },
+  {
+   "gate": "G7 monitor seed 1: test AUC from the stored predictions equals e1_model_suite_raw.csv",
+   "expected": 0.9307922037727052,
+   "realized": 0.9307922037727052,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e1_model_suite_raw.csv"
+  },
+  {
+   "gate": "G7 monitor seed 2: test AUC from the stored predictions equals e1_model_suite_raw.csv",
+   "expected": 0.9304143705257912,
+   "realized": 0.9304143705257911,
+   "abs_delta": 1.1102230246251565e-16,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e1_model_suite_raw.csv"
+  },
+  {
+   "gate": "G7 monitor seed 3: test AUC from the stored predictions equals e1_model_suite_raw.csv",
+   "expected": 0.9324964728864452,
+   "realized": 0.9324964728864451,
+   "abs_delta": 1.1102230246251565e-16,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e1_model_suite_raw.csv"
+  },
+  {
+   "gate": "G7 monitor seed 4: test AUC from the stored predictions equals e1_model_suite_raw.csv",
+   "expected": 0.9340640789108756,
+   "realized": 0.9340640789108755,
+   "abs_delta": 1.1102230246251565e-16,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e1_model_suite_raw.csv"
+  },
+  {
+   "gate": "G7 monitor: five-seed mean test AUC equals e1_model_suite.csv (Table II, deployed AMBER)",
+   "expected": 0.931609770606985,
+   "realized": 0.931609770606985,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e1_model_suite.csv"
+  },
+  {
+   "gate": "G7 monitor: five-seed ensemble test AUC equals e8_paired_frontier.csv (seed-mean AUC_ebm)",
+   "expected": 0.932026191079116,
+   "realized": 0.9320261910791158,
+   "abs_delta": 2.220446049250313e-16,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e8_paired_frontier.csv"
+  },
+  {
+   "gate": "G7 monitor: five-seed ensemble AUC equals the r21 strata (all test rows)",
+   "expected": 0.9320261910791158,
+   "realized": 0.9320261910791158,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r21/r21_design_baseline.json strata"
+  },
+  {
+   "gate": "G7 monitor: five-seed ensemble AUC equals the r21 strata (nGFM = 1)",
+   "expected": 0.9500188964474678,
+   "realized": 0.9500188964474678,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r21/r21_design_baseline.json strata"
+  },
+  {
+   "gate": "G7 monitor: five-seed ensemble AUC equals the r21 strata (nGFM = 2)",
+   "expected": 0.894945259725134,
+   "realized": 0.894945259725134,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r21/r21_design_baseline.json strata"
+  },
+  {
+   "gate": "G8 restated paired test reproduces e8 (AUC_ebm)",
+   "expected": 0.932026191079116,
+   "realized": 0.9320261910791159,
+   "abs_delta": 1.1102230246251565e-16,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e8_paired_frontier.csv seed-mean row"
+  },
+  {
+   "gate": "G8 restated paired test reproduces e8 (AUC_xgb)",
+   "expected": 0.9566657421810624,
+   "realized": 0.9566657421810625,
+   "abs_delta": 1.1102230246251565e-16,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e8_paired_frontier.csv seed-mean row"
+  },
+  {
+   "gate": "G8 restated paired test reproduces e8 (dAUC)",
+   "expected": -0.0246395511019466,
+   "realized": -0.0246395511019466,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e8_paired_frontier.csv seed-mean row"
+  },
+  {
+   "gate": "G8 restated paired test reproduces e8 (delong_z)",
+   "expected": -5.244244713292765,
+   "realized": -5.244244713292765,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e8_paired_frontier.csv seed-mean row"
+  },
+  {
+   "gate": "G8 restated paired test reproduces e8 (dAUC_mean)",
+   "expected": -0.0247561005090465,
+   "realized": -0.024756100509046548,
+   "abs_delta": 4.85722573273506e-17,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e8_paired_frontier.csv seed-mean row"
+  },
+  {
+   "gate": "G8 restated paired test reproduces e8 (dAUC_lo)",
+   "expected": -0.0349692865153573,
+   "realized": -0.03496928651535731,
+   "abs_delta": 6.938893903907228e-18,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e8_paired_frontier.csv seed-mean row"
+  },
+  {
+   "gate": "G8 restated paired test reproduces e8 (dAUC_hi)",
+   "expected": -0.0160913530816568,
+   "realized": -0.016091353081656812,
+   "abs_delta": 1.3877787807814457e-17,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e8_paired_frontier.csv seed-mean row"
+  },
+  {
+   "gate": "G8 restated paired test reproduces e8 (dAUC_frac_neg)",
+   "expected": 1.0,
+   "realized": 1.0,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e8_paired_frontier.csv seed-mean row"
+  },
+  {
+   "gate": "G8 restated paired test reproduces e8 (delong_p, relative)",
+   "expected": 1.569238119718782e-07,
+   "realized": 1.569238119718782e-07,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "relative",
+   "pass": true,
+   "source": "results/final/tables/e8_paired_frontier.csv seed-mean row"
+  },
+  {
+   "gate": "G11 every results leaf of the committed artifact is reproduced exactly, in value and type (leaves compared)",
+   "pass": true,
+   "detail": {
+    "leaves_compared": 289,
+    "numeric_leaves": 256,
+    "other_leaves": 33,
+    "leaves_equal": 289,
+    "missing": [],
+    "differ": [],
+    "extra": []
+   },
+   "tol": "exact",
+   "source": "results/reference/committed/e9_ma2024_index.json"
+  },
+  {
+   "gate": "G12 bank all_rows: the AUC of the index without shunts by sklearn.roc_auc_score equals the mid-rank AUC",
+   "expected": 0.8802736713640968,
+   "realized": 0.880273671364097,
+   "abs_delta": 1.1102230246251565e-16,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G12 bank nGFM_1: the AUC of the index without shunts by sklearn.roc_auc_score equals the mid-rank AUC",
+   "expected": 0.649527371971648,
+   "realized": 0.649527371971648,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G12 bank nGFM_2: the AUC of the index without shunts by sklearn.roc_auc_score equals the mid-rank AUC",
+   "expected": 0.8244206461698194,
+   "realized": 0.8244206461698194,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G12 bank nGFM_3: the AUC of the index without shunts by sklearn.roc_auc_score equals the mid-rank AUC",
+   "expected": 0.9320200849748937,
+   "realized": 0.9320200849748937,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G12 bank nGFM_4: the AUC of the index without shunts by sklearn.roc_auc_score equals the mid-rank AUC",
+   "expected": 0.8912869704236611,
+   "realized": 0.891286970423661,
+   "abs_delta": 1.1102230246251565e-16,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G12 bank: the rank correlation of the index without shunts with lam_min, as the Pearson correlation of average ranks",
+   "expected": 0.9864087597395864,
+   "realized": 0.9864087597395864,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G12 bank: the rank correlation of the index without shunts with the as-published index, as the Pearson correlation of average ranks",
+   "expected": 0.9979459705977699,
+   "realized": 0.9979459705977699,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G12 test_frame all_rows: the AUC of the index without shunts by sklearn.roc_auc_score equals the mid-rank AUC",
+   "expected": 0.8612829448484045,
+   "realized": 0.8612829448484044,
+   "abs_delta": 1.1102230246251565e-16,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G12 test_frame nGFM_1: the AUC of the index without shunts by sklearn.roc_auc_score equals the mid-rank AUC",
+   "expected": 0.6537226001511716,
+   "realized": 0.6537226001511716,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G12 test_frame nGFM_2: the AUC of the index without shunts by sklearn.roc_auc_score equals the mid-rank AUC",
+   "expected": 0.8429484690840386,
+   "realized": 0.8429484690840385,
+   "abs_delta": 1.1102230246251565e-16,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G12 test_frame nGFM_4: the AUC of the index without shunts by sklearn.roc_auc_score equals the mid-rank AUC",
+   "expected": 0.9265873015873016,
+   "realized": 0.9265873015873016,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G12 test_frame: the rank correlation of the index without shunts with lam_min, as the Pearson correlation of average ranks",
+   "expected": 0.9868549198897514,
+   "realized": 0.9868549198897514,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G12 test_frame: the rank correlation of the index without shunts with the as-published index, as the Pearson correlation of average ranks",
+   "expected": 0.9983426198014009,
+   "realized": 0.9983426198014009,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file"
+  },
+  {
+   "gate": "G12 bank all_rows: the nonpositive census of the index without shunts equals its recount from the files (csv module)",
+   "pass": true,
+   "detail": {
+    "recount": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 7324,
+     "n_unstable_population": 1120
+    }
+   },
+   "tol": "exact",
+   "source": "rows file, data/dataset.csv sigma_dom, results/tables/r13/r13_tier_battery_rows.csv unstable"
+  },
+  {
+   "gate": "G12 bank nGFM_1: the nonpositive census of the index without shunts equals its recount from the files (csv module)",
+   "pass": true,
+   "detail": {
+    "recount": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 1698,
+     "n_unstable_population": 712
+    }
+   },
+   "tol": "exact",
+   "source": "rows file, data/dataset.csv sigma_dom, results/tables/r13/r13_tier_battery_rows.csv unstable"
+  },
+  {
+   "gate": "G12 bank nGFM_2: the nonpositive census of the index without shunts equals its recount from the files (csv module)",
+   "pass": true,
+   "detail": {
+    "recount": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 3045,
+     "n_unstable_population": 387
+    }
+   },
+   "tol": "exact",
+   "source": "rows file, data/dataset.csv sigma_dom, results/tables/r13/r13_tier_battery_rows.csv unstable"
+  },
+  {
+   "gate": "G12 bank nGFM_3: the nonpositive census of the index without shunts equals its recount from the files (csv module)",
+   "pass": true,
+   "detail": {
+    "recount": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 1741,
+     "n_unstable_population": 15
+    }
+   },
+   "tol": "exact",
+   "source": "rows file, data/dataset.csv sigma_dom, results/tables/r13/r13_tier_battery_rows.csv unstable"
+  },
+  {
+   "gate": "G12 bank nGFM_4: the nonpositive census of the index without shunts equals its recount from the files (csv module)",
+   "pass": true,
+   "detail": {
+    "recount": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 840,
+     "n_unstable_population": 6
+    }
+   },
+   "tol": "exact",
+   "source": "rows file, data/dataset.csv sigma_dom, results/tables/r13/r13_tier_battery_rows.csv unstable"
+  },
+  {
+   "gate": "G12 test_frame all_rows: the nonpositive census of the index without shunts equals its recount from the files (csv module)",
+   "pass": true,
+   "detail": {
+    "recount": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 1308,
+     "n_unstable_population": 231
+    }
+   },
+   "tol": "exact",
+   "source": "rows file, data/dataset.csv sigma_dom, results/tables/r13/r13_tier_battery_rows.csv unstable"
+  },
+  {
+   "gate": "G12 test_frame nGFM_1: the nonpositive census of the index without shunts equals its recount from the files (csv module)",
+   "pass": true,
+   "detail": {
+    "recount": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 363,
+     "n_unstable_population": 147
+    }
+   },
+   "tol": "exact",
+   "source": "rows file, data/dataset.csv sigma_dom, results/tables/r13/r13_tier_battery_rows.csv unstable"
+  },
+  {
+   "gate": "G12 test_frame nGFM_2: the nonpositive census of the index without shunts equals its recount from the files (csv module)",
+   "pass": true,
+   "detail": {
+    "recount": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 558,
+     "n_unstable_population": 81
+    }
+   },
+   "tol": "exact",
+   "source": "rows file, data/dataset.csv sigma_dom, results/tables/r13/r13_tier_battery_rows.csv unstable"
+  },
+  {
+   "gate": "G12 test_frame nGFM_3: the nonpositive census of the index without shunts equals its recount from the files (csv module)",
+   "pass": true,
+   "detail": {
+    "recount": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 216,
+     "n_unstable_population": 0
+    }
+   },
+   "tol": "exact",
+   "source": "rows file, data/dataset.csv sigma_dom, results/tables/r13/r13_tier_battery_rows.csv unstable"
+  },
+  {
+   "gate": "G12 test_frame nGFM_4: the nonpositive census of the index without shunts equals its recount from the files (csv module)",
+   "pass": true,
+   "detail": {
+    "recount": {
+     "n_rows_index_nonpositive": 0,
+     "n_unstable_among_them": 0,
+     "n_stable_among_them": 0,
+     "n_rows_population": 171,
+     "n_unstable_population": 3
+    }
+   },
+   "tol": "exact",
+   "source": "rows file, data/dataset.csv sigma_dom, results/tables/r13/r13_tier_battery_rows.csv unstable"
+  },
+  {
+   "gate": "G12 paired all_rows: AUC_index of the index without shunts equals its AUC leaf",
+   "expected": 0.8612829448484045,
+   "realized": 0.8612829448484045,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results.auc"
+  },
+  {
+   "gate": "G12 paired all_rows: AUC_monitor equals the monitor's ensemble AUC leaf",
+   "expected": 0.9320261910791158,
+   "realized": 0.9320261910791159,
+   "abs_delta": 1.1102230246251565e-16,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results.auc"
+  },
+  {
+   "gate": "G12 paired nGFM_1: AUC_index of the index without shunts equals its AUC leaf",
+   "expected": 0.6537226001511716,
+   "realized": 0.6537226001511716,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results.auc"
+  },
+  {
+   "gate": "G12 paired nGFM_1: AUC_monitor equals the monitor's ensemble AUC leaf",
+   "expected": 0.9500188964474678,
+   "realized": 0.9500188964474678,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results.auc"
+  },
+  {
+   "gate": "G12 paired nGFM_2: AUC_index of the index without shunts equals its AUC leaf",
+   "expected": 0.8429484690840386,
+   "realized": 0.8429484690840386,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results.auc"
+  },
+  {
+   "gate": "G12 paired nGFM_2: AUC_monitor equals the monitor's ensemble AUC leaf",
+   "expected": 0.894945259725134,
+   "realized": 0.894945259725134,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results.auc"
+  }
+ ]
+}

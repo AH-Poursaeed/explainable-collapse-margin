@@ -1,0 +1,545 @@
+{
+ "tool": "python/r19_disp.py",
+ "spec": "the run plan",
+ "started": "2026-10-31 22:25:27",
+ "versions": {
+  "python": "3.13.15",
+  "numpy": "2.3.5",
+  "pandas": "2.3.3",
+  "scipy": "1.16.3",
+  "sklearn": "1.7.2",
+  "interpret": "0.7.8",
+  "torch": "2.9.1+cpu",
+  "torch_threads": 2
+ },
+ "inputs_sha256": {
+  "bank": "6add967f8fb3eae69453d6ff8f4e736efb17a4dd0fcc010775fdfd7b7a558d4d",
+  "bank_spec": "954e52143a57a6545d53b9b70d4ca63e50666d35afdd8bd3e6823e357048aee6",
+  "e1_model_suite_raw": "5dd09fd3eed5a8e253c0b44f9c180a71a49da0824737186dc30f8b011640546c",
+  "md_rows_fine": "9803ac0a8b179bce56397c438a222e8f0c0b6e9f9a2a6a642f3ce1ce4c99cad4",
+  "md_pairs_fine": "009a9034bc1e02119188a2fb7234554c2a25939a3d096b14d53f0477b1d2f7ae",
+  "plants": "70760f96aaf8e49cae165b2099d1e677457c14adbea30b727fae10e916e0e0c0",
+  "r22_json": "9be3bc2a1e1a091a9115b1d13021941b419581a722ba4a98ba9ae2e5503fd7a5",
+  "r22_rows": "29e1a61752c7e28d4c5f6fa331b98c2115de03d8675672e46c57739f4cf8ead3",
+  "r22_script": "e44e6e430a78435d33019b95c4de57b808778658f776edf58eede633d8a7c52c",
+  "this_script": "e0b37c63a649198e40b03a713d191c8737e88baeddd7c2873a8a8c894d7bed5a",
+  "old_rows": "f5166a783bc922b87f8b9cd1659ee88ef5ff597c2e2e259bbc5f9ffbe174a378",
+  "old_summary": "1365947e70e965791423a4ee1f52ad0d2d067d7a7531dcd4cccfd35e3e859e53",
+  "old_status": "5e6d04391a03f070c34d11620924b3051e3de3dd00813e1f0140751fb1317301"
+ },
+ "fit_s": {
+  "ebm_md_seed0": 76.8
+ },
+ "gates": [
+  {
+   "gate": "G1 refit: seed-0 M+D EBM test AUC = e1_model_suite_raw.csv (the script's gate)",
+   "expected": 0.9302817269391086,
+   "realized": 0.9302817269391086,
+   "abs_delta": 0.0,
+   "tol": 1e-06,
+   "pass": true,
+   "source": "e1_model_suite_raw.csv"
+  },
+  {
+   "gate": "G1 the twenty P/Q main terms are present (the DataFrame fit kept the names)",
+   "expected": 20,
+   "realized": 20,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "pass": true,
+   "source": "m.term_names_"
+  },
+  {
+   "gate": "G2 internal: recomputed response rho = published rho_ebm, every scenario (max |diff|)",
+   "expected": 0.0,
+   "realized": 1.1102230246251565e-16,
+   "abs_delta": 1.1102230246251565e-16,
+   "tol": 1e-09,
+   "pass": true,
+   "source": "e2r17_faith_rows_fine_md.csv"
+  },
+  {
+   "gate": "G3 stored rows: the same scenarios in the same order (differences)",
+   "expected": 0,
+   "realized": 0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "pass": true,
+   "source": "r19_disp_rows.csv"
+  },
+  {
+   "gate": "G3 stored rows: n_pairs (max |diff|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "pass": true,
+   "source": "r19_disp_rows.csv"
+  },
+  {
+   "gate": "G3 stored rows: rho_disp_vs_analytic (max |diff|)",
+   "expected": 0.0,
+   "realized": 9.71445146547012e-17,
+   "abs_delta": 9.71445146547012e-17,
+   "tol": 1e-12,
+   "pass": true,
+   "source": "r19_disp_rows.csv"
+  },
+  {
+   "gate": "G3 stored rows: rho_disp_vs_response (max |diff|)",
+   "expected": 0.0,
+   "realized": 9.020562075079397e-17,
+   "abs_delta": 9.020562075079397e-17,
+   "tol": 1e-12,
+   "pass": true,
+   "source": "r19_disp_rows.csv"
+  },
+  {
+   "gate": "G3 stored rows: rho_response_vs_analytic_recomputed (max |diff|)",
+   "expected": 0.0,
+   "realized": 1.1102230246251565e-16,
+   "abs_delta": 1.1102230246251565e-16,
+   "tol": 1e-12,
+   "pass": true,
+   "source": "r19_disp_rows.csv"
+  },
+  {
+   "gate": "G3 stored rows: rho_ebm_published (max |diff|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "pass": true,
+   "source": "r19_disp_rows.csv"
+  },
+  {
+   "gate": "G3 stored summary rho_disp_vs_analytic: n",
+   "expected": 236,
+   "realized": 236,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "pass": true,
+   "source": "r19_disp_summary.csv"
+  },
+  {
+   "gate": "G3 stored summary rho_disp_vs_analytic: scenarios with a NaN rho",
+   "expected": 0,
+   "realized": 0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "pass": true,
+   "source": "r19_disp_rows.csv"
+  },
+  {
+   "gate": "G3 stored summary rho_disp_vs_analytic: median",
+   "expected": 0.0102184620549543,
+   "realized": 0.010218462054954386,
+   "abs_delta": 8.500145032286355e-17,
+   "tol": 1e-12,
+   "pass": true,
+   "source": "r19_disp_summary.csv"
+  },
+  {
+   "gate": "G3 stored summary rho_disp_vs_analytic: q25",
+   "expected": -0.2151285511427778,
+   "realized": -0.21512855114277785,
+   "abs_delta": 5.551115123125783e-17,
+   "tol": 1e-12,
+   "pass": true,
+   "source": "r19_disp_summary.csv"
+  },
+  {
+   "gate": "G3 stored summary rho_disp_vs_analytic: q75",
+   "expected": 0.251974444295386,
+   "realized": 0.25197444429538607,
+   "abs_delta": 5.551115123125783e-17,
+   "tol": 1e-12,
+   "pass": true,
+   "source": "r19_disp_summary.csv"
+  },
+  {
+   "gate": "G3 stored summary rho_disp_vs_analytic: mean",
+   "expected": 0.0074902974658909,
+   "realized": 0.007490297465890948,
+   "abs_delta": 4.85722573273506e-17,
+   "tol": 1e-12,
+   "pass": true,
+   "source": "r19_disp_summary.csv"
+  },
+  {
+   "gate": "G3 stored summary rho_disp_vs_response: n",
+   "expected": 236,
+   "realized": 236,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "pass": true,
+   "source": "r19_disp_summary.csv"
+  },
+  {
+   "gate": "G3 stored summary rho_disp_vs_response: scenarios with a NaN rho",
+   "expected": 0,
+   "realized": 0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "pass": true,
+   "source": "r19_disp_rows.csv"
+  },
+  {
+   "gate": "G3 stored summary rho_disp_vs_response: median",
+   "expected": 0.1402783100331029,
+   "realized": 0.14027831003310298,
+   "abs_delta": 8.326672684688674e-17,
+   "tol": 1e-12,
+   "pass": true,
+   "source": "r19_disp_summary.csv"
+  },
+  {
+   "gate": "G3 stored summary rho_disp_vs_response: q25",
+   "expected": -0.0895073399138834,
+   "realized": -0.0895073399138834,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "pass": true,
+   "source": "r19_disp_summary.csv"
+  },
+  {
+   "gate": "G3 stored summary rho_disp_vs_response: q75",
+   "expected": 0.3018617102190752,
+   "realized": 0.3018617102190752,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "pass": true,
+   "source": "r19_disp_summary.csv"
+  },
+  {
+   "gate": "G3 stored summary rho_disp_vs_response: mean",
+   "expected": 0.087956807833748,
+   "realized": 0.08795680783374803,
+   "abs_delta": 2.7755575615628914e-17,
+   "tol": 1e-12,
+   "pass": true,
+   "source": "r19_disp_summary.csv"
+  },
+  {
+   "gate": "G3 stored summary rho_response_vs_analytic_recomputed: n",
+   "expected": 236,
+   "realized": 236,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "pass": true,
+   "source": "r19_disp_summary.csv"
+  },
+  {
+   "gate": "G3 stored summary rho_response_vs_analytic_recomputed: scenarios with a NaN rho",
+   "expected": 0,
+   "realized": 0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "pass": true,
+   "source": "r19_disp_rows.csv"
+  },
+  {
+   "gate": "G3 stored summary rho_response_vs_analytic_recomputed: median",
+   "expected": 0.5854025583145221,
+   "realized": 0.5854025583145221,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "pass": true,
+   "source": "r19_disp_summary.csv"
+  },
+  {
+   "gate": "G3 stored summary rho_response_vs_analytic_recomputed: q25",
+   "expected": 0.3318284424379232,
+   "realized": 0.3318284424379232,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "pass": true,
+   "source": "r19_disp_summary.csv"
+  },
+  {
+   "gate": "G3 stored summary rho_response_vs_analytic_recomputed: q75",
+   "expected": 0.7693754702784046,
+   "realized": 0.7693754702784046,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "pass": true,
+   "source": "r19_disp_summary.csv"
+  },
+  {
+   "gate": "G3 stored summary rho_response_vs_analytic_recomputed: mean",
+   "expected": 0.5509271166517427,
+   "realized": 0.5509271166517427,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "pass": true,
+   "source": "r19_disp_summary.csv"
+  },
+  {
+   "gate": "G3 printed: displayed vs analytic median 0.01 (IV-B)",
+   "expected": 0.01,
+   "realized": 0.010218462054954386,
+   "abs_delta": 0.00021846205495438566,
+   "tol": 0.005,
+   "pass": true,
+   "source": "the recorded value"
+  },
+  {
+   "gate": "G3 earlier record: displayed vs response median 0.14",
+   "expected": 0.14,
+   "realized": 0.14027831003310298,
+   "abs_delta": 0.00027831003310296865,
+   "tol": 0.005,
+   "pass": true,
+   "source": "the recorded value"
+  },
+  {
+   "gate": "G4 population all of the new rows = the recomputed published rho_disp_vs_analytic (max |diff|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0.0,
+   "pass": true,
+   "source": "the same arrays"
+  },
+  {
+   "gate": "G4 population all of the new rows = the recomputed published rho_disp_vs_response (max |diff|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0.0,
+   "pass": true,
+   "source": "the same arrays"
+  },
+  {
+   "gate": "G4 population all of the new rows = the recomputed published rho_response_vs_analytic_recomputed (max |diff|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0.0,
+   "pass": true,
+   "source": "the same arrays"
+  },
+  {
+   "gate": "G4 the scenarios of r22_faith_slack_rows.csv (symmetric difference)",
+   "expected": 0,
+   "realized": 0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "pass": true,
+   "source": "r22_faith_slack_rows.csv"
+  },
+  {
+   "gate": "G4 slack map = slack_plant of r22_faith_slack_rows.csv (mismatches)",
+   "expected": 0,
+   "realized": 0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "pass": true,
+   "source": "r22_faith_slack_rows.csv"
+  },
+  {
+   "gate": "G4 slack pairs over the scenarios = r22 results slack_pairs_236.pairs",
+   "expected": 420,
+   "realized": 420,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "pass": true,
+   "source": "r22_faith_slack.json"
+  },
+  {
+   "gate": "G4 every slack pair: analytic dsig exactly 0 (violations)",
+   "expected": 0,
+   "realized": 0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "pass": true,
+   "source": "e2r17_response_pairs_fine_md.csv"
+  },
+  {
+   "gate": "G4 every slack pair: EBM response dhat exactly 0 (violations)",
+   "expected": 0,
+   "realized": 0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "pass": true,
+   "source": "e2r17_response_pairs_fine_md.csv"
+  },
+  {
+   "gate": "G4 scenarios below eight applied probes = r22 min8_rule_on_nonslack.count",
+   "expected": 0,
+   "realized": 0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "pass": true,
+   "source": "r22_faith_slack.json"
+  },
+  {
+   "gate": "G4 applied probes per scenario = r22 n_ebm_excl (mismatches)",
+   "expected": 0,
+   "realized": 0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "pass": true,
+   "source": "r22_faith_slack_rows.csv"
+  },
+  {
+   "gate": "G4 applied-probe response rho = r22 rho_ebm_excl, every scenario (max |diff|)",
+   "expected": 0.0,
+   "realized": 1.1102230246251565e-16,
+   "abs_delta": 1.1102230246251565e-16,
+   "tol": 1e-12,
+   "pass": true,
+   "source": "r22_faith_slack_rows.csv"
+  },
+  {
+   "gate": "G4 applied-probe response rho median = r22 results amber_fine.excl.median",
+   "expected": 0.42156862745098045,
+   "realized": 0.42156862745098045,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "pass": true,
+   "source": "r22_faith_slack.json"
+  },
+  {
+   "gate": "old outputs unchanged (files whose SHA-256 changed)",
+   "expected": 0,
+   "realized": 0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "pass": true,
+   "source": "r19_disp_rows.csv, r19_disp_summary.csv, r19_disp_status.json"
+  }
+ ],
+ "all_gates_pass": true,
+ "wall_time_s": 78.7,
+ "peak_working_set_mib_main_process": 394.0,
+ "meta": {
+  "status": "complete",
+  "n_gates": 42,
+  "n_fail": 0
+ },
+ "n_pq_main_terms": 20,
+ "outputs": {
+  "contrib_rows": "r19_disp_contrib_rows.csv",
+  "slack_rows": "r19_disp_slack_rows.csv",
+  "json": "r19_disp_slack.json"
+ },
+ "diagnostics": {
+  "response_vs_analytic": {
+   "all": {
+    "n": 236,
+    "n_scenarios": 236,
+    "median": 0.5854025583145221,
+    "q25": 0.3318284424379232,
+    "q75": 0.7693754702784046,
+    "mean": 0.5509271166517427
+   },
+   "excl": {
+    "n": 236,
+    "n_scenarios": 236,
+    "median": 0.42156862745098045,
+    "q25": 0.06573787409700722,
+    "q75": 0.6738906088751291,
+    "mean": 0.36785204604477056
+   }
+  },
+  "per_scenario_change_excl_minus_all": {
+   "disp_vs_analytic": {
+    "median": 0.0840729519041252,
+    "n_increase": 176,
+    "n_decrease": 60,
+    "n_equal": 0
+   },
+   "disp_vs_response": {
+    "median": 0.08766998479069159,
+    "n_increase": 185,
+    "n_decrease": 51,
+    "n_equal": 0
+   }
+  },
+  "slack_displayed_rank_within_scenario": {
+   "note": "rank of a slack pair's displayed bar among the scenario's probed bars, 1 = largest",
+   "n_slack_pairs": 420,
+   "median_rank": 8.0,
+   "share_rank_1": 0.11428571428571428,
+   "share_top_3": 0.2523809523809524,
+   "median_rank_nonslack": 9.0
+  },
+  "stored_status_13_aug": {
+   "gates": {
+    "md_ebm_s0": 0.0,
+    "response_rho_reproduction_max": 1.1102230246251565e-16
+   },
+   "n_pq_main_terms": 20
+  }
+ },
+ "results": {
+  "displayed_vs_analytic": {
+   "all": {
+    "n": 236,
+    "n_scenarios": 236,
+    "median": 0.010218462054954386,
+    "q25": -0.21512855114277785,
+    "q75": 0.25197444429538607,
+    "mean": 0.007490297465890948
+   },
+   "excl": {
+    "n": 236,
+    "n_scenarios": 236,
+    "median": 0.09391124871001033,
+    "q25": -0.1340909090909091,
+    "q75": 0.327141382868937,
+    "mean": 0.0896740091737337
+   }
+  },
+  "displayed_vs_response": {
+   "all": {
+    "n": 236,
+    "n_scenarios": 236,
+    "median": 0.14027831003310298,
+    "q25": -0.0895073399138834,
+    "q75": 0.3018617102190752,
+    "mean": 0.08795680783374803
+   },
+   "excl": {
+    "n": 236,
+    "n_scenarios": 236,
+    "median": 0.21287175157144195,
+    "q25": -0.016666666666666666,
+    "q75": 0.4326367389060888,
+    "mean": 0.18933199568792788
+   }
+  },
+  "population": {
+   "all": "every converged probe pair of the scenario (the published statistic)",
+   "excl": "the applied probes: the slack plant's P and Q pairs removed (slack_map of r22_faith_slack.py, the build_case.m rule), the same scenarios"
+  },
+  "statistic": "per scenario, Spearman rho of |EBM main-effect term contribution at the base point| (the displayed bar) against |analytic dsig| or against |model dhat| over the population's probed P/Q features; deployed M+D EBM seed 0; +-0.02 p.u. probes",
+  "probes_per_scenario_median": {
+   "all": 20.0,
+   "excl": 18.0
+  },
+  "slack_pairs": {
+   "pairs": 420,
+   "scenarios": 236
+  },
+  "all_probe_gate_values": {
+   "refit_md_ebm_seed0_test_auc": {
+    "recomputed": 0.9302817269391086,
+    "e1_model_suite_raw": 0.9302817269391086,
+    "abs_diff": 0.0
+   },
+   "response_rho_reproduction_max_abs_diff": 1.1102230246251565e-16,
+   "displayed_vs_analytic_median": {
+    "recomputed": 0.010218462054954386,
+    "r19_disp_summary": 0.0102184620549543,
+    "abs_diff": 8.500145032286355e-17
+   },
+   "displayed_vs_response_median": {
+    "recomputed": 0.14027831003310298,
+    "r19_disp_summary": 0.1402783100331029,
+    "abs_diff": 8.326672684688674e-17
+   }
+  }
+ }
+}

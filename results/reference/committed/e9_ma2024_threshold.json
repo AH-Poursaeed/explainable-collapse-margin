@@ -1,0 +1,3839 @@
+{
+ "meta": {
+  "script": "python/e9_ma2024_threshold.py",
+  "generator": "matlab/e9_ma2024_threshold.m",
+  "mode": "full",
+  "started": "2026-11-01 00:47:17",
+  "versions": {
+   "python": "3.13.15",
+   "numpy": "2.3.5",
+   "pandas": "2.3.3",
+   "scipy": "1.16.3",
+   "scikit-learn": "1.7.2"
+  },
+  "status": "complete",
+  "n_gates": 165,
+  "n_run": 165,
+  "n_pass": 165,
+  "n_fail": 0,
+  "n_not_run": 0,
+  "assumptions": [
+   "As-published network: the load susceptance is taken out of B_lap (the source: loads play no role in the small-signal admittance model, printed p. 4); the line charging and the declared bus shunt capacitance are kept, as in e9_ma2024_index.m; the pages of the source read do not settle them.",
+   "Y_GFL,i is this project's GFL port (reduced.port: PLL, current control and P/Q outer loops), common frame, injected current, converter base: the object of the source's eq. 17, with this bank's parameters.",
+   "Y_delta,j is this project's closed form (reduced.Ydelta, the s = 0 Thevenin fit B_in = 1/(w0 Leff) from the frozen VSM port), rotated to the common frame and mapped to the source's absorbed convention as -R Ydelta R' (gate G1m); the source's simplified eq. 45 is not used.",
+   "The realness rule of reduced.threshold (static root at w = 0 and interior crossings over 2 rad/s to 2 pi 55 rad/s, IM gate 1e-6, the largest real root binding) is the numerical route to eq. 40; the source scales a capacity until the equation holds with the dominant root on the imaginary axis.",
+   "Rows without CgSCR are read with CgSCR = 0; the rule is also reported on the rows with CgSCR.",
+   "The monitor's score in the paired tests is the five-seed score-averaged ensemble of the stored deployed predictions, the convention of e8_paired_test.py and r21_design_baseline.py."
+  ],
+  "not_established": [
+   "Whether the GFL model of the source's [28] matches this project's port beyond its structure.",
+   "How the source treats line charging and other shunts.",
+   "Lemma 1's error term o(||N||): how closely the critical subsystem's root follows the full model's dominant root on this chain is measured only through the three rays' k* and the full-model labels of the test frame.",
+   "The orientation of the binding root (stable above CgSCR) is checked locally, by the sign of Re(ds/dlambda), not by a census of the subsystem's roots.",
+   "The source's own validation (its Table III on its 39-bus system) is not reproduced.",
+   "Why the closed-form Y_delta agrees only coarsely with the device (results.device_check) is not tested. A likely reason, not tested here: the closed form takes the GFM's Thevenin branch as a lossless inductance matched in magnitude (B_in = 1/(w0 Leff)), while the device's branch carries its virtual resistance (params.converter, dev.gfm_vsm_rhs). The project's own C_SGSI uses the same closed form."
+  ],
+  "finished": "2026-11-01 00:47:51",
+  "wall_s": 34.5
+ },
+ "merge": {
+  "test": {
+   "workers": [
+    {
+     "file": "e9thr_test_full_1_1308.csv",
+     "sha256": "6e117298922e14d607f765e0d323077f7e0777450b52230248b8cfcef4b6c4d4",
+     "data_lines": 944,
+     "cut_last_line_dropped": false
+    },
+    {
+     "file": "e9thr_test_full_1308_1.csv",
+     "sha256": "f499b170352d6a93e75ae647c236845a5763e45c981190d3a0e8fb568936005d",
+     "data_lines": 364,
+     "cut_last_line_dropped": false
+    }
+   ],
+   "rows_read": 1308,
+   "unique_ids": 1308,
+   "duplicate_ids": 0,
+   "max_duplicate_abs_delta": 0.0,
+   "code_id": "b53a488ca9fa9d36",
+   "written": "results/final/tables/e9_ma2024_threshold_rows.csv"
+  },
+  "gate": {
+   "files": [
+    {
+     "file": "e9thr_bank_conv_1_20.csv",
+     "sha256": "09fbb6acf9fb8ea564f2473d57930b89ebc71eab0b9d4246995d7c875347346b",
+     "data_lines": 20,
+     "cut_last_line_dropped": false
+    },
+    {
+     "file": "e9thr_bank_full_1_20.csv",
+     "sha256": "8ddedaccb6a14afc744d15cd9fd5b4f63d6e6ab17fe67b39cec7daa544f30ab6",
+     "data_lines": 20,
+     "cut_last_line_dropped": false
+    }
+   ],
+   "code_id": "b53a488ca9fa9d36",
+   "written": "results/final/tables/e9_ma2024_threshold_gate_rows.csv"
+  },
+  "rays": {
+   "file": {
+    "file": "e9thr_rays_full.csv",
+    "sha256": "0e6870d47b6649a37aa92b0f66904a739ce79ad5b657f185c40f8285a9548c9f",
+    "data_lines": 115,
+    "cut_last_line_dropped": false
+   },
+   "code_id": "b53a488ca9fa9d36",
+   "written": "results/final/tables/e9_ma2024_threshold_rays.csv"
+  }
+ },
+ "inputs": {
+  "bank": "data/dataset.csv",
+  "test_frame": "results/tables/r13/r13_tier_battery_rows.csv",
+  "index_rows": "results/final/tables/e9_ma2024_index_rows.csv",
+  "alarms": "results/final/tables/e1_alarms.csv",
+  "suite": "results/final/tables/e1_model_suite.csv",
+  "suite_raw": "results/final/tables/e1_model_suite_raw.csv",
+  "monitor_predictions": "results/final/e8_test_predictions.npz",
+  "e8_paired": "results/final/tables/e8_paired_frontier.csv",
+  "design_baseline": "results/tables/r21/r21_design_baseline.json",
+  "design_ray": "results/feasibility/fs3_boundary.csv",
+  "bank_rays": "results/tables/r17/r17_rays.csv",
+  "bank_rays_emt": "results/tables/r20/r20_straddle2.csv",
+  "generator": "matlab/e9_ma2024_threshold.m",
+  "stage": "python/e9_ma2024_threshold.py",
+  "rows": "results/final/tables/e9_ma2024_threshold_rows.csv",
+  "gate_rows": "results/final/tables/e9_ma2024_threshold_gate_rows.csv",
+  "rays": "results/final/tables/e9_ma2024_threshold_rays.csv"
+ },
+ "inputs_sha256": {
+  "bank": "6add967f8fb3eae69453d6ff8f4e736efb17a4dd0fcc010775fdfd7b7a558d4d",
+  "test_frame": "2fb8772476f130324e011c6517e58271b6cf72fdd41957da88066f98846f3790",
+  "index_rows": "c64ec33a84e017e57334fb789655990f6e48f66d528f516e454985907f04b836",
+  "alarms": "ac1b3140a3af8fb3e89c0b7bf3868c2bff9312d3a282ef8eafc9495d1c06ba5f",
+  "suite": "cabc75b56a1527ddb6dbc1c116777dbf500a03b94cac07da77114681e6d977aa",
+  "suite_raw": "5dd09fd3eed5a8e253c0b44f9c180a71a49da0824737186dc30f8b011640546c",
+  "monitor_predictions": "78eb8f3b06190b5e4b8d7d858718805153a84792397d00923c684a79ee33480f",
+  "e8_paired": "3719d4809f823bacfbc95accd4033c889449af243dc9636c66f40698bcf783c2",
+  "design_baseline": "63f3866dbdb380abc8365192419f895431567e025a1d5b8ade574135bfc7469e",
+  "design_ray": "12087b10367933ffb303e8e54c49485dc7c68c98586abc7d9d3b1e3013b21bed",
+  "bank_rays": "4b8a411716b90e3c51ff953a9aae7b9fb39dba373cccb1f9f20ed902c94c1562",
+  "bank_rays_emt": "91218aa37f6df67ed659b40c3c501d2d773ff3433dbe3b42e7219f627482999a",
+  "generator": "b53a488ca9fa9d36557eef3d6ef04a8eeff1f22c89714660df206598192c4064",
+  "stage": "bca71c865a5394225be0f568dd3cc1089799ca984674df084ed81f424cc85a32",
+  "rows": "4cdd0e6d60f9b993c722454da34c608b85f6455878acb54950542c533f17eb76",
+  "gate_rows": "9996597b821a28d50b0e6ab4344dd606c096da146681432a6370e5d4bd36cd5c",
+  "rays": "0e6870d47b6649a37aa92b0f66904a739ce79ad5b657f185c40f8285a9548c9f"
+ },
+ "gates": [
+  {
+   "gate": "G5 the test frame's alarm column equals pred_ebm0 >= the out-of-fold threshold of e1_alarms.csv (rows that differ)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e1_alarms.csv M+D ebm oof_thr"
+  },
+  {
+   "gate": "G5 the alarm's test recall equals e1_alarms.csv (M+D ebm test_recall)",
+   "expected": 0.935064935064935,
+   "realized": 0.935064935064935,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e1_alarms.csv"
+  },
+  {
+   "gate": "G5 the alarm's test false-alarm rate equals e1_alarms.csv (M+D ebm test_FA)",
+   "expected": 0.3166202414113278,
+   "realized": 0.3166202414113278,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e1_alarms.csv"
+  },
+  {
+   "gate": "G5 the stored predictions match the test frame in number",
+   "expected": 1308.0,
+   "realized": 1308.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/e8_test_predictions.npz"
+  },
+  {
+   "gate": "G5 alignment: stored y_raw equals the test frame's sigma_dom (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/e8_test_predictions.npz"
+  },
+  {
+   "gate": "G5 alignment: the test frame's pred_ebm0 equals stored ebm_0 (max |d|)",
+   "expected": 0.0,
+   "realized": 8.881784197001252e-16,
+   "abs_delta": 8.881784197001252e-16,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/e8_test_predictions.npz"
+  },
+  {
+   "gate": "G5 labels: stored unstable equals the test frame's (rows that differ)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/e8_test_predictions.npz"
+  },
+  {
+   "gate": "G5 the stored seeds are the seeds of the published suite",
+   "pass": true,
+   "detail": {
+    "npz": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "suite": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ]
+   },
+   "tol": "exact",
+   "source": "results/final/tables/e1_model_suite_raw.csv"
+  },
+  {
+   "gate": "G5 monitor seed 0: test AUC from the stored predictions equals e1_model_suite_raw.csv",
+   "expected": 0.9302817269391086,
+   "realized": 0.9302817269391086,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e1_model_suite_raw.csv"
+  },
+  {
+   "gate": "G5 monitor seed 1: test AUC from the stored predictions equals e1_model_suite_raw.csv",
+   "expected": 0.9307922037727052,
+   "realized": 0.9307922037727052,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e1_model_suite_raw.csv"
+  },
+  {
+   "gate": "G5 monitor seed 2: test AUC from the stored predictions equals e1_model_suite_raw.csv",
+   "expected": 0.9304143705257912,
+   "realized": 0.9304143705257911,
+   "abs_delta": 1.1102230246251565e-16,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e1_model_suite_raw.csv"
+  },
+  {
+   "gate": "G5 monitor seed 3: test AUC from the stored predictions equals e1_model_suite_raw.csv",
+   "expected": 0.9324964728864452,
+   "realized": 0.9324964728864451,
+   "abs_delta": 1.1102230246251565e-16,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e1_model_suite_raw.csv"
+  },
+  {
+   "gate": "G5 monitor seed 4: test AUC from the stored predictions equals e1_model_suite_raw.csv",
+   "expected": 0.9340640789108756,
+   "realized": 0.9340640789108755,
+   "abs_delta": 1.1102230246251565e-16,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e1_model_suite_raw.csv"
+  },
+  {
+   "gate": "G5 monitor: five-seed mean test AUC equals e1_model_suite.csv (Table II, deployed AMBER)",
+   "expected": 0.931609770606985,
+   "realized": 0.931609770606985,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e1_model_suite.csv"
+  },
+  {
+   "gate": "G5 monitor: five-seed ensemble test AUC equals e8_paired_frontier.csv (seed-mean AUC_ebm)",
+   "expected": 0.932026191079116,
+   "realized": 0.9320261910791158,
+   "abs_delta": 2.220446049250313e-16,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e8_paired_frontier.csv seed-mean row"
+  },
+  {
+   "gate": "G5 r21_design_baseline.json is complete and its gates PASS",
+   "pass": true,
+   "detail": {
+    "status": "complete",
+    "verdict": "PASS"
+   },
+   "tol": "exact",
+   "source": "results/tables/r21/r21_design_baseline.json"
+  },
+  {
+   "gate": "G5 test frame (all test rows): the r21 strata population equals this one",
+   "pass": true,
+   "detail": {
+    "r21": {
+     "n": 1308,
+     "n_unstable": 231
+    },
+    "here": {
+     "n": 1308,
+     "n_unstable": 231
+    }
+   },
+   "tol": "exact",
+   "source": "results/tables/r21/r21_design_baseline.json strata"
+  },
+  {
+   "gate": "G5 monitor: five-seed ensemble AUC equals the r21 strata (all test rows)",
+   "expected": 0.9320261910791158,
+   "realized": 0.9320261910791158,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r21/r21_design_baseline.json strata"
+  },
+  {
+   "gate": "G5 test frame (nGFM = 1): the r21 strata population equals this one",
+   "pass": true,
+   "detail": {
+    "r21": {
+     "n": 363,
+     "n_unstable": 147
+    },
+    "here": {
+     "n": 363,
+     "n_unstable": 147
+    }
+   },
+   "tol": "exact",
+   "source": "results/tables/r21/r21_design_baseline.json strata"
+  },
+  {
+   "gate": "G5 monitor: five-seed ensemble AUC equals the r21 strata (nGFM = 1)",
+   "expected": 0.9500188964474678,
+   "realized": 0.9500188964474678,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r21/r21_design_baseline.json strata"
+  },
+  {
+   "gate": "G5 test frame (nGFM = 2): the r21 strata population equals this one",
+   "pass": true,
+   "detail": {
+    "r21": {
+     "n": 558,
+     "n_unstable": 81
+    },
+    "here": {
+     "n": 558,
+     "n_unstable": 81
+    }
+   },
+   "tol": "exact",
+   "source": "results/tables/r21/r21_design_baseline.json strata"
+  },
+  {
+   "gate": "G5 monitor: five-seed ensemble AUC equals the r21 strata (nGFM = 2)",
+   "expected": 0.894945259725134,
+   "realized": 0.894945259725134,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r21/r21_design_baseline.json strata"
+  },
+  {
+   "gate": "G5 test frame (nGFM = 3): the r21 strata population equals this one",
+   "pass": true,
+   "detail": {
+    "r21": {
+     "n": 216,
+     "n_unstable": 0
+    },
+    "here": {
+     "n": 216,
+     "n_unstable": 0
+    }
+   },
+   "tol": "exact",
+   "source": "results/tables/r21/r21_design_baseline.json strata"
+  },
+  {
+   "gate": "G5 test frame (nGFM = 4): the r21 strata population equals this one",
+   "pass": true,
+   "detail": {
+    "r21": {
+     "n": 171,
+     "n_unstable": 3
+    },
+    "here": {
+     "n": 171,
+     "n_unstable": 3
+    }
+   },
+   "tol": "exact",
+   "source": "results/tables/r21/r21_design_baseline.json strata"
+  },
+  {
+   "gate": "G5 restated paired test reproduces e8 (AUC_ebm)",
+   "expected": 0.932026191079116,
+   "realized": 0.9320261910791159,
+   "abs_delta": 1.1102230246251565e-16,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e8_paired_frontier.csv seed-mean row"
+  },
+  {
+   "gate": "G5 restated paired test reproduces e8 (AUC_xgb)",
+   "expected": 0.9566657421810624,
+   "realized": 0.9566657421810625,
+   "abs_delta": 1.1102230246251565e-16,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e8_paired_frontier.csv seed-mean row"
+  },
+  {
+   "gate": "G5 restated paired test reproduces e8 (dAUC)",
+   "expected": -0.0246395511019466,
+   "realized": -0.0246395511019466,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e8_paired_frontier.csv seed-mean row"
+  },
+  {
+   "gate": "G5 restated paired test reproduces e8 (delong_z)",
+   "expected": -5.244244713292765,
+   "realized": -5.244244713292765,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e8_paired_frontier.csv seed-mean row"
+  },
+  {
+   "gate": "G5 restated paired test reproduces e8 (dAUC_mean)",
+   "expected": -0.0247561005090465,
+   "realized": -0.024756100509046548,
+   "abs_delta": 4.85722573273506e-17,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e8_paired_frontier.csv seed-mean row"
+  },
+  {
+   "gate": "G5 restated paired test reproduces e8 (dAUC_lo)",
+   "expected": -0.0349692865153573,
+   "realized": -0.03496928651535731,
+   "abs_delta": 6.938893903907228e-18,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e8_paired_frontier.csv seed-mean row"
+  },
+  {
+   "gate": "G5 restated paired test reproduces e8 (dAUC_hi)",
+   "expected": -0.0160913530816568,
+   "realized": -0.016091353081656812,
+   "abs_delta": 1.3877787807814457e-17,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e8_paired_frontier.csv seed-mean row"
+  },
+  {
+   "gate": "G5 restated paired test reproduces e8 (dAUC_frac_neg)",
+   "expected": 1.0,
+   "realized": 1.0,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e8_paired_frontier.csv seed-mean row"
+  },
+  {
+   "gate": "G5 restated paired test reproduces e8 (delong_p, relative)",
+   "expected": 1.569238119718782e-07,
+   "realized": 1.569238119718782e-07,
+   "abs_delta": 0.0,
+   "tol": 1e-09,
+   "tol_kind": "relative",
+   "pass": true,
+   "source": "results/final/tables/e8_paired_frontier.csv seed-mean row"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: rows whose id is not a bank id",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: the stored lam_min read by the generator equals the bank's (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv lam_min"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: the rebuilt chain reproduces the bank's lam_min (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 1.554312234475219e-14,
+   "abs_delta": 1.554312234475219e-14,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv lam_min"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: the stored gSCR read by the generator equals the bank's (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv gSCR"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: the rebuilt chain reproduces the bank's gSCR (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 1.0227929614359255e-14,
+   "abs_delta": 1.0227929614359255e-14,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv gSCR"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: the stored PWSGSI read by the generator equals the bank's (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv PWSGSI"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: the rebuilt chain reproduces the bank's PWSGSI (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 1.304512053934559e-14,
+   "abs_delta": 1.304512053934559e-14,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv PWSGSI"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: the stored C_SGSI read by the generator equals the bank's (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv C_SGSI"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: the rebuilt chain reproduces the bank's C_SGSI (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 4.529709940470639e-14,
+   "abs_delta": 4.529709940470639e-14,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv C_SGSI"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: the stored C_interior read by the generator equals the bank's (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv C_interior"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: the rebuilt chain reproduces the bank's C_interior (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 4.529709940470639e-14,
+   "abs_delta": 4.529709940470639e-14,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv C_interior"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: the stored C_dc read by the generator equals the bank's (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv C_dc"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: the rebuilt chain reproduces the bank's C_dc (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 3.552713678800501e-15,
+   "abs_delta": 3.552713678800501e-15,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv C_dc"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: the stored w_c read by the generator equals the bank's (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv w_c"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: the rebuilt chain reproduces the bank's w_c (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 5.3290705182007514e-14,
+   "abs_delta": 5.3290705182007514e-14,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv w_c"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: the stored thr_rule read by the generator equals the bank's thr_rule (rows that differ)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv thr_rule"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: the rebuilt chain's threshold family equals the bank's thr_rule (rows that differ)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv thr_rule"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: nGFM equals the bank's (rows that differ)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv nGFM"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: nGFL + nGFM equals the plant count (rows that differ)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv fpll_ columns"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: the generator's aggregation with the chain's weights equals the chain's yagg_s (largest relative difference)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file agg_id_rel"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: every row written by the generating script as it stands (code_id)",
+   "pass": true,
+   "detail": {
+    "code_id_of_script": "b53a488ca9fa9d36",
+    "code_ids_in_rows": [
+     "b53a488ca9fa9d36"
+    ]
+   },
+   "tol": "exact",
+   "source": "matlab/e9_ma2024_threshold.m"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: the rows are the bank rows at file positions 1 to 20",
+   "pass": true,
+   "detail": {
+    "rows": 20
+   },
+   "tol": "exact",
+   "source": "data/dataset.csv"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: the chain's threshold rerun through the generator's aggregation gives the same C_SGSI (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file C_mine"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: ... and the same family (rows that differ)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file rule_mine"
+  },
+  {
+   "gate": "G1 convention rows, stage conv: ... and the same w_c (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file w_c_mine"
+  },
+  {
+   "gate": "G1 convention rows, stage full: rows whose id is not a bank id",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv"
+  },
+  {
+   "gate": "G1 convention rows, stage full: the stored lam_min read by the generator equals the bank's (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv lam_min"
+  },
+  {
+   "gate": "G1 convention rows, stage full: the rebuilt chain reproduces the bank's lam_min (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 1.554312234475219e-14,
+   "abs_delta": 1.554312234475219e-14,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv lam_min"
+  },
+  {
+   "gate": "G1 convention rows, stage full: the stored gSCR read by the generator equals the bank's (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv gSCR"
+  },
+  {
+   "gate": "G1 convention rows, stage full: the rebuilt chain reproduces the bank's gSCR (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 1.0227929614359255e-14,
+   "abs_delta": 1.0227929614359255e-14,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv gSCR"
+  },
+  {
+   "gate": "G1 convention rows, stage full: the stored PWSGSI read by the generator equals the bank's (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv PWSGSI"
+  },
+  {
+   "gate": "G1 convention rows, stage full: the rebuilt chain reproduces the bank's PWSGSI (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 1.304512053934559e-14,
+   "abs_delta": 1.304512053934559e-14,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv PWSGSI"
+  },
+  {
+   "gate": "G1 convention rows, stage full: the stored C_SGSI read by the generator equals the bank's (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv C_SGSI"
+  },
+  {
+   "gate": "G1 convention rows, stage full: the rebuilt chain reproduces the bank's C_SGSI (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 4.529709940470639e-14,
+   "abs_delta": 4.529709940470639e-14,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv C_SGSI"
+  },
+  {
+   "gate": "G1 convention rows, stage full: the stored C_interior read by the generator equals the bank's (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv C_interior"
+  },
+  {
+   "gate": "G1 convention rows, stage full: the rebuilt chain reproduces the bank's C_interior (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 4.529709940470639e-14,
+   "abs_delta": 4.529709940470639e-14,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv C_interior"
+  },
+  {
+   "gate": "G1 convention rows, stage full: the stored C_dc read by the generator equals the bank's (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv C_dc"
+  },
+  {
+   "gate": "G1 convention rows, stage full: the rebuilt chain reproduces the bank's C_dc (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 3.552713678800501e-15,
+   "abs_delta": 3.552713678800501e-15,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv C_dc"
+  },
+  {
+   "gate": "G1 convention rows, stage full: the stored w_c read by the generator equals the bank's (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv w_c"
+  },
+  {
+   "gate": "G1 convention rows, stage full: the rebuilt chain reproduces the bank's w_c (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 5.3290705182007514e-14,
+   "abs_delta": 5.3290705182007514e-14,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv w_c"
+  },
+  {
+   "gate": "G1 convention rows, stage full: the stored thr_rule read by the generator equals the bank's thr_rule (rows that differ)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv thr_rule"
+  },
+  {
+   "gate": "G1 convention rows, stage full: the rebuilt chain's threshold family equals the bank's thr_rule (rows that differ)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv thr_rule"
+  },
+  {
+   "gate": "G1 convention rows, stage full: nGFM equals the bank's (rows that differ)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv nGFM"
+  },
+  {
+   "gate": "G1 convention rows, stage full: nGFL + nGFM equals the plant count (rows that differ)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv fpll_ columns"
+  },
+  {
+   "gate": "G1 convention rows, stage full: the generator's aggregation with the chain's weights equals the chain's yagg_s (largest relative difference)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file agg_id_rel"
+  },
+  {
+   "gate": "G1 convention rows, stage full: every row written by the generating script as it stands (code_id)",
+   "pass": true,
+   "detail": {
+    "code_id_of_script": "b53a488ca9fa9d36",
+    "code_ids_in_rows": [
+     "b53a488ca9fa9d36"
+    ]
+   },
+   "tol": "exact",
+   "source": "matlab/e9_ma2024_threshold.m"
+  },
+  {
+   "gate": "G2 convention rows, stage full: gSCR from the eigenvector form equals the expression of e9_ma2024_index.m (max |d|)",
+   "expected": 0.0,
+   "realized": 2.3314683517128287e-15,
+   "abs_delta": 2.3314683517128287e-15,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file gscr_g2b"
+  },
+  {
+   "gate": "G2 convention rows, stage full: gSCR equals e9_ma2024_index_rows.csv gscr_ma_noload (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 5.009326287108706e-13,
+   "abs_delta": 5.009326287108706e-13,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e9_ma2024_index_rows.csv"
+  },
+  {
+   "gate": "G2 convention rows, stage full: the participations p_1i sum to 1 (max |sum - 1|)",
+   "expected": 0.0,
+   "realized": 2.220446049250313e-16,
+   "abs_delta": 2.220446049250313e-16,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file psum"
+  },
+  {
+   "gate": "G2 convention rows, stage full: v1' u1 = 1 (max |v1' u1 - 1|)",
+   "expected": 0.0,
+   "realized": 2.220446049250313e-16,
+   "abs_delta": 2.220446049250313e-16,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file v1u1"
+  },
+  {
+   "gate": "G2 convention rows, stage full: u1 and v1 are right and left eigenvectors of Y_eq (largest relative residual)",
+   "expected": 0.0,
+   "realized": 4.383466018900494e-16,
+   "abs_delta": 4.383466018900494e-16,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file eig_res"
+  },
+  {
+   "gate": "G3 convention rows, stage full: delta_GFM(0) from the exact s = 0 limit equals delta_GFM(1e-9 j) (largest relative difference)",
+   "expected": 0.0,
+   "realized": 6.808235603695027e-10,
+   "abs_delta": 6.808235603695027e-10,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file limit_rel9"
+  },
+  {
+   "gate": "G3 convention rows, stage full: the residuals at 1e-6 j and 1e-9 j stand in the ratio 1000, first order in s (largest relative deviation of the ratio from 1000)",
+   "expected": 0.0,
+   "realized": 3.763100941966968e-12,
+   "abs_delta": 3.763100941966968e-12,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file limit_rel, limit_rel9"
+  },
+  {
+   "gate": "G3 convention rows, stage full: eqs. 28-31 equal the Schur complement of eq. 27 onto the GFL block (largest relative difference)",
+   "expected": 0.0,
+   "realized": 2.5044770125577976e-15,
+   "abs_delta": 2.5044770125577976e-15,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file schur_rel"
+  },
+  {
+   "gate": "G3 convention rows, stage full: G(s) equals the projection of eq. 35 (largest relative difference)",
+   "expected": 0.0,
+   "realized": 3.513406101171513e-15,
+   "abs_delta": 3.513406101171513e-15,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file proj_rel"
+  },
+  {
+   "gate": "G1m convention rows, stage full: eq. 27 with Y_delta = -R Ydelta R' equals the reduced characteristic of reduced.dominant_root (largest relative difference)",
+   "expected": 0.0,
+   "realized": 2.3711242975724485e-16,
+   "abs_delta": 2.3711242975724485e-16,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file map_rel"
+  },
+  {
+   "gate": "G1m convention rows, stage full: with the other sign, Y_delta = +R Ydelta R' (the literal D(s)), the identity fails (rows where it holds to 1e-12 or is missing)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file map_rel_flip"
+  },
+  {
+   "gate": "G1 test frame: rows whose id is not a bank id",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv"
+  },
+  {
+   "gate": "G1 test frame: the stored lam_min read by the generator equals the bank's (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv lam_min"
+  },
+  {
+   "gate": "G1 test frame: the rebuilt chain reproduces the bank's lam_min (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 2.220446049250313e-14,
+   "abs_delta": 2.220446049250313e-14,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv lam_min"
+  },
+  {
+   "gate": "G1 test frame: the stored gSCR read by the generator equals the bank's (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv gSCR"
+  },
+  {
+   "gate": "G1 test frame: the rebuilt chain reproduces the bank's gSCR (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 1.5466794511809212e-14,
+   "abs_delta": 1.5466794511809212e-14,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv gSCR"
+  },
+  {
+   "gate": "G1 test frame: the stored PWSGSI read by the generator equals the bank's (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv PWSGSI"
+  },
+  {
+   "gate": "G1 test frame: the rebuilt chain reproduces the bank's PWSGSI (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 2.4424906541753444e-14,
+   "abs_delta": 2.4424906541753444e-14,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv PWSGSI"
+  },
+  {
+   "gate": "G1 test frame: the stored C_SGSI read by the generator equals the bank's (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv C_SGSI"
+  },
+  {
+   "gate": "G1 test frame: the rebuilt chain reproduces the bank's C_SGSI (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 1.9451107391432743e-13,
+   "abs_delta": 1.9451107391432743e-13,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv C_SGSI"
+  },
+  {
+   "gate": "G1 test frame: the stored C_interior read by the generator equals the bank's (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv C_interior"
+  },
+  {
+   "gate": "G1 test frame: the rebuilt chain reproduces the bank's C_interior (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 1.9451107391432743e-13,
+   "abs_delta": 1.9451107391432743e-13,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv C_interior"
+  },
+  {
+   "gate": "G1 test frame: the stored C_dc read by the generator equals the bank's (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv C_dc"
+  },
+  {
+   "gate": "G1 test frame: the rebuilt chain reproduces the bank's C_dc (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 1.554312234475219e-14,
+   "abs_delta": 1.554312234475219e-14,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv C_dc"
+  },
+  {
+   "gate": "G1 test frame: the stored w_c read by the generator equals the bank's (max |d|)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv w_c"
+  },
+  {
+   "gate": "G1 test frame: the rebuilt chain reproduces the bank's w_c (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 3.751665644813329e-12,
+   "abs_delta": 3.751665644813329e-12,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv w_c"
+  },
+  {
+   "gate": "G1 test frame: the stored thr_rule read by the generator equals the bank's thr_rule (rows that differ)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv thr_rule"
+  },
+  {
+   "gate": "G1 test frame: the rebuilt chain's threshold family equals the bank's thr_rule (rows that differ)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv thr_rule"
+  },
+  {
+   "gate": "G1 test frame: nGFM equals the bank's (rows that differ)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv nGFM"
+  },
+  {
+   "gate": "G1 test frame: nGFL + nGFM equals the plant count (rows that differ)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "data/dataset.csv fpll_ columns"
+  },
+  {
+   "gate": "G1 test frame: the generator's aggregation with the chain's weights equals the chain's yagg_s (largest relative difference)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file agg_id_rel"
+  },
+  {
+   "gate": "G1 test frame: every row written by the generating script as it stands (code_id)",
+   "pass": true,
+   "detail": {
+    "code_id_of_script": "b53a488ca9fa9d36",
+    "code_ids_in_rows": [
+     "b53a488ca9fa9d36"
+    ]
+   },
+   "tol": "exact",
+   "source": "matlab/e9_ma2024_threshold.m"
+  },
+  {
+   "gate": "G2 test frame: gSCR from the eigenvector form equals the expression of e9_ma2024_index.m (max |d|)",
+   "expected": 0.0,
+   "realized": 7.271960811294775e-15,
+   "abs_delta": 7.271960811294775e-15,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file gscr_g2b"
+  },
+  {
+   "gate": "G2 test frame: gSCR equals e9_ma2024_index_rows.csv gscr_ma_noload (max |d| over rows)",
+   "expected": 0.0,
+   "realized": 4.9042991889791665e-12,
+   "abs_delta": 4.9042991889791665e-12,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e9_ma2024_index_rows.csv"
+  },
+  {
+   "gate": "G2 test frame: the participations p_1i sum to 1 (max |sum - 1|)",
+   "expected": 0.0,
+   "realized": 4.440892098500626e-16,
+   "abs_delta": 4.440892098500626e-16,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file psum"
+  },
+  {
+   "gate": "G2 test frame: v1' u1 = 1 (max |v1' u1 - 1|)",
+   "expected": 0.0,
+   "realized": 4.440892098500626e-16,
+   "abs_delta": 4.440892098500626e-16,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file v1u1"
+  },
+  {
+   "gate": "G2 test frame: u1 and v1 are right and left eigenvectors of Y_eq (largest relative residual)",
+   "expected": 0.0,
+   "realized": 7.921562862601279e-16,
+   "abs_delta": 7.921562862601279e-16,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file eig_res"
+  },
+  {
+   "gate": "G3 test frame: delta_GFM(0) from the exact s = 0 limit equals delta_GFM(1e-9 j) (largest relative difference)",
+   "expected": 0.0,
+   "realized": 1.4006528152604816e-07,
+   "abs_delta": 1.4006528152604816e-07,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file limit_rel9"
+  },
+  {
+   "gate": "G3 test frame: the residuals at 1e-6 j and 1e-9 j stand in the ratio 1000, first order in s (largest relative deviation of the ratio from 1000)",
+   "expected": 0.0,
+   "realized": 9.797711864045766e-09,
+   "abs_delta": 9.797711864045766e-09,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file limit_rel, limit_rel9"
+  },
+  {
+   "gate": "G3 test frame: eqs. 28-31 equal the Schur complement of eq. 27 onto the GFL block (largest relative difference)",
+   "expected": 0.0,
+   "realized": 1.1419780768538748e-13,
+   "abs_delta": 1.1419780768538748e-13,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file schur_rel"
+  },
+  {
+   "gate": "G3 test frame: G(s) equals the projection of eq. 35 (largest relative difference)",
+   "expected": 0.0,
+   "realized": 1.4980471844176542e-14,
+   "abs_delta": 1.4980471844176542e-14,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file proj_rel"
+  },
+  {
+   "gate": "G1m test frame: eq. 27 with Y_delta = -R Ydelta R' equals the reduced characteristic of reduced.dominant_root (largest relative difference)",
+   "expected": 0.0,
+   "realized": 3.0210705241124894e-16,
+   "abs_delta": 3.0210705241124894e-16,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file map_rel"
+  },
+  {
+   "gate": "G1m test frame: with the other sign, Y_delta = +R Ydelta R' (the literal D(s)), the identity fails (rows where it holds to 1e-12 or is missing)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file map_rel_flip"
+  },
+  {
+   "gate": "G1 test frame: every test-frame id exactly once",
+   "pass": true,
+   "detail": {
+    "rows": 1308,
+    "test_frame_rows": 1308
+   },
+   "tol": "exact",
+   "source": "results/tables/r13/r13_tier_battery_rows.csv"
+  },
+  {
+   "gate": "G5 results.device_check equals the recomputation from the rows file (dev_cos_min, dev_cos1_min, dev_rel_max; largest |d| over its leaves)",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e9_ma2024_threshold_rows.csv"
+  },
+  {
+   "gate": "G5 every test-frame id has its label in the test frame file",
+   "pass": true,
+   "detail": {
+    "rows": 1308
+   },
+   "tol": "exact",
+   "source": "results/tables/r13/r13_tier_battery_rows.csv"
+  },
+  {
+   "gate": "G5 results.test_frame.rule_counts.n_rows equals the recount from the rows file",
+   "expected": 1308.0,
+   "realized": 1308.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e9_ma2024_threshold_rows.csv, results/tables/r13/r13_tier_battery_rows.csv"
+  },
+  {
+   "gate": "G5 results.test_frame.rule_counts.n_with_cgscr equals the recount from the rows file",
+   "expected": 1308.0,
+   "realized": 1308.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e9_ma2024_threshold_rows.csv, results/tables/r13/r13_tier_battery_rows.csv"
+  },
+  {
+   "gate": "G5 results.test_frame.rule_counts.n_static_binding equals the recount from the rows file",
+   "expected": 1303.0,
+   "realized": 1303.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e9_ma2024_threshold_rows.csv, results/tables/r13/r13_tier_battery_rows.csv"
+  },
+  {
+   "gate": "G5 results.test_frame.rule_counts.n_declared_unstable equals the recount from the rows file",
+   "expected": 1307.0,
+   "realized": 1307.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e9_ma2024_threshold_rows.csv, results/tables/r13/r13_tier_battery_rows.csv"
+  },
+  {
+   "gate": "G5 results.test_frame.rule_counts.n_unstable_declared_unstable equals the recount from the rows file",
+   "expected": 230.0,
+   "realized": 230.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e9_ma2024_threshold_rows.csv, results/tables/r13/r13_tier_battery_rows.csv"
+  },
+  {
+   "gate": "G5 results.test_frame.rule_counts.n_stable_declared_unstable equals the recount from the rows file",
+   "expected": 1077.0,
+   "realized": 1077.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e9_ma2024_threshold_rows.csv, results/tables/r13/r13_tier_battery_rows.csv"
+  },
+  {
+   "gate": "G4 the rays file holds exactly the rays the artifacts define",
+   "pass": true,
+   "detail": {
+    "in_file": [
+     "bank11",
+     "bank8",
+     "design"
+    ],
+    "defined": [
+     "bank11",
+     "bank8",
+     "design"
+    ]
+   },
+   "tol": "exact",
+   "source": "rays file"
+  },
+  {
+   "gate": "G4 every ray point written by the generating script as it stands (code_id)",
+   "pass": true,
+   "detail": {
+    "code_ids": [
+     "b53a488ca9fa9d36"
+    ]
+   },
+   "tol": "exact",
+   "source": "matlab/e9_ma2024_threshold.m"
+  },
+  {
+   "gate": "G3 ray points: delta_GFM(0) from the exact s = 0 limit equals delta_GFM(1e-9 j) (largest relative difference)",
+   "expected": 0.0,
+   "realized": 2.1345727984393216e-09,
+   "abs_delta": 2.1345727984393216e-09,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rays file limit_rel9"
+  },
+  {
+   "gate": "G3 ray points: the residuals at 1e-6 j and 1e-9 j stand in the ratio 1000, first order in s (largest relative deviation of the ratio from 1000)",
+   "expected": 0.0,
+   "realized": 2.794831033270384e-11,
+   "abs_delta": 2.794831033270384e-11,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rays file limit_rel, limit_rel9"
+  },
+  {
+   "gate": "G3 ray points: Schur identity (largest relative difference)",
+   "expected": 0.0,
+   "realized": 2.3959785982920962e-15,
+   "abs_delta": 2.3959785982920962e-15,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rays file"
+  },
+  {
+   "gate": "G3 ray points: projection of eq. 35 (largest relative difference)",
+   "expected": 0.0,
+   "realized": 2.1731813871262243e-14,
+   "abs_delta": 2.1731813871262243e-14,
+   "tol": 1e-09,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rays file"
+  },
+  {
+   "gate": "G1m ray points: eq. 27 equals the reduced characteristic (largest relative difference)",
+   "expected": 0.0,
+   "realized": 3.723503717785348e-16,
+   "abs_delta": 3.723503717785348e-16,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rays file"
+  },
+  {
+   "gate": "G4 ray design: one probe point, computed",
+   "pass": true,
+   "detail": {
+    "probe_rows": 1
+   },
+   "tol": "exact",
+   "source": "rays file"
+  },
+  {
+   "gate": "G4 ray design: the probe sits at the artifact's stable-side point (k)",
+   "expected": 1.9680468750000002,
+   "realized": 1.9680468750000002,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/feasibility/fs3_boundary.csv"
+  },
+  {
+   "gate": "G4 ray design: the generator's k* equals the artifact's",
+   "expected": 1.973046875,
+   "realized": 1.973046875,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/feasibility/fs3_boundary.csv ray 'k-sweep kL=1.0' kstar_full"
+  },
+  {
+   "gate": "G4 ray design: the probe reproduces the artifact's lam_min",
+   "expected": 0.33648284206294,
+   "realized": 0.3364828420629364,
+   "abs_delta": 3.608224830031759e-15,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/feasibility/fs3_boundary.csv"
+  },
+  {
+   "gate": "G4 ray design: the probe reproduces the artifact's gSCR",
+   "expected": 0.0591753945336303,
+   "realized": 0.059175394533625345,
+   "abs_delta": 4.954370247389761e-15,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/feasibility/fs3_boundary.csv"
+  },
+  {
+   "gate": "G4 ray design: the probe reproduces the artifact's GRIP",
+   "expected": 0.287035974112594,
+   "realized": 0.2870359741125903,
+   "abs_delta": 3.7192471324942744e-15,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/feasibility/fs3_boundary.csv"
+  },
+  {
+   "gate": "G4 ray bank8: one probe point, computed",
+   "pass": true,
+   "detail": {
+    "probe_rows": 1
+   },
+   "tol": "exact",
+   "source": "rays file"
+  },
+  {
+   "gate": "G4 ray bank8: the probe sits at the artifact's stable-side point (k)",
+   "expected": 0.811797,
+   "realized": 0.811797,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r17/r17_rays.csv"
+  },
+  {
+   "gate": "G4 ray bank8: the generator's k* equals the artifact's",
+   "expected": 0.816797,
+   "realized": 0.816797,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r17/r17_rays.csv rayid 8 kstar"
+  },
+  {
+   "gate": "G4 ray bank8: the probe reproduces the artifact's lam_min",
+   "expected": 0.219785,
+   "realized": 0.219784960054102,
+   "abs_delta": 3.994589800604409e-08,
+   "tol": 2e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r17/r17_rays.csv"
+  },
+  {
+   "gate": "G4 ray bank8: the probe reproduces the artifact's gSCR",
+   "expected": 0.058466,
+   "realized": 0.05846638813905738,
+   "abs_delta": 3.8813905738066534e-07,
+   "tol": 2e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r17/r17_rays.csv"
+  },
+  {
+   "gate": "G4 ray bank8: the probe reproduces the artifact's GRIP",
+   "expected": 0.205151,
+   "realized": 0.20515099692746436,
+   "abs_delta": 3.0725356425787e-09,
+   "tol": 2e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r17/r17_rays.csv"
+  },
+  {
+   "gate": "G4 ray bank11: one probe point, computed",
+   "pass": true,
+   "detail": {
+    "probe_rows": 1
+   },
+   "tol": "exact",
+   "source": "rays file"
+  },
+  {
+   "gate": "G4 ray bank11: the probe sits at the artifact's stable-side point (k)",
+   "expected": 2.019609,
+   "realized": 2.019609,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r17/r17_rays.csv"
+  },
+  {
+   "gate": "G4 ray bank11: the generator's k* equals the artifact's",
+   "expected": 2.024609,
+   "realized": 2.024609,
+   "abs_delta": 0.0,
+   "tol": 1e-12,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r17/r17_rays.csv rayid 11 kstar"
+  },
+  {
+   "gate": "G4 ray bank11: the probe reproduces the artifact's lam_min",
+   "expected": 0.347428,
+   "realized": 0.3474280275687128,
+   "abs_delta": 2.7568712812620078e-08,
+   "tol": 2e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r17/r17_rays.csv"
+  },
+  {
+   "gate": "G4 ray bank11: the probe reproduces the artifact's gSCR",
+   "expected": 0.057758,
+   "realized": 0.05775771480739191,
+   "abs_delta": 2.8519260808490543e-07,
+   "tol": 2e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r17/r17_rays.csv"
+  },
+  {
+   "gate": "G4 ray bank11: the probe reproduces the artifact's GRIP",
+   "expected": 0.254934,
+   "realized": 0.2549342332739097,
+   "abs_delta": 2.3327390968885808e-07,
+   "tol": 2e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/tables/r17/r17_rays.csv"
+  },
+  {
+   "gate": "G4 ray design: the recorded n_sign_changes equals the recount from the rays file",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e9_ma2024_threshold_rays.csv"
+  },
+  {
+   "gate": "G4 ray design: the recorded closest approach equals the recount from the rays file (k, gSCR - CgSCR, family)",
+   "pass": true,
+   "detail": {
+    "recorded": {
+     "k": 0.2,
+     "gSCR_minus_CgSCR": -0.6350614398807941,
+     "family": "static"
+    },
+    "recount": {
+     "k": 0.2,
+     "gSCR_minus_CgSCR": -0.6350614398807941,
+     "family": "static"
+    }
+   },
+   "tol": "exact",
+   "source": "results/final/tables/e9_ma2024_threshold_rays.csv"
+  },
+  {
+   "gate": "G4 ray design: the grid is complete up to its first failed point",
+   "pass": true,
+   "detail": {
+    "grid_points": 41,
+    "computed_before_the_first_failure": 40
+   },
+   "tol": "exact",
+   "source": "results/final/tables/e9_ma2024_threshold_rays.csv"
+  },
+  {
+   "gate": "G4 ray bank8: the recorded n_sign_changes equals the recount from the rays file",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e9_ma2024_threshold_rays.csv"
+  },
+  {
+   "gate": "G4 ray bank8: the recorded closest approach equals the recount from the rays file (k, gSCR - CgSCR, family)",
+   "pass": true,
+   "detail": {
+    "recorded": {
+     "k": 0.2,
+     "gSCR_minus_CgSCR": -0.8146277341430064,
+     "family": "static"
+    },
+    "recount": {
+     "k": 0.2,
+     "gSCR_minus_CgSCR": -0.8146277341430064,
+     "family": "static"
+    }
+   },
+   "tol": "exact",
+   "source": "results/final/tables/e9_ma2024_threshold_rays.csv"
+  },
+  {
+   "gate": "G4 ray bank8: the grid is complete up to its first failed point",
+   "pass": true,
+   "detail": {
+    "grid_points": 31,
+    "computed_before_the_first_failure": 30
+   },
+   "tol": "exact",
+   "source": "results/final/tables/e9_ma2024_threshold_rays.csv"
+  },
+  {
+   "gate": "G4 ray bank11: the recorded n_sign_changes equals the recount from the rays file",
+   "expected": 0.0,
+   "realized": 0.0,
+   "abs_delta": 0.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "results/final/tables/e9_ma2024_threshold_rays.csv"
+  },
+  {
+   "gate": "G4 ray bank11: the recorded closest approach equals the recount from the rays file (k, gSCR - CgSCR, family)",
+   "pass": true,
+   "detail": {
+    "recorded": {
+     "k": 0.2,
+     "gSCR_minus_CgSCR": -0.6238088810576279,
+     "family": "static"
+    },
+    "recount": {
+     "k": 0.2,
+     "gSCR_minus_CgSCR": -0.6238088810576279,
+     "family": "static"
+    }
+   },
+   "tol": "exact",
+   "source": "results/final/tables/e9_ma2024_threshold_rays.csv"
+  },
+  {
+   "gate": "G4 ray bank11: the grid is complete up to its first failed point",
+   "pass": true,
+   "detail": {
+    "grid_points": 40,
+    "computed_before_the_first_failure": 39
+   },
+   "tol": "exact",
+   "source": "results/final/tables/e9_ma2024_threshold_rays.csv"
+  }
+ ],
+ "superseded_gates": [
+  {
+   "gate": "G3 convention rows, stage full: delta_GFM(0) from the exact s = 0 limit equals delta_GFM(1e-6 j) (largest relative difference)",
+   "expected": 0.0,
+   "realized": 6.808235603692682e-07,
+   "abs_delta": 6.808235603692682e-07,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": true,
+   "source": "rows file limit_rel",
+   "reason": "the probe point s = 1e-6 j measures the first-order slope of delta_GFM at the origin, not its limit: on rows with a slow mode of the GFM subsystem near s = 0 the residual there exceeds 1e-6 although the limit is exact (the residual at 1e-9 j is a thousandth of it on every row); restated with the tolerance unchanged",
+   "superseded_by": [
+    "G3 convention rows, stage full: delta_GFM(0) from the exact s = 0 limit equals delta_GFM(1e-9 j) (largest relative difference)",
+    "G3 convention rows, stage full: the residuals at 1e-6 j and 1e-9 j stand in the ratio 1000, first order in s (largest relative deviation of the ratio from 1000)"
+   ]
+  },
+  {
+   "gate": "G3 test frame: delta_GFM(0) from the exact s = 0 limit equals delta_GFM(1e-6 j) (largest relative difference)",
+   "expected": 0.0,
+   "realized": 0.0001400652801537289,
+   "abs_delta": 0.0001400652801537289,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": false,
+   "source": "rows file limit_rel",
+   "reason": "the probe point s = 1e-6 j measures the first-order slope of delta_GFM at the origin, not its limit: on rows with a slow mode of the GFM subsystem near s = 0 the residual there exceeds 1e-6 although the limit is exact (the residual at 1e-9 j is a thousandth of it on every row); restated with the tolerance unchanged",
+   "superseded_by": [
+    "G3 test frame: delta_GFM(0) from the exact s = 0 limit equals delta_GFM(1e-9 j) (largest relative difference)",
+    "G3 test frame: the residuals at 1e-6 j and 1e-9 j stand in the ratio 1000, first order in s (largest relative deviation of the ratio from 1000)"
+   ]
+  },
+  {
+   "gate": "G3 ray points: delta_GFM(0) from the exact s = 0 limit equals delta_GFM(1e-6 j) (largest relative difference)",
+   "expected": 0.0,
+   "realized": 2.1345727984050135e-06,
+   "abs_delta": 2.1345727984050135e-06,
+   "tol": 1e-06,
+   "tol_kind": "absolute",
+   "pass": false,
+   "source": "rays file limit_rel",
+   "reason": "the probe point s = 1e-6 j measures the first-order slope of delta_GFM at the origin, not its limit: on rows with a slow mode of the GFM subsystem near s = 0 the residual there exceeds 1e-6 although the limit is exact (the residual at 1e-9 j is a thousandth of it on every row); restated with the tolerance unchanged",
+   "superseded_by": [
+    "G3 ray points: delta_GFM(0) from the exact s = 0 limit equals delta_GFM(1e-9 j) (largest relative difference)",
+    "G3 ray points: the residuals at 1e-6 j and 1e-9 j stand in the ratio 1000, first order in s (largest relative deviation of the ratio from 1000)"
+   ]
+  },
+  {
+   "gate": "G4 ray design: gSCR - CgSCR changes sign exactly once on the grid (sign changes)",
+   "expected": 1.0,
+   "realized": 0.0,
+   "abs_delta": 1.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": false,
+   "source": "rays file",
+   "reason": "the gate encoded a hypothesis about the rule (one crossing of gSCR and CgSCR on the grid), not a correctness check; its outcome is the physics result and is reported in results.rays; restated as a reproduction",
+   "superseded_by": [
+    "G4 ray design: the recorded n_sign_changes equals the recount from the rays file",
+    "G4 ray design: the recorded closest approach equals the recount from the rays file (k, gSCR - CgSCR, family)",
+    "G4 ray design: the grid is complete up to its first failed point"
+   ]
+  },
+  {
+   "gate": "G4 ray bank8: gSCR - CgSCR changes sign exactly once on the grid (sign changes)",
+   "expected": 1.0,
+   "realized": 0.0,
+   "abs_delta": 1.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": false,
+   "source": "rays file",
+   "reason": "the gate encoded a hypothesis about the rule (one crossing of gSCR and CgSCR on the grid), not a correctness check; its outcome is the physics result and is reported in results.rays; restated as a reproduction",
+   "superseded_by": [
+    "G4 ray bank8: the recorded n_sign_changes equals the recount from the rays file",
+    "G4 ray bank8: the recorded closest approach equals the recount from the rays file (k, gSCR - CgSCR, family)",
+    "G4 ray bank8: the grid is complete up to its first failed point"
+   ]
+  },
+  {
+   "gate": "G4 ray bank11: gSCR - CgSCR changes sign exactly once on the grid (sign changes)",
+   "expected": 1.0,
+   "realized": 0.0,
+   "abs_delta": 1.0,
+   "tol": 0,
+   "tol_kind": "absolute",
+   "pass": false,
+   "source": "rays file",
+   "reason": "the gate encoded a hypothesis about the rule (one crossing of gSCR and CgSCR on the grid), not a correctness check; its outcome is the physics result and is reported in results.rays; restated as a reproduction",
+   "superseded_by": [
+    "G4 ray bank11: the recorded n_sign_changes equals the recount from the rays file",
+    "G4 ray bank11: the recorded closest approach equals the recount from the rays file (k, gSCR - CgSCR, family)",
+    "G4 ray bank11: the grid is complete up to its first failed point"
+   ]
+  }
+ ],
+ "definitions": {
+  "frames": {
+   "test_frame": "the held-out test rows of results/tables/r13/r13_tier_battery_rows.csv; unstable as stored there",
+   "convention_rows": "the bank rows at file positions 1 to 20 of data/dataset.csv"
+  },
+  "populations": {
+   "all_rows": "every row of the frame",
+   "nGFM_k": "the rows with k GFM plants"
+  },
+  "gSCR": "eq. 39 on the as-published network (the index of e9_ma2024_index_rows.csv, gscr_ma_noload)",
+  "CgSCR": "eq. 40: the largest real positive eigenvalue of G(j w_c) = sum_i p_1i F^-1 Y_GFL,i - delta_GFM over the static root at w = 0 and the interior crossings of 2 rad/s to 2 pi 55 rad/s (reduced.threshold unchanged)",
+  "rule": "stable iff gSCR >= CgSCR (eq. 41); rows without CgSCR read with CgSCR = 0",
+  "beta": "(gSCR - CgSCR)/CgSCR (eq. 41 without the factor 100); ranked by -beta",
+  "rule_interior_family_only_sensitivity": "the rule with CgSCR taken from the interior crossings alone (the source's sideband reading), rows without one read with 0",
+  "monitor_alarm_md_amber": "the test frame's alarm column, the deployed M+D AMBER-EBM seed 0 at its out-of-fold threshold (results/final/tables/e1_alarms.csv)",
+  "project_threshold_rule_context": "lam_min < C_SGSI, the chain's own analytic threshold (context, not a comparator)",
+  "design_coordinates_amber_alarm_all_rows": "results/tables/r21/r21_design_baseline.json arms.DC4.ebm.alarm (pooled only; FA is the false-alarm rate)",
+  "design_coordinates_logistic_all_rows": "DC4 logistic classifier (results/tables/r21/r21_design_baseline.json strata AUC_DC4_LOGIT), all rows of the population",
+  "design_coordinates_amber_ensemble_all_rows": "DC4 AMBER-EBM five-seed ensemble (results/tables/r21/r21_design_baseline.json strata)",
+  "monitor_md_amber_ensemble": "five-seed score-averaged ensemble of the deployed M+D AMBER-EBM (results/final/e8_test_predictions.npz)",
+  "monitor_md_amber_seed_mean_all_rows": "mean over the five seeds of each seed's AUC (the Table II convention)",
+  "paired": "on the rows with CgSCR: DeLong z and two-sided p; paired bootstrap of dAUC, 2000 resamples, RandomState(42), percentile interval 2.5 to 97.5",
+  "rays": "probe at the artifact's k* - 0.005; grid k = 0.20:0.05:3.00 up to its first failed point; every sign change of gSCR - CgSCR bisected to 1e-5 in k; k_c the midpoint of the final bracket; rel_error_vs_kstar = (k_c - k*)/k*; n_sign_changes, closest_approach (the grid point of largest gSCR - CgSCR), binding_family_at_every_point and interior_only_bracket are the outcome of the superseded sign-change gate, reported as results",
+  "crossing_orientation": "sign of Re(ds/dlambda) of the binding root of det(lambda I - G(s)) = 0; negative when a larger gSCR moves the root into the left half plane (the orientation the rule presumes)",
+  "device_check": "on the test frame: cosine and relative error of the closed-form R Ydelta R' against the VSM port with the swing live minus the frozen port, both at s = 0 (and the cosine at 1 Hz), taken at the worst GFM plant of each row; n_rows rows",
+  "rule_counts": "the rule on the test frame (stable iff gSCR >= CgSCR, rows without CgSCR read with CgSCR = 0): rows, rows with CgSCR, rows where the static root binds, rows declared unstable, and among them the full model's unstable and stable rows",
+  "superseded_gates": "gates of the first gated run that were restated: kept with their realized values, reason and successors; they do not count in the tally",
+  "low_support": "fewer than 10 unstable or 10 stable rows"
+ },
+ "diagnostics": {
+  "convention_rows_variants": [
+   {
+    "id": 1,
+    "nGFM": 1,
+    "gSCR": 0.05850953943327174,
+    "CgSCR": 0.5685299530951516,
+    "family": "static",
+    "CgSCR_other_sign_of_Y_delta": 0.45999649322982566,
+    "CgSCR_delta_zero_nominal_subsystem": 0.4684261592758136,
+    "C_SGSI_chain": 0.4772165118202799,
+    "lam_min": 0.14751281949764375,
+    "device_cosine_s0": 0.24387144160394605,
+    "cg_dsdl": -14.164120897986479,
+    "limit_rel_1e-6j": 3.0488008012047147e-07,
+    "limit_rel_1e-9j": 3.0488008012058265e-10,
+    "wall_s": 10.2770869
+   },
+   {
+    "id": 2,
+    "nGFM": 2,
+    "gSCR": 0.48608968248325823,
+    "CgSCR": 1.3686479021838656,
+    "family": "static",
+    "CgSCR_other_sign_of_Y_delta": 0.8349043274848912,
+    "CgSCR_delta_zero_nominal_subsystem": 0.9144170700835613,
+    "C_SGSI_chain": 1.3259624397419296,
+    "lam_min": 0.6276899157308355,
+    "device_cosine_s0": 0.2829448229732707,
+    "cg_dsdl": -10.205195535285862,
+    "limit_rel_1e-6j": 7.454493118739648e-08,
+    "limit_rel_1e-9j": 7.454493118757042e-11,
+    "wall_s": 8.7281035
+   },
+   {
+    "id": 3,
+    "nGFM": 2,
+    "gSCR": 0.31354801478750094,
+    "CgSCR": 1.353091644338909,
+    "family": "static",
+    "CgSCR_other_sign_of_Y_delta": 0.9011995278643976,
+    "CgSCR_delta_zero_nominal_subsystem": 0.9419274147382244,
+    "C_SGSI_chain": 1.5166317638696385,
+    "lam_min": 0.4797928812988156,
+    "device_cosine_s0": 0.30470243395608493,
+    "cg_dsdl": -8.00988440580821,
+    "limit_rel_1e-6j": 1.9274035855492315e-07,
+    "limit_rel_1e-9j": 1.9274035855541178e-10,
+    "wall_s": 8.3671705
+   },
+   {
+    "id": 4,
+    "nGFM": 2,
+    "gSCR": 0.2572229005200012,
+    "CgSCR": 1.1753065236636648,
+    "family": "static",
+    "CgSCR_other_sign_of_Y_delta": 0.8605677410703344,
+    "CgSCR_delta_zero_nominal_subsystem": 0.8849793068095495,
+    "C_SGSI_chain": 0.9152724293183395,
+    "lam_min": 0.43520089448165955,
+    "device_cosine_s0": 0.269003797190876,
+    "cg_dsdl": -6.353692429037086,
+    "limit_rel_1e-6j": 3.313195641220333e-07,
+    "limit_rel_1e-9j": 3.3131956412205767e-10,
+    "wall_s": 8.2374152
+   },
+   {
+    "id": 5,
+    "nGFM": 4,
+    "gSCR": 0.775225928680641,
+    "CgSCR": 1.3087715881353037,
+    "family": "static",
+    "CgSCR_other_sign_of_Y_delta": 4.068025054103386,
+    "CgSCR_delta_zero_nominal_subsystem": 0.5727713006381348,
+    "C_SGSI_chain": 2.309605537478005,
+    "lam_min": 0.890108793659109,
+    "device_cosine_s0": 0.26117118416862334,
+    "cg_dsdl": -4.5082490781789355,
+    "limit_rel_1e-6j": 2.3733807373540507e-07,
+    "limit_rel_1e-9j": 2.3733807373572354e-10,
+    "wall_s": 8.4745116
+   },
+   {
+    "id": 6,
+    "nGFM": 2,
+    "gSCR": 0.18040019585687417,
+    "CgSCR": 0.6609432992279565,
+    "family": "static",
+    "CgSCR_other_sign_of_Y_delta": 0.4804509022272545,
+    "CgSCR_delta_zero_nominal_subsystem": 0.4962965131106689,
+    "C_SGSI_chain": 0.5141301903142674,
+    "lam_min": 0.26552033197189706,
+    "device_cosine_s0": 0.24568152308016522,
+    "cg_dsdl": -12.475784935500913,
+    "limit_rel_1e-6j": 2.3412348760163398e-07,
+    "limit_rel_1e-9j": 2.341234876016888e-10,
+    "wall_s": 8.2238978
+   },
+   {
+    "id": 7,
+    "nGFM": 2,
+    "gSCR": 0.4623355094618139,
+    "CgSCR": 1.2266395182402858,
+    "family": "static",
+    "CgSCR_other_sign_of_Y_delta": 0.689605183796617,
+    "CgSCR_delta_zero_nominal_subsystem": 0.7504846375327157,
+    "C_SGSI_chain": 0.8382014018581947,
+    "lam_min": 0.5977649232101946,
+    "device_cosine_s0": 0.2648056981800059,
+    "cg_dsdl": -4.60333047412052,
+    "limit_rel_1e-6j": 3.257182871901836e-07,
+    "limit_rel_1e-9j": 3.257182871902461e-10,
+    "wall_s": 7.9689612
+   },
+   {
+    "id": 8,
+    "nGFM": 3,
+    "gSCR": 0.326499884893124,
+    "CgSCR": 1.1336682246595853,
+    "family": "static",
+    "CgSCR_other_sign_of_Y_delta": 0.7147219287111486,
+    "CgSCR_delta_zero_nominal_subsystem": 0.7441373561035863,
+    "C_SGSI_chain": 0.8561310729697091,
+    "lam_min": 0.4808449069669764,
+    "device_cosine_s0": 0.2628888349961192,
+    "cg_dsdl": -4.9657775935582675,
+    "limit_rel_1e-6j": 4.3614926073807546e-07,
+    "limit_rel_1e-9j": 4.3614926073817686e-10,
+    "wall_s": 8.2307977
+   },
+   {
+    "id": 9,
+    "nGFM": 2,
+    "gSCR": 0.14726306842990752,
+    "CgSCR": 0.7045181971189515,
+    "family": "static",
+    "CgSCR_other_sign_of_Y_delta": 0.5183988048347713,
+    "CgSCR_delta_zero_nominal_subsystem": 0.5291981143572964,
+    "C_SGSI_chain": 0.5441389957445708,
+    "lam_min": 0.2567918551905856,
+    "device_cosine_s0": 0.23711324784793247,
+    "cg_dsdl": -7.51367708790066,
+    "limit_rel_1e-6j": 5.153763208362019e-07,
+    "limit_rel_1e-9j": 5.153763208362621e-10,
+    "wall_s": 8.2921228
+   },
+   {
+    "id": 10,
+    "nGFM": 1,
+    "gSCR": 0.06895054737555353,
+    "CgSCR": 0.7694109760920836,
+    "family": "static",
+    "CgSCR_other_sign_of_Y_delta": 0.6772114368547302,
+    "CgSCR_delta_zero_nominal_subsystem": 0.6839093872393209,
+    "C_SGSI_chain": 0.6902069066321075,
+    "lam_min": 0.1970545564699577,
+    "device_cosine_s0": 0.265658362934726,
+    "cg_dsdl": -11.269411829423943,
+    "limit_rel_1e-6j": 3.8222044187755737e-07,
+    "limit_rel_1e-9j": 3.822204418775581e-10,
+    "wall_s": 7.7649801
+   },
+   {
+    "id": 11,
+    "nGFM": 3,
+    "gSCR": 0.6961206944655367,
+    "CgSCR": 1.1050281621751796,
+    "family": "static",
+    "CgSCR_other_sign_of_Y_delta": 0.4165652419841012,
+    "CgSCR_delta_zero_nominal_subsystem": 0.4865652161410551,
+    "C_SGSI_chain": 0.6182659722363913,
+    "lam_min": 0.7562191493870183,
+    "device_cosine_s0": 0.23397861231625516,
+    "cg_dsdl": -5.65270763754137,
+    "limit_rel_1e-6j": 2.0730680451991139e-07,
+    "limit_rel_1e-9j": 2.073068045199604e-10,
+    "wall_s": 5.8000226
+   },
+   {
+    "id": 12,
+    "nGFM": 1,
+    "gSCR": 0.18481247530561748,
+    "CgSCR": 1.101991905835694,
+    "family": "static",
+    "CgSCR_other_sign_of_Y_delta": 0.7788592159158976,
+    "CgSCR_delta_zero_nominal_subsystem": 0.820389463334999,
+    "C_SGSI_chain": 0.8714869860726512,
+    "lam_min": 0.3466207515241587,
+    "device_cosine_s0": 0.2928209292395108,
+    "cg_dsdl": -8.166120144076313,
+    "limit_rel_1e-6j": 2.1531287079525014e-07,
+    "limit_rel_1e-9j": 2.1531287079525162e-10,
+    "wall_s": 5.7543965
+   },
+   {
+    "id": 13,
+    "nGFM": 3,
+    "gSCR": 0.4881405703710271,
+    "CgSCR": 0.9890493657024582,
+    "family": "static",
+    "CgSCR_other_sign_of_Y_delta": 0.5365678799088907,
+    "CgSCR_delta_zero_nominal_subsystem": 0.5816076965525435,
+    "C_SGSI_chain": 0.6476332581025722,
+    "lam_min": 0.5791180012823037,
+    "device_cosine_s0": 0.24352508744975535,
+    "cg_dsdl": -5.933838470010474,
+    "limit_rel_1e-6j": 2.8635645739618515e-07,
+    "limit_rel_1e-9j": 2.863564573964253e-10,
+    "wall_s": 5.4272072
+   },
+   {
+    "id": 14,
+    "nGFM": 3,
+    "gSCR": 0.5281743684455785,
+    "CgSCR": 1.5401438426434415,
+    "family": "static",
+    "CgSCR_other_sign_of_Y_delta": 0.8912086532502149,
+    "CgSCR_delta_zero_nominal_subsystem": 0.8612929813291814,
+    "C_SGSI_chain": 0.9386332212216847,
+    "lam_min": 0.676536577974066,
+    "device_cosine_s0": 0.2726201403753858,
+    "cg_dsdl": -2.5351767283849482,
+    "limit_rel_1e-6j": 4.7527681287460073e-07,
+    "limit_rel_1e-9j": 4.752768128763893e-10,
+    "wall_s": 5.6268708
+   },
+   {
+    "id": 15,
+    "nGFM": 2,
+    "gSCR": 0.5734511094733313,
+    "CgSCR": 1.070264180347688,
+    "family": "static",
+    "CgSCR_other_sign_of_Y_delta": 0.5389331163498637,
+    "CgSCR_delta_zero_nominal_subsystem": 0.6243503314049124,
+    "C_SGSI_chain": 0.7536382461684813,
+    "lam_min": 0.647912338101472,
+    "device_cosine_s0": 0.2450576353743015,
+    "cg_dsdl": -9.164252536825222,
+    "limit_rel_1e-6j": 1.1951445556976482e-07,
+    "limit_rel_1e-9j": 1.1951445557018247e-10,
+    "wall_s": 5.9159056
+   },
+   {
+    "id": 16,
+    "nGFM": 3,
+    "gSCR": 0.6448120170780938,
+    "CgSCR": 1.4172957820820073,
+    "family": "static",
+    "CgSCR_other_sign_of_Y_delta": 0.6464881816264006,
+    "CgSCR_delta_zero_nominal_subsystem": 0.7216438376583636,
+    "C_SGSI_chain": 0.843898114460139,
+    "lam_min": 0.7600522141149755,
+    "device_cosine_s0": 0.2578875272468206,
+    "cg_dsdl": -3.4678540082260607,
+    "limit_rel_1e-6j": 3.1659620422880415e-07,
+    "limit_rel_1e-9j": 3.165962042292446e-10,
+    "wall_s": 5.5621982
+   },
+   {
+    "id": 17,
+    "nGFM": 1,
+    "gSCR": 0.030612205584928297,
+    "CgSCR": 0.6987931736448257,
+    "family": "static",
+    "CgSCR_other_sign_of_Y_delta": 0.6657977386616273,
+    "CgSCR_delta_zero_nominal_subsystem": 0.6678015952749008,
+    "C_SGSI_chain": 0.6751222982260144,
+    "lam_min": 0.16444413922563203,
+    "device_cosine_s0": 0.2732011298031771,
+    "cg_dsdl": -20.475451525955044,
+    "limit_rel_1e-6j": 3.8501308403766183e-07,
+    "limit_rel_1e-9j": 3.850130840376694e-10,
+    "wall_s": 5.7529414
+   },
+   {
+    "id": 18,
+    "nGFM": 2,
+    "gSCR": 0.23809719152231357,
+    "CgSCR": 0.7781995245009939,
+    "family": "static",
+    "CgSCR_other_sign_of_Y_delta": 0.4864104315776594,
+    "CgSCR_delta_zero_nominal_subsystem": 0.5119066861545731,
+    "C_SGSI_chain": 0.5415302150212269,
+    "lam_min": 0.32513209091167616,
+    "device_cosine_s0": 0.2531655386299639,
+    "cg_dsdl": -5.719134266649968,
+    "limit_rel_1e-6j": 4.806332049803856e-07,
+    "limit_rel_1e-9j": 4.806332049811423e-10,
+    "wall_s": 5.7548167
+   },
+   {
+    "id": 19,
+    "nGFM": 2,
+    "gSCR": 0.27426165848997686,
+    "CgSCR": 1.3256893653042032,
+    "family": "static",
+    "CgSCR_other_sign_of_Y_delta": 0.9183013127170337,
+    "CgSCR_delta_zero_nominal_subsystem": 0.942109826809655,
+    "C_SGSI_chain": 0.9775427878121955,
+    "lam_min": 0.4567492168502344,
+    "device_cosine_s0": 0.27811848054783495,
+    "cg_dsdl": -2.951762119989523,
+    "limit_rel_1e-6j": 6.808235603692682e-07,
+    "limit_rel_1e-9j": 6.808235603695027e-10,
+    "wall_s": 5.8746448
+   },
+   {
+    "id": 21,
+    "nGFM": 1,
+    "gSCR": 0.09236015869853996,
+    "CgSCR": 1.0724430557497688,
+    "family": "static",
+    "CgSCR_other_sign_of_Y_delta": 0.8753971615184746,
+    "CgSCR_delta_zero_nominal_subsystem": 0.8896909501329299,
+    "C_SGSI_chain": 0.895008960596953,
+    "lam_min": 0.2681714701119571,
+    "device_cosine_s0": 0.3011375067693356,
+    "cg_dsdl": -10.596312662252096,
+    "limit_rel_1e-6j": 2.0136963377530122e-07,
+    "limit_rel_1e-9j": 2.0136963377529417e-10,
+    "wall_s": 6.0299434
+   }
+  ],
+  "test_frame": {
+   "map_other_sign_residual_min": 0.5267283325803068,
+   "limit_check": {
+    "rel_difference_at_1e-6j": {
+     "q00": 6.105224612078713e-08,
+     "q25": 2.0858535616217407e-07,
+     "q50": 2.9328154051527515e-07,
+     "q75": 4.2226159379659577e-07,
+     "q100": 0.0001400652801537289
+    },
+    "rel_difference_at_1e-9j": {
+     "q00": 6.105224612078768e-11,
+     "q25": 2.0858535616228343e-10,
+     "q50": 2.9328154051586315e-10,
+     "q75": 4.2226159379758857e-10,
+     "q100": 1.4006528152604816e-07
+    },
+    "ratio_1e-6j_over_1e-9j": {
+     "q00": 999.9999902022881,
+     "q25": 999.9999999970169,
+     "q50": 999.9999999994086,
+     "q75": 999.9999999998893,
+     "q100": 1000.0000000001143
+    },
+    "rows_above_the_gate_tolerance": [
+     {
+      "id": 12389,
+      "nGFM": 2,
+      "unstable": true,
+      "rel_difference_at_1e-6j": 0.0001400652801537289,
+      "rel_difference_at_1e-9j": 1.4006528152604816e-07,
+      "ratio": 999.9999902022881,
+      "family": "interior",
+      "CgSCR": 0.07180910283027464,
+      "gSCR": 0.1319942140612651,
+      "cg_dsdl": -428.4345431495898
+     },
+     {
+      "id": 10264,
+      "nGFM": 1,
+      "unstable": false,
+      "rel_difference_at_1e-6j": 3.707568536612502e-05,
+      "rel_difference_at_1e-9j": 3.707568539195373e-08,
+      "ratio": 999.9999993033516,
+      "family": "interior",
+      "CgSCR": 0.1062707142051012,
+      "gSCR": -0.05924802924168671,
+      "cg_dsdl": -147.5181308688838
+     },
+     {
+      "id": 11601,
+      "nGFM": 2,
+      "unstable": true,
+      "rel_difference_at_1e-6j": 9.002157418071638e-06,
+      "rel_difference_at_1e-9j": 9.002157418713078e-09,
+      "ratio": 999.999999928746,
+      "family": "static",
+      "CgSCR": 3.2913036210376636,
+      "gSCR": 0.1340420658128554,
+      "cg_dsdl": -0.043498152454081784
+     },
+     {
+      "id": 11175,
+      "nGFM": 3,
+      "unstable": false,
+      "rel_difference_at_1e-6j": 6.146419006523492e-06,
+      "rel_difference_at_1e-9j": 6.146419006668141e-09,
+      "ratio": 999.9999999764661,
+      "family": "static",
+      "CgSCR": 5.244141790985948,
+      "gSCR": 0.43792733137142015,
+      "cg_dsdl": -0.03769186926921206
+     },
+     {
+      "id": 10346,
+      "nGFM": 2,
+      "unstable": true,
+      "rel_difference_at_1e-6j": 4.578572019211025e-06,
+      "rel_difference_at_1e-9j": 4.578572019261787e-09,
+      "ratio": 999.999999988913,
+      "family": "static",
+      "CgSCR": 2.4631474133486355,
+      "gSCR": 0.13625164357113673,
+      "cg_dsdl": -0.12534091300373004
+     },
+     {
+      "id": 11934,
+      "nGFM": 2,
+      "unstable": true,
+      "rel_difference_at_1e-6j": 4.304442506300983e-06,
+      "rel_difference_at_1e-9j": 4.304442506363866e-09,
+      "ratio": 999.9999999853911,
+      "family": "static",
+      "CgSCR": 0.3923300518850735,
+      "gSCR": 0.16304788298684905,
+      "cg_dsdl": -0.32275681529141526
+     },
+     {
+      "id": 3146,
+      "nGFM": 1,
+      "unstable": false,
+      "rel_difference_at_1e-6j": 3.894553992516134e-06,
+      "rel_difference_at_1e-9j": 3.894553992585972e-09,
+      "ratio": 999.9999999820678,
+      "family": "static",
+      "CgSCR": 2.6830236642792276,
+      "gSCR": -0.025166274812213906,
+      "cg_dsdl": -0.13649860447062945
+     },
+     {
+      "id": 11112,
+      "nGFM": 2,
+      "unstable": true,
+      "rel_difference_at_1e-6j": 3.4938377805501497e-06,
+      "rel_difference_at_1e-9j": 3.493837780569058e-09,
+      "ratio": 999.999999994588,
+      "family": "static",
+      "CgSCR": 2.6947718218461403,
+      "gSCR": 0.11063782685335541,
+      "cg_dsdl": -0.13414904752022452
+     },
+     {
+      "id": 1132,
+      "nGFM": 1,
+      "unstable": false,
+      "rel_difference_at_1e-6j": 2.2940912437154615e-06,
+      "rel_difference_at_1e-9j": 2.294091243725001e-09,
+      "ratio": 999.9999999958417,
+      "family": "static",
+      "CgSCR": 1.454235095044691,
+      "gSCR": -0.017473303292625624,
+      "cg_dsdl": -0.6265946438041119
+     },
+     {
+      "id": 2423,
+      "nGFM": 4,
+      "unstable": false,
+      "rel_difference_at_1e-6j": 2.1603673095557497e-06,
+      "rel_difference_at_1e-9j": 2.1603673095745734e-09,
+      "ratio": 999.9999999912868,
+      "family": "static",
+      "CgSCR": 2.1210423864827885,
+      "gSCR": 0.6823357742233811,
+      "cg_dsdl": -0.3115483827340202
+     },
+     {
+      "id": 11191,
+      "nGFM": 2,
+      "unstable": false,
+      "rel_difference_at_1e-6j": 2.0408399336585994e-06,
+      "rel_difference_at_1e-9j": 2.0408399336631942e-09,
+      "ratio": 999.9999999977485,
+      "family": "static",
+      "CgSCR": 2.3188139296084245,
+      "gSCR": 0.16521138687537057,
+      "cg_dsdl": -0.29649580971417866
+     },
+     {
+      "id": 12258,
+      "nGFM": 2,
+      "unstable": true,
+      "rel_difference_at_1e-6j": 1.9203854551471806e-06,
+      "rel_difference_at_1e-9j": 1.9203854551524187e-09,
+      "ratio": 999.9999999972723,
+      "family": "static",
+      "CgSCR": 1.3850064054783688,
+      "gSCR": 0.14031058911372743,
+      "cg_dsdl": -0.720805016006733
+     },
+     {
+      "id": 247,
+      "nGFM": 2,
+      "unstable": false,
+      "rel_difference_at_1e-6j": 1.860927348516601e-06,
+      "rel_difference_at_1e-9j": 1.860927348521148e-09,
+      "ratio": 999.9999999975566,
+      "family": "static",
+      "CgSCR": 1.3109737761865339,
+      "gSCR": 0.20406803805645107,
+      "cg_dsdl": -0.871593503552039
+     },
+     {
+      "id": 10253,
+      "nGFM": 2,
+      "unstable": false,
+      "rel_difference_at_1e-6j": 1.838326161821992e-06,
+      "rel_difference_at_1e-9j": 1.8383261618257728e-09,
+      "ratio": 999.9999999979434,
+      "family": "static",
+      "CgSCR": 1.7195116798720989,
+      "gSCR": 0.16721437410791903,
+      "cg_dsdl": -0.5763425432015371
+     },
+     {
+      "id": 11783,
+      "nGFM": 1,
+      "unstable": true,
+      "rel_difference_at_1e-6j": 1.7967865673441573e-06,
+      "rel_difference_at_1e-9j": 1.7967865674068895e-09,
+      "ratio": 999.9999999650864,
+      "family": "interior",
+      "CgSCR": 0.5775417631759273,
+      "gSCR": -0.049670157562193874,
+      "cg_dsdl": -838.3887048770206
+     },
+     {
+      "id": 5361,
+      "nGFM": 3,
+      "unstable": false,
+      "rel_difference_at_1e-6j": 1.6972817698633164e-06,
+      "rel_difference_at_1e-9j": 1.6972817698682806e-09,
+      "ratio": 999.9999999970752,
+      "family": "static",
+      "CgSCR": 1.7576254941625997,
+      "gSCR": 0.48949691243772664,
+      "cg_dsdl": -1.218588045144849
+     },
+     {
+      "id": 347,
+      "nGFM": 2,
+      "unstable": true,
+      "rel_difference_at_1e-6j": 1.6316077169665635e-06,
+      "rel_difference_at_1e-9j": 1.6316077169700803e-09,
+      "ratio": 999.9999999978446,
+      "family": "static",
+      "CgSCR": 1.5463992292648072,
+      "gSCR": 0.08945132274102577,
+      "cg_dsdl": -0.8524527183212767
+     },
+     {
+      "id": 12155,
+      "nGFM": 2,
+      "unstable": true,
+      "rel_difference_at_1e-6j": 1.5983610856706589e-06,
+      "rel_difference_at_1e-9j": 1.598361085684757e-09,
+      "ratio": 999.9999999911796,
+      "family": "static",
+      "CgSCR": 1.494218760558124,
+      "gSCR": 0.15472788754163325,
+      "cg_dsdl": -0.7884061963770786
+     },
+     {
+      "id": 1821,
+      "nGFM": 2,
+      "unstable": false,
+      "rel_difference_at_1e-6j": 1.5974646728821373e-06,
+      "rel_difference_at_1e-9j": 1.5974646728855525e-09,
+      "ratio": 999.9999999978621,
+      "family": "static",
+      "CgSCR": 1.5364203251359725,
+      "gSCR": 0.11445856698113158,
+      "cg_dsdl": -1.0062713489331019
+     },
+     {
+      "id": 10310,
+      "nGFM": 3,
+      "unstable": false,
+      "rel_difference_at_1e-6j": 1.591188091181227e-06,
+      "rel_difference_at_1e-9j": 1.591188091196615e-09,
+      "ratio": 999.9999999903292,
+      "family": "static",
+      "CgSCR": 2.1956341806399244,
+      "gSCR": 0.4441806529802281,
+      "cg_dsdl": -0.42592832109745016
+     },
+     {
+      "id": 10034,
+      "nGFM": 1,
+      "unstable": true,
+      "rel_difference_at_1e-6j": 1.5813905666641868e-06,
+      "rel_difference_at_1e-9j": 1.5813905666718e-09,
+      "ratio": 999.9999999951857,
+      "family": "static",
+      "CgSCR": 1.0680320541786483,
+      "gSCR": -0.020884790257629116,
+      "cg_dsdl": -2.030795719586951
+     },
+     {
+      "id": 2530,
+      "nGFM": 2,
+      "unstable": true,
+      "rel_difference_at_1e-6j": 1.5427971786212396e-06,
+      "rel_difference_at_1e-9j": 1.542797178642827e-09,
+      "ratio": 999.9999999860077,
+      "family": "static",
+      "CgSCR": 1.4185712763963174,
+      "gSCR": 0.13135433319396464,
+      "cg_dsdl": -1.456232639301463
+     },
+     {
+      "id": 11508,
+      "nGFM": 2,
+      "unstable": true,
+      "rel_difference_at_1e-6j": 1.5111940991539157e-06,
+      "rel_difference_at_1e-9j": 1.511194099178308e-09,
+      "ratio": 999.999999983859,
+      "family": "static",
+      "CgSCR": 1.3697166481803285,
+      "gSCR": 0.15479123348122031,
+      "cg_dsdl": -1.0179178773227693
+     },
+     {
+      "id": 10974,
+      "nGFM": 1,
+      "unstable": true,
+      "rel_difference_at_1e-6j": 1.448986227271647e-06,
+      "rel_difference_at_1e-9j": 1.4489862272936225e-09,
+      "ratio": 999.9999999848338,
+      "family": "static",
+      "CgSCR": 0.8032195218835141,
+      "gSCR": -0.023842953873232063,
+      "cg_dsdl": -15.090980768050112
+     },
+     {
+      "id": 10890,
+      "nGFM": 1,
+      "unstable": true,
+      "rel_difference_at_1e-6j": 1.3358635465885629e-06,
+      "rel_difference_at_1e-9j": 1.3358635465895323e-09,
+      "ratio": 999.9999999992742,
+      "family": "static",
+      "CgSCR": 0.8132454278947963,
+      "gSCR": -0.052853144342851495,
+      "cg_dsdl": -6.162462250062068
+     },
+     {
+      "id": 4071,
+      "nGFM": 2,
+      "unstable": false,
+      "rel_difference_at_1e-6j": 1.333464389619315e-06,
+      "rel_difference_at_1e-9j": 1.3334643896203377e-09,
+      "ratio": 999.9999999992331,
+      "family": "static",
+      "CgSCR": 1.1064024867058881,
+      "gSCR": 0.0879857165193148,
+      "cg_dsdl": -1.7683304350424727
+     },
+     {
+      "id": 5191,
+      "nGFM": 1,
+      "unstable": true,
+      "rel_difference_at_1e-6j": 1.3134945862933168e-06,
+      "rel_difference_at_1e-9j": 1.3134945862942565e-09,
+      "ratio": 999.9999999992846,
+      "family": "static",
+      "CgSCR": 0.5598579360162959,
+      "gSCR": -0.02231186688193774,
+      "cg_dsdl": -11.227211554278385
+     },
+     {
+      "id": 2856,
+      "nGFM": 1,
+      "unstable": true,
+      "rel_difference_at_1e-6j": 1.2160681862989176e-06,
+      "rel_difference_at_1e-9j": 1.2160681862996585e-09,
+      "ratio": 999.9999999993908,
+      "family": "static",
+      "CgSCR": 0.6887877016134463,
+      "gSCR": -0.017052487872086148,
+      "cg_dsdl": -8.796704235556232
+     },
+     {
+      "id": 4454,
+      "nGFM": 1,
+      "unstable": true,
+      "rel_difference_at_1e-6j": 1.154223977803128e-06,
+      "rel_difference_at_1e-9j": 1.1542239778079378e-09,
+      "ratio": 999.9999999958329,
+      "family": "static",
+      "CgSCR": 0.9914292845612418,
+      "gSCR": -0.04486932651916136,
+      "cg_dsdl": -3.9589035362484557
+     },
+     {
+      "id": 10963,
+      "nGFM": 3,
+      "unstable": false,
+      "rel_difference_at_1e-6j": 1.1495455649627032e-06,
+      "rel_difference_at_1e-9j": 1.1495455649689119e-09,
+      "ratio": 999.999999994599,
+      "family": "static",
+      "CgSCR": 2.7422744365712592,
+      "gSCR": 0.48808075072068463,
+      "cg_dsdl": -0.4755781262653602
+     },
+     {
+      "id": 5951,
+      "nGFM": 2,
+      "unstable": false,
+      "rel_difference_at_1e-6j": 1.1323496234515919e-06,
+      "rel_difference_at_1e-9j": 1.1323496234535193e-09,
+      "ratio": 999.9999999982979,
+      "family": "static",
+      "CgSCR": 1.4333865871105849,
+      "gSCR": 0.19952509713726585,
+      "cg_dsdl": -2.201294862533203
+     },
+     {
+      "id": 12089,
+      "nGFM": 1,
+      "unstable": true,
+      "rel_difference_at_1e-6j": 1.1224923896624141e-06,
+      "rel_difference_at_1e-9j": 1.122492389662904e-09,
+      "ratio": 999.9999999995636,
+      "family": "static",
+      "CgSCR": 1.3171081566160776,
+      "gSCR": -0.04305482381769257,
+      "cg_dsdl": -1.4307877077856408
+     },
+     {
+      "id": 4232,
+      "nGFM": 1,
+      "unstable": true,
+      "rel_difference_at_1e-6j": 1.0869524093681904e-06,
+      "rel_difference_at_1e-9j": 1.0869524093764452e-09,
+      "ratio": 999.9999999924055,
+      "family": "static",
+      "CgSCR": 0.7077354626121013,
+      "gSCR": -0.03511599128419096,
+      "cg_dsdl": -7.630400290005842
+     },
+     {
+      "id": 2968,
+      "nGFM": 2,
+      "unstable": true,
+      "rel_difference_at_1e-6j": 1.076741013456235e-06,
+      "rel_difference_at_1e-9j": 1.0767410134567471e-09,
+      "ratio": 999.9999999995244,
+      "family": "static",
+      "CgSCR": 1.3772562072686787,
+      "gSCR": 0.1866087941965931,
+      "cg_dsdl": -1.7619874514748275
+     },
+     {
+      "id": 3327,
+      "nGFM": 3,
+      "unstable": false,
+      "rel_difference_at_1e-6j": 1.065616920445852e-06,
+      "rel_difference_at_1e-9j": 1.0656169204484035e-09,
+      "ratio": 999.9999999976058,
+      "family": "static",
+      "CgSCR": 2.1987898347010852,
+      "gSCR": 0.4870861440505154,
+      "cg_dsdl": -0.6443401613779495
+     },
+     {
+      "id": 4797,
+      "nGFM": 3,
+      "unstable": false,
+      "rel_difference_at_1e-6j": 1.0352044384531186e-06,
+      "rel_difference_at_1e-9j": 1.0352044384542863e-09,
+      "ratio": 999.9999999988721,
+      "family": "static",
+      "CgSCR": 1.1391389953243871,
+      "gSCR": 0.4205495137626673,
+      "cg_dsdl": -2.292549531870905
+     },
+     {
+      "id": 10704,
+      "nGFM": 1,
+      "unstable": true,
+      "rel_difference_at_1e-6j": 1.024686833718222e-06,
+      "rel_difference_at_1e-9j": 1.0246868337186505e-09,
+      "ratio": 999.9999999995819,
+      "family": "static",
+      "CgSCR": 0.992916879660614,
+      "gSCR": -0.005852957217914385,
+      "cg_dsdl": -7.77495270449855
+     },
+     {
+      "id": 4353,
+      "nGFM": 2,
+      "unstable": false,
+      "rel_difference_at_1e-6j": 1.0147151039416322e-06,
+      "rel_difference_at_1e-9j": 1.0147151039444164e-09,
+      "ratio": 999.9999999972562,
+      "family": "static",
+      "CgSCR": 1.526672420408389,
+      "gSCR": 0.19339997296890582,
+      "cg_dsdl": -1.4294246668129282
+     },
+     {
+      "id": 11596,
+      "nGFM": 3,
+      "unstable": false,
+      "rel_difference_at_1e-6j": 1.0011073650582189e-06,
+      "rel_difference_at_1e-9j": 1.001107365060638e-09,
+      "ratio": 999.9999999975836,
+      "family": "static",
+      "CgSCR": 2.179524635514313,
+      "gSCR": 0.4787805334767628,
+      "cg_dsdl": -0.7096216554369165
+     }
+    ]
+   },
+   "crossing_orientation": {
+    "rows_with_cgscr": 1308,
+    "dsdl_negative": 1308,
+    "dsdl_positive": 0,
+    "dsdl_missing": 0,
+    "dsdl_positive_static": 0,
+    "dsdl_positive_interior": 0
+   },
+   "candidates_rejected_by_the_im_gate": 0,
+   "wall_s_per_row": {
+    "q00": 2.8444232,
+    "q25": 3.94595375,
+    "q50": 4.742020699999999,
+    "q75": 5.6729807,
+    "q100": 21.9790183
+   }
+  }
+ },
+ "results": {
+  "test_frame": {
+   "threshold_census": {
+    "all_rows": {
+     "n": 1308,
+     "n_unstable": 231,
+     "n_with_cgscr": 1308,
+     "n_without_cgscr": 0,
+     "n_unstable_without_cgscr": 0,
+     "binding_family": {
+      "static": 1303,
+      "interior": 5
+     },
+     "n_gscr_nonpositive": 83,
+     "cgscr": {
+      "q00": 0.07180910283027464,
+      "q25": 0.9024883931638914,
+      "q50": 1.0876893246831285,
+      "q75": 1.3653222209418665,
+      "q100": 5.244141790985948
+     },
+     "gscr": {
+      "q00": -0.05924802924168671,
+      "q25": 0.12981351470824112,
+      "q50": 0.2945356595008122,
+      "q75": 0.5464566144960075,
+      "q100": 1.729029966826961
+     },
+     "beta": {
+      "q00": -1.5575198179936829,
+      "q25": -0.8625571689072197,
+      "q50": -0.719116478994588,
+      "q75": -0.5651604661879048,
+      "q100": 0.8381264889667509
+     },
+     "w_c_interior_rad_s": {
+      "q00": 82.28679714776774,
+      "q25": 114.91773414967628,
+      "q50": 177.21919227314385,
+      "q75": 182.17108348877736,
+      "q100": 294.637321096228
+     }
+    },
+    "nGFM_1": {
+     "n": 363,
+     "n_unstable": 147,
+     "n_with_cgscr": 363,
+     "n_without_cgscr": 0,
+     "n_unstable_without_cgscr": 0,
+     "binding_family": {
+      "static": 359,
+      "interior": 4
+     },
+     "n_gscr_nonpositive": 83,
+     "cgscr": {
+      "q00": 0.1062707142051012,
+      "q25": 0.7478802009537955,
+      "q50": 0.8669897342907354,
+      "q75": 0.9837873366768658,
+      "q100": 2.6830236642792276
+     },
+     "gscr": {
+      "q00": -0.05924802924168671,
+      "q25": 0.005399204677735001,
+      "q50": 0.05635720752701414,
+      "q75": 0.09276104825634443,
+      "q100": 0.2451474775898
+     },
+     "beta": {
+      "q00": -1.5575198179936829,
+      "q25": -0.9944609403860454,
+      "q50": -0.9359840225050196,
+      "q75": -0.889582836639595,
+      "q100": -0.6499461054873158
+     },
+     "w_c_interior_rad_s": {
+      "q00": 82.28679714776774,
+      "q25": 153.4860934917998,
+      "q50": 179.6951378809606,
+      "q75": 210.28764289064003,
+      "q100": 294.637321096228
+     }
+    },
+    "nGFM_2": {
+     "n": 558,
+     "n_unstable": 81,
+     "n_with_cgscr": 558,
+     "n_without_cgscr": 0,
+     "n_unstable_without_cgscr": 0,
+     "binding_family": {
+      "static": 557,
+      "interior": 1
+     },
+     "n_gscr_nonpositive": 0,
+     "cgscr": {
+      "q00": 0.07180910283027464,
+      "q25": 0.9269060424721717,
+      "q50": 1.0749682393272932,
+      "q75": 1.2078439788582689,
+      "q100": 3.2913036210376636
+     },
+     "gscr": {
+      "q00": 0.0879857165193148,
+      "q25": 0.21976350070933703,
+      "q50": 0.2860569310921428,
+      "q75": 0.3862231124991131,
+      "q100": 0.6490233411426983
+     },
+     "beta": {
+      "q00": -0.9592738679725343,
+      "q25": -0.788325966168059,
+      "q50": -0.7150440191442053,
+      "q75": -0.6318409409824995,
+      "q100": 0.8381264889667509
+     },
+     "w_c_interior_rad_s": {
+      "q00": 114.91773414967628,
+      "q25": 114.91773414967628,
+      "q50": 114.91773414967628,
+      "q75": 114.91773414967628,
+      "q100": 114.91773414967628
+     }
+    },
+    "nGFM_3": {
+     "n": 216,
+     "n_unstable": 0,
+     "n_with_cgscr": 216,
+     "n_without_cgscr": 0,
+     "n_unstable_without_cgscr": 0,
+     "binding_family": {
+      "static": 216,
+      "interior": 0
+     },
+     "n_gscr_nonpositive": 0,
+     "cgscr": {
+      "q00": 0.9190302457407521,
+      "q25": 1.2864013573744097,
+      "q50": 1.4877832472213053,
+      "q75": 1.707089032317274,
+      "q100": 5.244141790985948
+     },
+     "gscr": {
+      "q00": 0.27976509166039076,
+      "q25": 0.5139022167430283,
+      "q50": 0.6195552264375486,
+      "q75": 0.7927799834889375,
+      "q100": 1.136912153680418
+     },
+     "beta": {
+      "q00": -0.9164920879667737,
+      "q25": -0.6342413634417052,
+      "q50": -0.5433785686455874,
+      "q75": -0.45066146781570726,
+      "q100": -0.2499360179703347
+     },
+     "w_c_interior_rad_s": null
+    },
+    "nGFM_4": {
+     "n": 171,
+     "n_unstable": 3,
+     "n_with_cgscr": 171,
+     "n_without_cgscr": 0,
+     "n_unstable_without_cgscr": 0,
+     "binding_family": {
+      "static": 171,
+      "interior": 0
+     },
+     "n_gscr_nonpositive": 0,
+     "cgscr": {
+      "q00": 0.9660242988839992,
+      "q25": 1.5175964169018288,
+      "q50": 1.83374688134457,
+      "q75": 2.0384496918858233,
+      "q100": 2.5016366038757534
+     },
+     "gscr": {
+      "q00": 0.5667531814441074,
+      "q25": 0.80492678945752,
+      "q50": 0.9804132489246873,
+      "q75": 1.2490413048008557,
+      "q100": 1.729029966826961
+     },
+     "beta": {
+      "q00": -0.7243037977832262,
+      "q25": -0.5160720224571451,
+      "q50": -0.395097925337557,
+      "q75": -0.29996150234456587,
+      "q100": -0.15235478240591915
+     },
+     "w_c_interior_rad_s": null
+    }
+   },
+   "rule_recall_false_alarms": {
+    "all_rows": {
+     "all_rows_without_cgscr_read_as_zero": {
+      "n": 1308,
+      "n_unstable": 231,
+      "n_stable": 1077,
+      "TP": 230,
+      "FN": 1,
+      "FP": 1077,
+      "TN": 0,
+      "n_alarm": 1307,
+      "recall": 0.9956709956709957,
+      "false_alarm_rate": 1.0
+     },
+     "rows_with_cgscr": {
+      "n": 1308,
+      "n_unstable": 231,
+      "n_stable": 1077,
+      "TP": 230,
+      "FN": 1,
+      "FP": 1077,
+      "TN": 0,
+      "n_alarm": 1307,
+      "recall": 0.9956709956709957,
+      "false_alarm_rate": 1.0
+     }
+    },
+    "nGFM_1": {
+     "all_rows_without_cgscr_read_as_zero": {
+      "n": 363,
+      "n_unstable": 147,
+      "n_stable": 216,
+      "TP": 147,
+      "FN": 0,
+      "FP": 216,
+      "TN": 0,
+      "n_alarm": 363,
+      "recall": 1.0,
+      "false_alarm_rate": 1.0
+     },
+     "rows_with_cgscr": {
+      "n": 363,
+      "n_unstable": 147,
+      "n_stable": 216,
+      "TP": 147,
+      "FN": 0,
+      "FP": 216,
+      "TN": 0,
+      "n_alarm": 363,
+      "recall": 1.0,
+      "false_alarm_rate": 1.0
+     }
+    },
+    "nGFM_2": {
+     "all_rows_without_cgscr_read_as_zero": {
+      "n": 558,
+      "n_unstable": 81,
+      "n_stable": 477,
+      "TP": 80,
+      "FN": 1,
+      "FP": 477,
+      "TN": 0,
+      "n_alarm": 557,
+      "recall": 0.9876543209876543,
+      "false_alarm_rate": 1.0
+     },
+     "rows_with_cgscr": {
+      "n": 558,
+      "n_unstable": 81,
+      "n_stable": 477,
+      "TP": 80,
+      "FN": 1,
+      "FP": 477,
+      "TN": 0,
+      "n_alarm": 557,
+      "recall": 0.9876543209876543,
+      "false_alarm_rate": 1.0
+     }
+    },
+    "nGFM_3": {
+     "all_rows_without_cgscr_read_as_zero": {
+      "n": 216,
+      "n_unstable": 0,
+      "n_stable": 216,
+      "TP": 0,
+      "FN": 0,
+      "FP": 216,
+      "TN": 0,
+      "n_alarm": 216,
+      "recall": null,
+      "false_alarm_rate": 1.0
+     },
+     "rows_with_cgscr": {
+      "n": 216,
+      "n_unstable": 0,
+      "n_stable": 216,
+      "TP": 0,
+      "FN": 0,
+      "FP": 216,
+      "TN": 0,
+      "n_alarm": 216,
+      "recall": null,
+      "false_alarm_rate": 1.0
+     }
+    },
+    "nGFM_4": {
+     "all_rows_without_cgscr_read_as_zero": {
+      "n": 171,
+      "n_unstable": 3,
+      "n_stable": 168,
+      "TP": 3,
+      "FN": 0,
+      "FP": 168,
+      "TN": 0,
+      "n_alarm": 171,
+      "recall": 1.0,
+      "false_alarm_rate": 1.0
+     },
+     "rows_with_cgscr": {
+      "n": 171,
+      "n_unstable": 3,
+      "n_stable": 168,
+      "TP": 3,
+      "FN": 0,
+      "FP": 168,
+      "TN": 0,
+      "n_alarm": 171,
+      "recall": 1.0,
+      "false_alarm_rate": 1.0
+     }
+    }
+   },
+   "rule_interior_family_only_sensitivity": {
+    "all_rows": {
+     "all_rows_without_interior_root_read_as_zero": {
+      "n": 1308,
+      "n_unstable": 231,
+      "n_stable": 1077,
+      "TP": 177,
+      "FN": 54,
+      "FP": 283,
+      "TN": 794,
+      "n_alarm": 460,
+      "recall": 0.7662337662337663,
+      "false_alarm_rate": 0.2627669452181987
+     },
+     "n_without_interior_root": 166
+    },
+    "nGFM_1": {
+     "all_rows_without_interior_root_read_as_zero": {
+      "n": 363,
+      "n_unstable": 147,
+      "n_stable": 216,
+      "TP": 119,
+      "FN": 28,
+      "FP": 141,
+      "TN": 75,
+      "n_alarm": 260,
+      "recall": 0.8095238095238095,
+      "false_alarm_rate": 0.6527777777777778
+     },
+     "n_without_interior_root": 83
+    },
+    "nGFM_2": {
+     "all_rows_without_interior_root_read_as_zero": {
+      "n": 558,
+      "n_unstable": 81,
+      "n_stable": 477,
+      "TP": 57,
+      "FN": 24,
+      "FP": 112,
+      "TN": 365,
+      "n_alarm": 169,
+      "recall": 0.7037037037037037,
+      "false_alarm_rate": 0.2348008385744235
+     },
+     "n_without_interior_root": 74
+    },
+    "nGFM_3": {
+     "all_rows_without_interior_root_read_as_zero": {
+      "n": 216,
+      "n_unstable": 0,
+      "n_stable": 216,
+      "TP": 0,
+      "FN": 0,
+      "FP": 24,
+      "TN": 192,
+      "n_alarm": 24,
+      "recall": null,
+      "false_alarm_rate": 0.1111111111111111
+     },
+     "n_without_interior_root": 6
+    },
+    "nGFM_4": {
+     "all_rows_without_interior_root_read_as_zero": {
+      "n": 171,
+      "n_unstable": 3,
+      "n_stable": 168,
+      "TP": 1,
+      "FN": 2,
+      "FP": 6,
+      "TN": 162,
+      "n_alarm": 7,
+      "recall": 0.3333333333333333,
+      "false_alarm_rate": 0.03571428571428571
+     },
+     "n_without_interior_root": 3
+    }
+   },
+   "comparators": {
+    "all_rows": {
+     "monitor_alarm_md_amber": {
+      "n": 1308,
+      "n_unstable": 231,
+      "n_stable": 1077,
+      "TP": 216,
+      "FN": 15,
+      "FP": 341,
+      "TN": 736,
+      "n_alarm": 557,
+      "recall": 0.935064935064935,
+      "false_alarm_rate": 0.3166202414113278
+     },
+     "project_threshold_rule_context": {
+      "n": 1308,
+      "n_unstable": 231,
+      "n_stable": 1077,
+      "TP": 230,
+      "FN": 1,
+      "FP": 900,
+      "TN": 177,
+      "n_alarm": 1130,
+      "recall": 0.9956709956709957,
+      "false_alarm_rate": 0.8356545961002786
+     }
+    },
+    "nGFM_1": {
+     "monitor_alarm_md_amber": {
+      "n": 363,
+      "n_unstable": 147,
+      "n_stable": 216,
+      "TP": 141,
+      "FN": 6,
+      "FP": 69,
+      "TN": 147,
+      "n_alarm": 210,
+      "recall": 0.9591836734693877,
+      "false_alarm_rate": 0.3194444444444444
+     },
+     "project_threshold_rule_context": {
+      "n": 363,
+      "n_unstable": 147,
+      "n_stable": 216,
+      "TP": 147,
+      "FN": 0,
+      "FP": 216,
+      "TN": 0,
+      "n_alarm": 363,
+      "recall": 1.0,
+      "false_alarm_rate": 1.0
+     }
+    },
+    "nGFM_2": {
+     "monitor_alarm_md_amber": {
+      "n": 558,
+      "n_unstable": 81,
+      "n_stable": 477,
+      "TP": 73,
+      "FN": 8,
+      "FP": 121,
+      "TN": 356,
+      "n_alarm": 194,
+      "recall": 0.9012345679012346,
+      "false_alarm_rate": 0.25366876310272535
+     },
+     "project_threshold_rule_context": {
+      "n": 558,
+      "n_unstable": 81,
+      "n_stable": 477,
+      "TP": 81,
+      "FN": 0,
+      "FP": 476,
+      "TN": 1,
+      "n_alarm": 557,
+      "recall": 1.0,
+      "false_alarm_rate": 0.9979035639412998
+     }
+    },
+    "nGFM_3": {
+     "monitor_alarm_md_amber": {
+      "n": 216,
+      "n_unstable": 0,
+      "n_stable": 216,
+      "TP": 0,
+      "FN": 0,
+      "FP": 70,
+      "TN": 146,
+      "n_alarm": 70,
+      "recall": null,
+      "false_alarm_rate": 0.32407407407407407
+     },
+     "project_threshold_rule_context": {
+      "n": 216,
+      "n_unstable": 0,
+      "n_stable": 216,
+      "TP": 0,
+      "FN": 0,
+      "FP": 154,
+      "TN": 62,
+      "n_alarm": 154,
+      "recall": null,
+      "false_alarm_rate": 0.7129629629629629
+     }
+    },
+    "nGFM_4": {
+     "monitor_alarm_md_amber": {
+      "n": 171,
+      "n_unstable": 3,
+      "n_stable": 168,
+      "TP": 2,
+      "FN": 1,
+      "FP": 81,
+      "TN": 87,
+      "n_alarm": 83,
+      "recall": 0.6666666666666666,
+      "false_alarm_rate": 0.48214285714285715
+     },
+     "project_threshold_rule_context": {
+      "n": 171,
+      "n_unstable": 3,
+      "n_stable": 168,
+      "TP": 2,
+      "FN": 1,
+      "FP": 54,
+      "TN": 114,
+      "n_alarm": 56,
+      "recall": 0.6666666666666666,
+      "false_alarm_rate": 0.32142857142857145
+     }
+    },
+    "design_coordinates_amber_alarm_all_rows": {
+     "recall": 0.9567099567099567,
+     "FA": 0.36025998142989785,
+     "n_alarm": 609,
+     "recall_lo": 0.9294605809128631,
+     "recall_hi": 0.9800874931645965,
+     "FA_lo": 0.33087523436532373,
+     "FA_hi": 0.3891524910337971,
+     "oof_thr": -2.31628960569957
+    }
+   },
+   "auc": {
+    "all_rows": {
+     "n": 1308,
+     "n_unstable": 231,
+     "n_stable": 1077,
+     "low_support": false,
+     "n_with_cgscr": 1308,
+     "n_unstable_with_cgscr": 231,
+     "beta_rows_with_cgscr": 0.8569539405194001,
+     "index_rows_with_cgscr": 0.8562545470623465,
+     "index_all_rows": 0.8562545470623465,
+     "monitor_md_amber_ensemble_rows_with_cgscr": 0.9320261910791158,
+     "monitor_md_amber_ensemble_all_rows": 0.9320261910791158,
+     "monitor_md_amber_seed_mean_all_rows": 0.931609770606985,
+     "design_coordinates_logistic_all_rows": 0.9312745440879145,
+     "design_coordinates_amber_ensemble_all_rows": 0.9196139669677275,
+     "project_threshold_margin_context_all_rows": 0.8578904846314317
+    },
+    "nGFM_1": {
+     "n": 363,
+     "n_unstable": 147,
+     "n_stable": 216,
+     "low_support": false,
+     "n_with_cgscr": 363,
+     "n_unstable_with_cgscr": 147,
+     "beta_rows_with_cgscr": 0.6360859158478206,
+     "index_rows_with_cgscr": 0.6243386243386243,
+     "index_all_rows": 0.6243386243386243,
+     "monitor_md_amber_ensemble_rows_with_cgscr": 0.9500188964474678,
+     "monitor_md_amber_ensemble_all_rows": 0.9500188964474678,
+     "monitor_md_amber_seed_mean_all_rows": 0.9498425296044344,
+     "design_coordinates_logistic_all_rows": 0.891660367850844,
+     "design_coordinates_amber_ensemble_all_rows": 0.8910934744268078,
+     "project_threshold_margin_context_all_rows": 0.6843663391282439
+    },
+    "nGFM_2": {
+     "n": 558,
+     "n_unstable": 81,
+     "n_stable": 477,
+     "low_support": false,
+     "n_with_cgscr": 558,
+     "n_unstable_with_cgscr": 81,
+     "beta_rows_with_cgscr": 0.8325180526438388,
+     "index_rows_with_cgscr": 0.8581152781013018,
+     "index_all_rows": 0.8581152781013018,
+     "monitor_md_amber_ensemble_rows_with_cgscr": 0.894945259725134,
+     "monitor_md_amber_ensemble_all_rows": 0.894945259725134,
+     "monitor_md_amber_seed_mean_all_rows": 0.8944586795041023,
+     "design_coordinates_logistic_all_rows": 0.8979734451432565,
+     "design_coordinates_amber_ensemble_all_rows": 0.894117038072314,
+     "project_threshold_margin_context_all_rows": 0.8728938582188058
+    },
+    "nGFM_3": {
+     "n": 216,
+     "n_unstable": 0,
+     "n_stable": 216,
+     "low_support": true,
+     "n_with_cgscr": 216,
+     "n_unstable_with_cgscr": 0,
+     "beta_rows_with_cgscr": null,
+     "index_rows_with_cgscr": null,
+     "index_all_rows": null,
+     "monitor_md_amber_ensemble_rows_with_cgscr": null,
+     "monitor_md_amber_ensemble_all_rows": null,
+     "monitor_md_amber_seed_mean_all_rows": null,
+     "design_coordinates_logistic_all_rows": null,
+     "design_coordinates_amber_ensemble_all_rows": null,
+     "project_threshold_margin_context_all_rows": null
+    },
+    "nGFM_4": {
+     "n": 171,
+     "n_unstable": 3,
+     "n_stable": 168,
+     "low_support": true,
+     "n_with_cgscr": 171,
+     "n_unstable_with_cgscr": 3,
+     "beta_rows_with_cgscr": 0.75,
+     "index_rows_with_cgscr": 0.9246031746031746,
+     "index_all_rows": 0.9246031746031746,
+     "monitor_md_amber_ensemble_rows_with_cgscr": 0.763888888888889,
+     "monitor_md_amber_ensemble_all_rows": 0.763888888888889,
+     "monitor_md_amber_seed_mean_all_rows": 0.7623015873015873,
+     "design_coordinates_logistic_all_rows": 0.8075396825396824,
+     "design_coordinates_amber_ensemble_all_rows": 0.623015873015873,
+     "project_threshold_margin_context_all_rows": 0.7599206349206349
+    }
+   },
+   "paired": {
+    "all_rows": {
+     "beta_vs_index": {
+      "n": 1308,
+      "n_unstable": 231,
+      "n_stable": 1077,
+      "AUC_beta": 0.8569539405194001,
+      "AUC_index": 0.8562545470623465,
+      "dAUC": 0.0006993934570536098,
+      "delong_z": 0.13745082106305634,
+      "delong_p": 0.8906744628062444,
+      "boot_dAUC_mean": 0.000755137349020789,
+      "boot_dAUC_lo": -0.010030461450996753,
+      "boot_dAUC_hi": 0.01001445384987981,
+      "boot_share_dAUC_negative": 0.4255,
+      "boot_share_dAUC_positive": 0.5745,
+      "boot_resamples": 2000,
+      "boot_resamples_used": 2000,
+      "boot_seed": 42,
+      "sign": "dAUC = AUC(beta) - AUC(index)"
+     },
+     "monitor_vs_beta": {
+      "n": 1308,
+      "n_unstable": 231,
+      "n_stable": 1077,
+      "AUC_monitor": 0.9320261910791159,
+      "AUC_beta": 0.8569539405194001,
+      "dAUC": 0.07507225055971578,
+      "delong_z": 5.969112825186268,
+      "delong_p": 2.3854711788998753e-09,
+      "boot_dAUC_mean": 0.07542195217641315,
+      "boot_dAUC_lo": 0.050698959046745935,
+      "boot_dAUC_hi": 0.10002942475250352,
+      "boot_share_dAUC_negative": 0.0,
+      "boot_share_dAUC_positive": 1.0,
+      "boot_resamples": 2000,
+      "boot_resamples_used": 2000,
+      "boot_seed": 42,
+      "sign": "dAUC = AUC(monitor) - AUC(beta)"
+     }
+    },
+    "nGFM_1": {
+     "beta_vs_index": {
+      "n": 363,
+      "n_unstable": 147,
+      "n_stable": 216,
+      "AUC_beta": 0.6360859158478206,
+      "AUC_index": 0.6243386243386243,
+      "dAUC": 0.01174729150919629,
+      "delong_z": 1.9667911217711842,
+      "delong_p": 0.04920729654210814,
+      "boot_dAUC_mean": 0.011910000344920834,
+      "boot_dAUC_lo": -0.00012660912408947447,
+      "boot_dAUC_hi": 0.025260306210813634,
+      "boot_share_dAUC_negative": 0.0275,
+      "boot_share_dAUC_positive": 0.9725,
+      "boot_resamples": 2000,
+      "boot_resamples_used": 2000,
+      "boot_seed": 42,
+      "sign": "dAUC = AUC(beta) - AUC(index)"
+     },
+     "monitor_vs_beta": {
+      "n": 363,
+      "n_unstable": 147,
+      "n_stable": 216,
+      "AUC_monitor": 0.9500188964474678,
+      "AUC_beta": 0.6360859158478206,
+      "dAUC": 0.31393298059964725,
+      "delong_z": 10.600047206123419,
+      "delong_p": 2.978298538828211e-26,
+      "boot_dAUC_mean": 0.3137656138806914,
+      "boot_dAUC_lo": 0.25877560332009214,
+      "boot_dAUC_hi": 0.3719699778383263,
+      "boot_share_dAUC_negative": 0.0,
+      "boot_share_dAUC_positive": 1.0,
+      "boot_resamples": 2000,
+      "boot_resamples_used": 2000,
+      "boot_seed": 42,
+      "sign": "dAUC = AUC(monitor) - AUC(beta)"
+     }
+    },
+    "nGFM_2": {
+     "beta_vs_index": {
+      "n": 558,
+      "n_unstable": 81,
+      "n_stable": 477,
+      "AUC_beta": 0.8325180526438388,
+      "AUC_index": 0.8581152781013018,
+      "dAUC": -0.025597225457463013,
+      "delong_z": -1.3334744934976728,
+      "delong_p": 0.18237614043088868,
+      "boot_dAUC_mean": -0.025055791254788132,
+      "boot_dAUC_lo": -0.06813772383820879,
+      "boot_dAUC_hi": 0.010046416739953153,
+      "boot_share_dAUC_negative": 0.909,
+      "boot_share_dAUC_positive": 0.0905,
+      "boot_resamples": 2000,
+      "boot_resamples_used": 2000,
+      "boot_seed": 42,
+      "sign": "dAUC = AUC(beta) - AUC(index)"
+     },
+     "monitor_vs_beta": {
+      "n": 558,
+      "n_unstable": 81,
+      "n_stable": 477,
+      "AUC_monitor": 0.894945259725134,
+      "AUC_beta": 0.8325180526438388,
+      "dAUC": 0.06242720708129512,
+      "delong_z": 2.5195064375113536,
+      "delong_p": 0.01175194914062425,
+      "boot_dAUC_mean": 0.061479387819487794,
+      "boot_dAUC_lo": 0.013424328941035726,
+      "boot_dAUC_hi": 0.11297815804739904,
+      "boot_share_dAUC_negative": 0.008,
+      "boot_share_dAUC_positive": 0.992,
+      "boot_resamples": 2000,
+      "boot_resamples_used": 2000,
+      "boot_seed": 42,
+      "sign": "dAUC = AUC(monitor) - AUC(beta)"
+     }
+    }
+   },
+   "rule_counts": {
+    "n_rows": 1308,
+    "n_with_cgscr": 1308,
+    "n_static_binding": 1303,
+    "n_declared_unstable": 1307,
+    "n_unstable_declared_unstable": 230,
+    "n_stable_declared_unstable": 1077
+   }
+  },
+  "device_check": {
+   "n_rows": 1308,
+   "cosine_s0_min": 0.228022703341753,
+   "cosine_s0_median": 0.2659419992909361,
+   "cosine_s0": {
+    "q00": 0.228022703341753,
+    "q25": 0.24920779135953605,
+    "q50": 0.2659419992909361,
+    "q75": 0.2817490023049899,
+    "q100": 0.3548647373063843
+   },
+   "cosine_1Hz": {
+    "q00": 0.07974849237893457,
+    "q25": 0.1750456977028595,
+    "q50": 0.2129410445866275,
+    "q75": 0.2552249066501242,
+    "q100": 0.3545164411880368
+   },
+   "rel_error_s0": {
+    "q00": 0.9882726707085832,
+    "q25": 1.004870067395161,
+    "q50": 1.0073459107656673,
+    "q75": 1.0094499464362423,
+    "q100": 1.0114818539164052
+   },
+   "rows_cosine_s0_nonpositive": 0
+  },
+  "rays": {
+   "design": {
+    "configuration": "flagship: GFM plants at buses 38 and 39, load scale 1.0, design-default tune, no outage (fs3_boundary.m)",
+    "kstar_full_model": 1.973046875,
+    "kstar_source": "results/feasibility/fs3_boundary.csv ray 'k-sweep kL=1.0' kstar_full",
+    "k_c": null,
+    "rel_error_vs_kstar": null,
+    "crossings": [],
+    "grid": {
+     "k_first": 0.2,
+     "k_last": 2.15,
+     "n_points": 40,
+     "first_failed_k": 2.2,
+     "n_points_without_cgscr": 0,
+     "n_sign_changes": 0,
+     "families": {
+      "static": 40,
+      "interior": 0,
+      "none": 0
+     }
+    },
+    "probe": {
+     "k": 1.9680468750000002,
+     "gSCR": 0.16759494959689897,
+     "CgSCR": 1.1973850565951096,
+     "beta": -0.8600325361722212,
+     "family": "static",
+     "w_c": 0.0,
+     "lam_min": 0.3364828420629364,
+     "C_SGSI": 0.82906735626292,
+     "stable_by_the_rule": false
+    },
+    "closest_approach_on_the_grid": {
+     "k": 0.2,
+     "gSCR_minus_CgSCR": -0.6350614398807941,
+     "gSCR": 1.1166163294953018,
+     "CgSCR": 1.7516777693760959,
+     "beta": -0.36254467059143375,
+     "family": "static"
+    },
+    "interior_family_only_sensitivity": {
+     "definition": "gSCR - CgSCR_interior on the same grid (no interior root read as 0), grid brackets only, not bisected",
+     "n_sign_changes": 1,
+     "brackets": [
+      {
+       "k_lo": 1.25,
+       "k_hi": 1.3,
+       "k_mid": 1.275,
+       "rel_error_of_k_mid_vs_kstar": -0.353791328449812,
+       "direction": "rule stable below, unstable above"
+      }
+     ]
+    },
+    "limit_check": {
+     "n_points": 41,
+     "n_points_above_the_gate_tolerance": 0,
+     "max_rel_difference_at_1e-6j": 9.886704747582355e-07,
+     "ratio_1e-6j_over_1e-9j_min": 999.9999999773825,
+     "ratio_1e-6j_over_1e-9j_max": 1000.0000000000116
+    },
+    "project_threshold_context": {
+     "definition": "lam_min - C_SGSI on the same grid (the chain's own rule), grid brackets only, not bisected",
+     "n_sign_changes": 0,
+     "brackets": []
+    },
+    "n_sign_changes": 0,
+    "closest_approach": {
+     "k": 0.2,
+     "gSCR_minus_CgSCR": -0.6350614398807941,
+     "family": "static"
+    },
+    "binding_family_at_every_point": "static",
+    "interior_only_bracket": {
+     "k_lo": 1.25,
+     "k_hi": 1.3
+    },
+    "interior_only_bracket_rel_error": -0.353791328449812
+   },
+   "bank8": {
+    "configuration": "bank-drawn ray 8 of r17_rays.m: GFM buses 39, outage 1, load scale 1.099508",
+    "kstar_full_model": 0.816797,
+    "kstar_source": "results/tables/r17/r17_rays.csv rayid 8 kstar",
+    "k_c": null,
+    "rel_error_vs_kstar": null,
+    "crossings": [],
+    "grid": {
+     "k_first": 0.2,
+     "k_last": 1.65,
+     "n_points": 30,
+     "first_failed_k": 1.7,
+     "n_points_without_cgscr": 0,
+     "n_sign_changes": 0,
+     "families": {
+      "static": 30,
+      "interior": 0,
+      "none": 0
+     }
+    },
+    "probe": {
+     "k": 0.811797,
+     "gSCR": 0.060383388908238675,
+     "CgSCR": 0.9492573302369964,
+     "beta": -0.936388809456796,
+     "family": "static",
+     "w_c": 0.0,
+     "lam_min": 0.219784960054102,
+     "C_SGSI": 0.8252186024005648,
+     "stable_by_the_rule": false
+    },
+    "closest_approach_on_the_grid": {
+     "k": 0.2,
+     "gSCR_minus_CgSCR": -0.8146277341430064,
+     "gSCR": 0.3509070750664854,
+     "CgSCR": 1.1655348092094917,
+     "beta": -0.6989304203582875,
+     "family": "static"
+    },
+    "interior_family_only_sensitivity": {
+     "definition": "gSCR - CgSCR_interior on the same grid (no interior root read as 0), grid brackets only, not bisected",
+     "n_sign_changes": 1,
+     "brackets": [
+      {
+       "k_lo": 0.45,
+       "k_hi": 0.5,
+       "k_mid": 0.475,
+       "rel_error_of_k_mid_vs_kstar": -0.4184601559506218,
+       "direction": "rule stable below, unstable above"
+      }
+     ]
+    },
+    "limit_check": {
+     "n_points": 31,
+     "n_points_above_the_gate_tolerance": 5,
+     "max_rel_difference_at_1e-6j": 2.1345727984050135e-06,
+     "ratio_1e-6j_over_1e-9j_min": 999.9999999768979,
+     "ratio_1e-6j_over_1e-9j_max": 999.999999999995
+    },
+    "project_threshold_context": {
+     "definition": "lam_min - C_SGSI on the same grid (the chain's own rule), grid brackets only, not bisected",
+     "n_sign_changes": 0,
+     "brackets": []
+    },
+    "n_sign_changes": 0,
+    "closest_approach": {
+     "k": 0.2,
+     "gSCR_minus_CgSCR": -0.8146277341430064,
+     "family": "static"
+    },
+    "binding_family_at_every_point": "static",
+    "interior_only_bracket": {
+     "k_lo": 0.45,
+     "k_hi": 0.5
+    },
+    "interior_only_bracket_rel_error": -0.4184601559506218
+   },
+   "bank11": {
+    "configuration": "bank-drawn ray 11 of r17_rays.m: GFM buses [35 39], outage 0, load scale 0.969009",
+    "kstar_full_model": 2.024609,
+    "kstar_source": "results/tables/r17/r17_rays.csv rayid 11 kstar",
+    "k_c": null,
+    "rel_error_vs_kstar": null,
+    "crossings": [],
+    "grid": {
+     "k_first": 0.2,
+     "k_last": 2.1,
+     "n_points": 39,
+     "first_failed_k": 2.15,
+     "n_points_without_cgscr": 0,
+     "n_sign_changes": 0,
+     "families": {
+      "static": 39,
+      "interior": 0,
+      "none": 0
+     }
+    },
+    "probe": {
+     "k": 2.019609,
+     "gSCR": 0.20871581687231822,
+     "CgSCR": 1.0739593966274497,
+     "beta": -0.8056576277206124,
+     "family": "static",
+     "w_c": 0.0,
+     "lam_min": 0.3474280275687128,
+     "C_SGSI": 0.77955775767875,
+     "stable_by_the_rule": false
+    },
+    "closest_approach_on_the_grid": {
+     "k": 0.2,
+     "gSCR_minus_CgSCR": -0.6238088810576279,
+     "gSCR": 1.1576068217987932,
+     "CgSCR": 1.781415702856421,
+     "beta": -0.35017591910601104,
+     "family": "static"
+    },
+    "interior_family_only_sensitivity": {
+     "definition": "gSCR - CgSCR_interior on the same grid (no interior root read as 0), grid brackets only, not bisected",
+     "n_sign_changes": 1,
+     "brackets": [
+      {
+       "k_lo": 1.7,
+       "k_hi": 1.75,
+       "k_mid": 1.725,
+       "rel_error_of_k_mid_vs_kstar": -0.14798363535872844,
+       "direction": "rule stable below, unstable above"
+      }
+     ]
+    },
+    "limit_check": {
+     "n_points": 40,
+     "n_points_above_the_gate_tolerance": 0,
+     "max_rel_difference_at_1e-6j": 4.477636186532096e-07,
+     "ratio_1e-6j_over_1e-9j_min": 999.9999999720517,
+     "ratio_1e-6j_over_1e-9j_max": 1000.000000000005
+    },
+    "project_threshold_context": {
+     "definition": "lam_min - C_SGSI on the same grid (the chain's own rule), grid brackets only, not bisected",
+     "n_sign_changes": 0,
+     "brackets": []
+    },
+    "n_sign_changes": 0,
+    "closest_approach": {
+     "k": 0.2,
+     "gSCR_minus_CgSCR": -0.6238088810576279,
+     "family": "static"
+    },
+    "binding_family_at_every_point": "static",
+    "interior_only_bracket": {
+     "k_lo": 1.7,
+     "k_hi": 1.75
+    },
+    "interior_only_bracket_rel_error": -0.14798363535872844
+   }
+  }
+ }
+}

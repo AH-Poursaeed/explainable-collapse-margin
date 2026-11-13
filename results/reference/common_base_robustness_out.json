@@ -1,0 +1,88 @@
+{
+ "status": "not paper numbers",
+ "keys": {
+  "ebm_duplicate_id_kind_plant": 0,
+  "pair_file_ids": 240,
+  "row_file_ids": 236,
+  "ebm_pairs_all_ids": 3982,
+  "ebm_slack_pairs_all_ids": 424,
+  "ebm_pairs_in_236": 3971,
+  "ebm_slack_pairs_in_236": 420,
+  "real_pairs_in_236": 3551,
+  "scenarios_with_q_probes": 170
+ },
+ "table_support": {
+  "min": 27,
+  "max": 236,
+  "cells": 20
+ },
+ "gfm_configurations_in_236": 6,
+ "own": {
+  "pooled": {
+   "n": 236,
+   "amber_median": 0.42156862745098045,
+   "table_median": 0.6557533539731681,
+   "amber_above_table_share": 0.2796610169491525,
+   "wilcoxon_p": 1.8734120875697424e-13,
+   "table_entries_missing": 0
+  },
+  "p_probes_only": {
+   "n": 236,
+   "amber_median": 0.45,
+   "table_median": 0.7,
+   "amber_above_table_share": 0.19915254237288135,
+   "wilcoxon_p": 3.456108977668537e-22,
+   "table_entries_missing": 0
+  },
+  "q_probes_only": {
+   "n": 160,
+   "amber_median": 0.3666666666666667,
+   "table_median": 0.575,
+   "amber_above_table_share": 0.3375,
+   "wilcoxon_p": 1.1319464902067945e-07,
+   "table_entries_missing": 0
+  },
+  "table_from_other_configurations": {
+   "n": 236,
+   "amber_median": 0.42156862745098045,
+   "table_median": 0.6702786377708979,
+   "amber_above_table_share": 0.326271186440678,
+   "wilcoxon_p": 4.127096281866051e-10,
+   "table_entries_missing": 56
+  }
+ },
+ "common": {
+  "pooled": {
+   "n": 236,
+   "amber_median": 0.3,
+   "table_median": 0.6726096401019002,
+   "amber_above_table_share": 0.3347457627118644,
+   "wilcoxon_p": 4.513964026828579e-10,
+   "table_entries_missing": 0
+  },
+  "p_probes_only": {
+   "n": 236,
+   "amber_median": 0.29166666666666663,
+   "table_median": 0.7,
+   "amber_above_table_share": 0.1906779661016949,
+   "wilcoxon_p": 1.8953316874363643e-20,
+   "table_entries_missing": 0
+  },
+  "q_probes_only": {
+   "n": 160,
+   "amber_median": 0.2154761904761905,
+   "table_median": 0.3,
+   "amber_above_table_share": 0.4375,
+   "wilcoxon_p": 0.010164076039223946,
+   "table_entries_missing": 0
+  },
+  "table_from_other_configurations": {
+   "n": 236,
+   "amber_median": 0.3,
+   "table_median": 0.6749226006191951,
+   "amber_above_table_share": 0.326271186440678,
+   "wilcoxon_p": 3.73481210256331e-08,
+   "table_entries_missing": 56
+  }
+ }
+}

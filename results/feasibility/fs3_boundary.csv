@@ -1,0 +1,5 @@
+ray,axis,mode,kstar_full,kstar_pencil,pencil_err_pct,PWSGSI_star,lam_min_star,gSCR_star,sigma_at_star_minus
+k-sweep kL=0.8,k,crossing,2.392578125,2.149609375,10.1551020408163,0.219704065871147,0.257594709767382,0.011318469326669,-0.124665078880895
+k-sweep kL=1.0,k,crossing,1.973046875,1.783203125,9.62185705800831,0.287035974112594,0.33648284206294,0.0591753945336303,-0.191897009840475
+k-sweep kL=1.2,k,pf_infeasible_first,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+load-growth k=1.0,kL,pf_infeasible_first,NaN,NaN,NaN,NaN,NaN,NaN,NaN
